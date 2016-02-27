@@ -22,8 +22,6 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'launchy'
   gem 'mocha'
-  gem 'shoulda', '~> 3.5'
-  gem 'shoulda-matchers', '~> 2.0'
   gem 'simplecov', :require => false
 end
 
