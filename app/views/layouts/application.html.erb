@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GlobeSquatter</title>
+  <link rel="stylesheet" href="jquery-jvectormap-2.0.1.css" type="text/css" media="screen"/>
+<script src="jquery.js"></script>
+<script src="jquery-jvectormap-2.0.3.min.js"></script>
+<script src="jquery-jvectormap-world-mill-en.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <%= include_gon %>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body>
+  <%= Gon::Base.render_data %>
+<%= yield %>
+
+</body>
+</html>
