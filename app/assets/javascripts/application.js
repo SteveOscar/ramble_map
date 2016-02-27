@@ -15,3 +15,7 @@
 //= require jquery-jvectormap-world-mill
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function(){
+  $('#blank-map').delay( 200 ).fadeTo('slow', 1);
+});

@@ -2,6 +2,10 @@ require 'json'
 require 'csv'
 
 class StaticController < ApplicationController
+
+  def welcome
+  end
+
   def home
     @latest = {}
     rates = Stats.new.get_data["rates"]
