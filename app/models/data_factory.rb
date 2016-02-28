@@ -15,9 +15,7 @@ class DataFactory
     latest.each do |rate|
       change[rate[0]] = ((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f).to_s[0..4]
     end
-    @percent = change
-    gon.percent = @percent
-    set_range(change)
+    change
   end
 
   def set_range(change)
