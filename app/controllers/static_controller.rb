@@ -7,19 +7,29 @@ class StaticController < ApplicationController
     @countries = Country.all.map{|u| [ u.country_name, u.id ] }
   end
 
-  def home
-    @latest = {}
-    rates = ExchangeRateService.new.get_data["rates"]
-    Country.all.each do |country|
-      @latest[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
-    end
-    @stats = compare(@latest)
+  def view
+    get_region(params)
     gon.stats = @stats
   end
 
   private
 
-  def compare(latest)
+  def get_region(params)
+    world_map if params[:region] == "World"
+  end
+
+  def world_map
+    @latest = DataFactory.new.exchange_rates(params)
+    # @latest = {}
+    # rates = ExchangeRateService.new(params).get_data["rates"]
+    # Country.all.each do |country|
+    #   @latest[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
+    # end
+
+    @stats = compare_rates(@latest)
+  end
+
+  def compare_rates(latest)
     old = HistoricalData.first[:data]
     change = {}
     latest.each do |rate|

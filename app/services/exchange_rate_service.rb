@@ -3,9 +3,9 @@ require 'faraday'
 
 class ExchangeRateService
 
-  # def initialize(params)
-  #   @type = params["DataType"]
-  # end
+  def initialize(params)
+    @type = params["DataType"]
+  end
 
 
   def get_data
