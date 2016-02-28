@@ -6,7 +6,7 @@ body {
   position: absolute;
   top: 10px;
   width: 50%;
-  min-width: 300px;
+  min-width: 360px;
   margin: auto;
   left: 0;
   right: 0;
@@ -15,32 +15,36 @@ body {
   margin: auto;
   height: 600px;
   width: 900px;
-  opacity: .7;
+  opacity: 0;
   z-index: 0;
 }
 .left-card {
-  background-color: black;
-  opacity: .5;
+  background-color: darkred;
+  opacity: .6;
   z-index: 2;
   position: absolute;
   left: 0;
   top: 0;
   width: 50%;
   height: 100%;
+  display: none;
 }
 .right-card {
-  background-color: white;
-  opacity: .7;
+  background-color: cyan;
+  opacity: .3;
   z-index: 2;
   position: absolute;
   right: 0;
   top: 0;
   width: 50%;
   height: 100%;
+  display: none;
 }
-.welcome-circle {
-  width: 50vh;
-  height: 50vh;
+.circle {
+  width: 60vh;
+  height: 60vh;
+  border-radius: 30vh;
+  background: black;
   position:absolute;
   left:0;
   right:0;
@@ -48,15 +52,44 @@ body {
   margin-left:auto;
   margin-right:auto;
   z-index: 3;
-  opacity: .8;
-  min-height: 300px;
-  min-width: 300px;
+  min-height: 250px;
+  min-width: 250px;
+  opacity: 0;
 }
-.left-circle {
-  border-radius: 25vh 0 0 25vh;
-  background: black;
+.select {
+  font-size: 13px;
+  font-weight:bold;
+  color: white
 }
-.right-circle {
-  border-radius: 0 25vh 25vh 0;
-  background: white;
+.select select {
+  outline: none;
+  -webkit-appearance: none;
+  display: block;
+  padding: 1.2em 1.2em 1.2em 1.2em;
+  margin: 0;
+
+  transition: border-color 0.2s;
+  border: 1px solid white;
+  border-radius: 10px;
+
+  background: darkred;
+  color: white;
+  line-height: normal;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.select-box-left {
+  margin: auto;
+  position: relative;
+  top: 40%;
+  transform: translateY(-60%);
+  float: left;
+}
+.select-box-right {
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  float: right;
 }

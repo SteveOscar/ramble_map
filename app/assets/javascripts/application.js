@@ -17,5 +17,12 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('#blank-map').delay( 200 ).fadeTo('slow', 1);
+  $('#blank-map').delay( 300 ).fadeTo('slow', 0.7);
+  $('.circle').delay( 1500 ).fadeTo('slow', 0.8);
+  $('.left-card').delay( 100 ).slideDown( 1000, function() {
+    // Animation complete.
+  });
+  $('.right-card').delay( 100 ).slideDown( 1500, function() {
+    // Animation complete.
+  });
 });

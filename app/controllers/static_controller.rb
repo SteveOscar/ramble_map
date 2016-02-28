@@ -4,11 +4,12 @@ require 'csv'
 class StaticController < ApplicationController
 
   def welcome
+    @countries = Country.all.map{|u| [ u.country_name, u.id ] }
   end
 
   def home
     @latest = {}
-    rates = Stats.new.get_data["rates"]
+    rates = ExchangeRateService.new.get_data["rates"]
     Country.all.each do |country|
       @latest[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
     end

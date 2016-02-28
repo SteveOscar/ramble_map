@@ -29,7 +29,7 @@ class Seed
 
   def historical_data
     @stats = {}
-    rates = Stats.new.get_historical_data('2015-02-16')["rates"]
+    rates = ExchangeRateService.new.get_historical_data('2015-02-16')["rates"]
     Country.all.each do |country|
       @stats[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
     end

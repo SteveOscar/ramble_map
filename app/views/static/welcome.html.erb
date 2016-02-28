@@ -11,12 +11,30 @@
 <div class="col s12 m6 right-card">
 </div>
 
-<div class="col s12 m6 left-circle welcome-circle">
+<div class="col s12 m6 circle welcome-circle">
+
+    <%= form_tag('/home', :method => "get") do %>
+    <div class="select select-box-left">
+      <%= select_tag(:country, options_for_select(@countries), prompt: "Your Country?") %>
+    </div>
+    <div class="select select-box-left">
+      <%= select_tag(:time, options_for_select([["Currency Exchange", 1],
+                                               ["Relative Expense", 2],
+                                               ["Today's Price", 3]]), prompt: "Data Type?") %>
+    </div>
+    <div class="select select-box-right">
+      <%= select_tag(:time, options_for_select([["1 Year", 1],
+                                               ["2 Years", 2],
+                                               ["3 Years", 3],
+                                               ["4 Years", 4]]), prompt: "How Far Back?") %>
+    </div>
+    <div class="select select-box-right">
+      <%= select_tag(:time, options_for_select([["World", 1],
+                                               ["South America", 2],
+                                               ["North America", 3],
+                                               ["Africa", 4]]), prompt: "Which Region?") %>
+    </div>
+      <%= submit_tag "Submit" %>
+    <% end -%>
+
 </div>
-
-<div class="col s12 m6 right-circle welcome-circle">
-</div>
-
-
-<span id="title-left">Globe</span>
-<span id="title-right">Squatter</span>
