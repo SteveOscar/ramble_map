@@ -9,8 +9,9 @@ class DataFactory
     latest
   end
 
-  def compare(latest)
-    old = HistoricalData.first[:data]
+  def compare(latest, params)
+    date = format_date(params)
+    old = historical_data(date, params)
     change = {}
     latest.each do |rate|
       change[rate[0]] = ((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f).to_s[0..4]
@@ -18,6 +19,20 @@ class DataFactory
     change
   end
 
+  def format_date(params)
+    params["time"].to_i.year.ago.strftime('%Y-%m-%d')
+  end
+
+  def historical_data(date, params)
+    rates = {}
+    rates = ExchangeRateService.new(params).get_historical_data(date)["rates"]
+    Country.all.each do |country|
+      rates[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
+    end
+    rates
+  end
+
+  # Breaks up the data for the colorscale on the map.
   def set_range(change)
     data = {}
     change.each do |rate|

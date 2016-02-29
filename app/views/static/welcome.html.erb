@@ -1,4 +1,3 @@
-<!-- <a class="waves-effect waves-light btn">test</a> -->
 <%= image_tag('title.png', id: 'site-title') %>
 
 <div class="holder">
@@ -12,10 +11,20 @@
 </div>
 
 <div class="col s12 m6 circle welcome-circle">
-
-    <%= form_tag('/view', :method => "get") do %>
+  <div class="welcome-form">
+    <%= form_tag('/display_map', :method => "get") do %>
       <div class="select select-box">
         <%= select_tag(:country, options_for_select(@countries), prompt: "Your Country?") %>
+      </div>
+      <div class="select select-box">
+        <%= select_tag(:region, options_for_select([["World", "World"],
+        ["Europe", "Europe"],
+        ["North America", "North America"],
+        ["South America", "South America"],
+        ["Oceana", "Oceana"],
+        ["Asia", "Asia"],
+        ["Africa", "Africa"]]),
+        prompt: "Which Region?") %>
       </div>
       <div class="select select-box">
         <%= select_tag(:data_type, options_for_select([["Currency Exchange", 1],
@@ -30,14 +39,9 @@
                                                  ["4 Years", 4]]),
                                                  prompt: "How Far Back?") %>
       </div>
-      <div class="select select-box">
-        <%= select_tag(:region, options_for_select([["World", "World"],
-                                                   ["Europe", "Europe"],
-                                                   ["North America", "North America"],
-                                                   ["Africa", "Africa"]]),
-                                                   prompt: "Which Region?") %>
-      </div>
+
       <%= submit_tag "Submit" %>
+    </div>
     <% end -%>
 
 </div>

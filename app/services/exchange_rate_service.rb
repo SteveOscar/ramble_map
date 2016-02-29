@@ -7,7 +7,6 @@ class ExchangeRateService
     @type = params["DataType"]
   end
 
-
   def get_data
     response = Faraday.get('https://openexchangerates.org/api/latest.json?app_id=d89861a2fc9f4018b72156cbea82cd4a')
     JSON.parse(response.body)
