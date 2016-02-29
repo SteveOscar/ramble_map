@@ -4,7 +4,6 @@ require 'csv'
 class StaticController < ApplicationController
 
   def welcome
-
     @countries = Country.all.order(:country_name).map{|u| [ u.country_name, u.id ] }
   end
 

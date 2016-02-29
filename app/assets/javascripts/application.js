@@ -25,4 +25,9 @@ $(document).ready(function(){
   $('.right-card').delay( 100 ).slideDown( 1500, function() {
     // Animation complete.
   });
+
+  // Potential code for selection box reaction
+  // $('.selectChange').change(function() {
+  //   updateAllCSS($(this).attr('data-element'), $(this).attr('data-property'), $(this).val() + $(this).attr('data-unit'))
+  // });
 });

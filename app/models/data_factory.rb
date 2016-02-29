@@ -32,7 +32,7 @@ class DataFactory
     rates
   end
 
-  # Breaks up the data for the colorscale on the map.
+  # Breaks up the data for the color scale on the map.
   def set_range(change)
     data = {}
     change.each do |rate|
