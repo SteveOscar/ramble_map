@@ -5,7 +5,9 @@ class Seed
   def initialize
     currency_codes
     country_data
-    historical_data
+    ppp_data
+    # historical_data
+
   end
 
   def currency_codes
@@ -27,14 +29,25 @@ class Seed
     end
   end
 
-  def historical_data
-    @stats = {}
-    rates = ExchangeRateService.new.get_historical_data('2015-02-16')["rates"]
-    Country.all.each do |country|
-      @stats[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
+  def ppp_data
+    data = CSV.read("./public/PPP_data.csv")
+    data.each do |row|
+      country = Country.where("country_name LIKE ?", "%#{row.first}%").first
+      if country
+        country.update(ppp: row.last[0..5])
+        puts "#{country.country_name} PPP is #{row.last}"
+      end
     end
-    HistoricalData.create(date: "2015-02-16", data: @stats)
   end
+
+  # def historical_data
+  #   @stats = {}
+  #   rates = ExchangeRateService.new.get_historical_data('2015-02-16')["rates"]
+  #   Country.all.each do |country|
+  #     @stats[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
+  #   end
+  #   HistoricalData.create(date: "2015-02-16", data: @stats)
+  # end
 
 
 end
