@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: globe_squatter_production
-  username: globe_squatter
-  password: <%= ENV['GLOBE_SQUATTER_DATABASE_PASSWORD'] %>

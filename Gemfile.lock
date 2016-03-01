@@ -102,8 +102,6 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    materialize-sass (0.97.5)
-      sass (~> 3.3)
     metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.99.1)
@@ -157,6 +155,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.4)
     railties (4.2.5.1)
       actionpack (= 4.2.5.1)
       activesupport (= 4.2.5.1)
@@ -233,7 +236,6 @@ DEPENDENCIES
   jquery-rails
   jvectormap-rails (~> 1.0.0)
   launchy
-  materialize-sass
   minitest-rails
   minitest-vcr
   mocha
@@ -241,6 +243,7 @@ DEPENDENCIES
   pry
   quiet_assets
   rails (= 4.2.5.1)
+  rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   shoulda-matchers (~> 3.1)
