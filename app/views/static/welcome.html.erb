@@ -1,7 +1,7 @@
 <%= image_tag('title.png', id: 'site-title') %>
 
 <div class="holder">
-  <div id="blank-map"></div>
+  <div id="blank-map" class="show-map"></div>
 </div>
 
 <div class="col s12 m6 left-card">
@@ -18,17 +18,17 @@
       </div>
       <div class="select select-box">
         <%= select_tag(:region, options_for_select([["World", "World"],
-        ["Europe", "Europe"],
-        ["North America", "North America"],
-        ["South America", "South America"],
-        ["Oceana", "Oceana"],
-        ["Asia", "Asia"],
-        ["Africa", "Africa"]]),
+                                                    ["Europe", "Europe"],
+                                                    ["North America", "North America"],
+                                                    ["South America", "South America"],
+                                                    ["Oceana", "Oceana"],
+                                                    ["Asia", "Asia"],
+                                                    ["Africa", "Africa"]]),
         prompt: "Which Region?") %>
       </div>
       <div class="select select-box">
-        <%= select_tag(:data_type, options_for_select([["Currency Exchange", 1],
-                                                       ["Relative Expense", 2],
+        <%= select_tag(:data_type, options_for_select([["Currency Exchange", "Exchange"],
+                                                       ["Relative Expense", "Cost"],
                                                        ["Today's Price", 3]]),
                                                        prompt: "Data Type?") %>
       </div>

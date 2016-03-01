@@ -10,6 +10,7 @@ class StaticController < ApplicationController
   def display_map
     generate_map_data
     @map = get_region(params)
+    @title = DataFactory.generate_title_from_params(params)
     gon.stats = @stats
   end
 
@@ -27,14 +28,14 @@ class StaticController < ApplicationController
   end
 
   def generate_map_data
-    @latest = DataFactory.new.exchange_rates(params)
+    @latest = DataFactory.exchange_rates(params)
     @stats = compare_rates(@latest)
   end
 
   def compare_rates(latest)
-    changes_in_rates = DataFactory.new.compare(latest, params)
+    changes_in_rates = DataFactory.compare(latest, params)
     gon.percent = changes_in_rates
-    DataFactory.new.set_range(changes_in_rates)
+    DataFactory.set_range(changes_in_rates)
   end
 
 end

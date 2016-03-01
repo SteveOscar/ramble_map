@@ -13,7 +13,7 @@ body {
   left: 0;
   right: 0;
 }
-#blank-map {
+.show-map {
   margin: auto;
   height: 600px;
   width: 900px;
@@ -91,4 +91,15 @@ body {
 .welcome-form {
   position: relative;
   top: 15%;
+}
+// MAP DISPLAY PAGE
+.main-map {
+  margin: auto;
+  height: 600px;
+  width: 900px;
+  // opacity: 0;
+  z-index: 0;
+}
+.holder {
+  text-align: center;
 }

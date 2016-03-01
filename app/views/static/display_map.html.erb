@@ -1,2 +1,5 @@
 <%= Gon::Base.render_data %>
-<div id="<%= @map %>" style="width: 900px; height: 600px"></div>
+<div class="holder">
+  <h3> <%= @title %> </h3>
+  <div class="main-map" id="<%= @map %>"style="width: 900px; height: 600px"></div>
+</div>

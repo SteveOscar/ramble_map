@@ -16,17 +16,23 @@ gem 'gon'
 group :development, :test do
   gem 'byebug'
   gem 'pry'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'shoulda-matchers', '~> 3.1'
-  gem 'launchy'
-  gem 'mocha'
-  gem 'simplecov', :require => false
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'quiet_assets'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'vcr'
+  gem "minitest-vcr"
+  gem 'webmock'
+  gem 'guard', '~> 2.13'
+  gem 'minitest-rails'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'launchy'
+  gem 'mocha'
+  gem 'simplecov', :require => false
 end
