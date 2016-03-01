@@ -35,6 +35,8 @@ class StaticController < ApplicationController
   def compare_rates(latest)
     changes_in_rates = DataFactory.compare(latest, params)
     gon.percent = changes_in_rates
+    wipe = Hash[latest.map{|k,str| [k,0] } ]
+    gon.wipe = wipe
     DataFactory.set_range(changes_in_rates)
   end
 
