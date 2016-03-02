@@ -19,12 +19,21 @@
 $(document).ready(function(){
   $('#blank-map').delay( 300 ).fadeTo('slow', 0.7);
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
+  $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
   $('.left-card').delay( 100 ).slideDown( 1000, function() {
     // Animation complete.
   });
   $('.right-card').delay( 100 ).slideDown( 1500, function() {
     // Animation complete.
   });
+  $('.top-banner').delay( 100 ).slideDown( 2000, function() {
+  });
+  $('.background-banner').delay( 100 ).slideDown( 2000, function() {
+  });
+  $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
+  $('.perspective').delay( 2100 ).fadeTo('slow', 0.9).delay( 1000 ).fadeTo('slow', 0);
+  $('.country').delay( 2500 ).fadeTo('slow', 0.9).delay( 1400 ).fadeTo('slow', 0);
+
   // Potential code for selection box reaction
   // $('.selectChange').change(function() {
   //   updateAllCSS($(this).attr('data-element'), $(this).attr('data-property'), $(this).val() + $(this).attr('data-unit'))

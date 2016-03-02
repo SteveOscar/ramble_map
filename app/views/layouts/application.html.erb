@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GlobeSquatter</title>
-  <script src="jquery.js"></script>
-  <script src="jquery-jvectormap-2.0.3.min.js"></script>
-  <script src="jquery-jvectormap-world-mill-en.js"></script>
+  <title>Ramble Map</title>
   <link rel="stylesheet" href="jquery-jvectormap-2.0.3.scss" type="text/css" media="screen"/>
- <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
- <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= stylesheet_link_tag    'custom', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= include_gon %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<%= Gon::Base.render_data %>
-<%= yield %>
-
-
-<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-<!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+  <%= Gon::Base.render_data %>
+  <%= yield %>
+  <%= javascript_include_tag 'application' %>
+  <script src="jquery.js"></script>
+  <script src="jquery-jvectormap-2.0.3.min.js"></script>
+  <!-- <script src="jquery-jvectormap-world-mill-en.js"></script> -->
 </body>
 </html>

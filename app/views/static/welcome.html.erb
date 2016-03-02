@@ -1,4 +1,5 @@
 <%= image_tag('title2.png', id: 'site-title') %>
+<!-- <%= image_tag('globe.png', id: 'globe') %> -->
 
 <div class="holder">
   <div id="blank-map" class="show-map"></div>
@@ -13,12 +14,18 @@
 <div class="col s12 m6 circle welcome-circle">
   <div class="welcome-form">
     <%= form_tag('/display_map', :method => "get") do %>
+
+    <h5>Set your perspective</h5>
+    <span>You're home country, or get a different view</span>
+
       <div class="select select-box">
-        <%= select_tag(:country, options_for_select(@countries), prompt: "Your Country?") %>
+        <%= select_tag(:country, options_for_select(@countries), prompt: "What Perspective?") %>
       </div>
+
+      <h5>View data for...
       <div class="select select-box">
-        <%= select_tag(:region, options_for_select([["World", "World"],
-                                                    ["Europe", "Europe"],
+        <%= select_tag(:region, options_for_select([["World", "world"],
+                                                    ["Europe", "europe"],
                                                     ["North America", "North America"],
                                                     ["South America", "South America"],
                                                     ["Oceana", "Oceana"],
@@ -26,12 +33,12 @@
                                                     ["Africa", "Africa"]]),
         prompt: "Which Region?") %>
       </div>
-      <div class="select select-box">
-        <%= select_tag(:data_type, options_for_select([["Currency Exchange", "Exchange"],
-                                                       ["Relative Expense", "Cost"],
+      <!-- <div class="select select-box">
+        <%= select_tag(:data_type, options_for_select([["Currency Exchange", "-map"],
+                                                       ["Relative Expense", "-expense-map"],
                                                        ["Today's Price", 3]]),
                                                        prompt: "Data Type?") %>
-      </div>
+      </div> -->
       <div class="select select-box">
         <%= select_tag(:time, options_for_select([["1 Year", 1],
                                                  ["2 Years", 2],

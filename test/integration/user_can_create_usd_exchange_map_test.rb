@@ -25,7 +25,7 @@ class User_Can_Create_USD_Exchange_Map_Test < ActionDispatch::IntegrationTest
     VCR.use_cassette('foreign_currency_multi_year') do
       visit root_path
 
-      select('Russie', :from => 'country')
+      select('Russia', :from => 'country')
       select('World', :from => 'region')
       select('Currency Exchange', :from => 'data_type')
       select('3 Years', :from => 'time')
@@ -34,7 +34,7 @@ class User_Can_Create_USD_Exchange_Map_Test < ActionDispatch::IntegrationTest
 
       assert_equal display_map_path, current_path
       assert page.has_content?('currency: RUB')
-      assert page.has_content?('3 Years')
+      assert page.has_content?('3 years')
     end
   end
 end

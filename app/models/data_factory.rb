@@ -1,5 +1,28 @@
 class DataFactory
 
+  def self.relative_prices(params)
+    prices = {}
+    rates = ExchangeRateService.new(params).get_data["rates"]
+    Country.all.each do |country|
+      prices[country.map_code] = calc_relative_expense(country, rates, params) unless rates[country.currency.code].nil? || country.ppp.nil?
+    end
+    # set_range_for_relative_prices(prices)
+    trim_outliers(prices)
+  end
+
+  def self.trim_outliers(prices)
+    prices.each {|k, v| prices[k] = v / 10}
+    prices
+  end
+
+  def self.calc_relative_expense(country, rates, params)
+    base = Country.find(params[:country])
+    exchange_rate = rates[country.currency.code]
+    expense_factor = (base.ppp.to_f * exchange_rate) / country.ppp.to_f
+    expense_factor.round(2)
+    # (exchange_rate.to_f / country.ppp.to_f).round(2)
+  end
+
   def self.exchange_rates(params)
     latest = {}
     rates = ExchangeRateService.new(params).get_data["rates"]
@@ -14,8 +37,9 @@ class DataFactory
     old = historical_data(date, params)
     change = {}
     latest.each do |rate|
-      change[rate[0]] = ((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f).to_s[0..4]
+      change[rate[0]] = (((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f) * 100).round(0).to_s
     end
+    binding.pry
     change
   end
 
@@ -30,6 +54,20 @@ class DataFactory
       data[rate[0]] = 4 if diff >= 0.01 && diff < 0.02
       data[rate[0]] = 5 if diff >= 0.02 && diff < 0.03
       data[rate[0]] = 1 if diff >= 0.03
+    end
+    data
+  end
+
+  def self.set_range_for_relative_prices(prices)
+    data = {}
+    prices.each do |price|
+      diff = price[1].to_f
+      data[price[0]] = 1 if diff < 0.9
+      data[price[0]] = 2 if diff >= 0.9 && diff < 1
+      data[price[0]] = 3 if diff > 1 && diff < 2
+      data[price[0]] = 4 if diff >= 2 && diff < 3
+      data[price[0]] = 5 if diff >= 3 && diff < 4
+      data[price[0]] = 1 if diff >= 4
     end
     data
   end

@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
   $(function(){
-    $('#world-map').vectorMap({
+    $('#world').vectorMap({
     map: 'world_mill',
-    backgroundColor: ['white'],
+    backgroundColor: ['transparent'],
     regionStyle: {
                   initial: {
                     fill: 'grey',
@@ -26,41 +26,58 @@ $(document).ready(function(){
               regions: [{
                 values: gon.percent,
                 scale: ['#C8EEFF', '#0071A4'],
-                min: -0.15,
-                max: 0.5,
+                min: -15,
+                max: 50,
                 normalizeFunction: 'linear'
               }]
             },
     // Sets the pop-up descriptions when hovering over a country
     onRegionTipShow: function(e, el, code){
-      if (gon.percent[code]*100 > 0) {
-        el.html(el.html()+'\'s currency has become '+gon.percent[code]*100+'% more cheap');
-      } else if (gon.percent[code]*100 < 0) {
-        el.html(el.html()+'\'s currency has become '+gon.percent[code]*(-100)+'% more expensive');
-      } else if (gon.percent[code]*100 === 0) {
+      if (gon.percent[code].to_i > 0) {
+        el.html(el.html()+'\'s currency has become '+gon.percent[code]+'% cheaper');
+      } else if (gon.percent[code] < 0) {
+        el.html(el.html()+'\'s currency has become '+gon.percent[code]*(-1)+'% more expensive');
+      } else if (gon.percent[code].to_i === 0) {
         el.html(el.html()+'\ uses the same currency');
       } else {
-        el.html('No data avialable for' + el.html());
+        el.html(el.html() + ' N/A');
       }
     }
     });
-    var mapObject = $('#world-map').vectorMap('get', 'mapObject');
-
-    // $(".slider").slider({
-    //   value: val,
-    //   min: 2013,
-    //   max: 2015,
-    //   step: 1,
-    //   slide: function( event, ui ) {
-    //     val = ui.value;
-    //     mapObject.series.regions[0].setValues(gon.test);
-    //   }
-    // });
+    var mapObject = $('#world').vectorMap('get', 'mapObject');
 
     $('#update').on('click', function() {
-      mapObject.series.regions[0].setValues(gon.wipe);
+      var mapObject = $('#world').vectorMap('get', 'mapObject');
+      var r=mapObject.series.regions[0];
+      mapObject.series.regions[0].clear();
+      r.params.min = 0.1;
+      r.params.max = 0.5;
+
+      r.setValues(gon.relative_prices);
+
       // clearMap();
     });
   })
 
 });
+
+// if (gon.relative_prices[code]*10 > 4) {
+//   el.html(el.html()+' is very cheap for you');
+// } else if (gon.relative_prices[code]*10 < 4 && gon.relative_prices[code]*10 >1.5) {
+//   el.html(el.html()+' is fairly fairly cheap for you');
+// } else if (gon.relative_prices[code]*10 < 1.5  && gon.relative_prices[code]*10 > 0.9) {
+//   el.html(el.html()+' has prices similar to your home country');
+// } else {
+//   el.html(el.html() + ' is more expensive than your country');
+// }
+
+// $(".slider").slider({
+//   value: val,
+//   min: 2013,
+//   max: 2015,
+//   step: 1,
+//   slide: function( event, ui ) {
+//     val = ui.value;
+//     mapObject.series.regions[0].setValues(gon.test);
+//   }
+// });

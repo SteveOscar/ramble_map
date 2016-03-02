@@ -7,17 +7,17 @@ class StaticController < ApplicationController
     @countries = Country.all.order(:country_name).map{|u| [ u.country_name, u.id ] }
   end
 
-  def display_map
+  def currency_map
     generate_map_data
-    @map = get_region(params)
+    @country = params["country"]
+    @map = params["region"]
     @title = DataFactory.generate_title_from_params(params)
-    gon.stats = @stats
   end
 
   private
 
   def get_region(params)
-    region = 'world-map' if params[:region] == "World"
+    region = 'world-map' if params[:region] == "world"
     region = 'europe-map' if params[:region] == "Europe"
     region = 'south-america-map' if params[:region] == "South America"
     region = 'north-america-map' if params[:region] == "North America"
@@ -28,16 +28,9 @@ class StaticController < ApplicationController
   end
 
   def generate_map_data
-    @latest = DataFactory.exchange_rates(params)
-    @stats = compare_rates(@latest)
-  end
-
-  def compare_rates(latest)
-    changes_in_rates = DataFactory.compare(latest, params)
-    gon.percent = changes_in_rates
-    wipe = Hash[latest.map{|k,str| [k,0] } ]
-    gon.wipe = wipe
-    DataFactory.set_range(changes_in_rates)
+    latest = DataFactory.exchange_rates(params)
+    gon.percent = DataFactory.compare(latest, params)
+    gon.relative_prices = DataFactory.relative_prices(params)
   end
 
 end
