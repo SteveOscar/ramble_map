@@ -109,10 +109,37 @@ body {
 #map-title {
   z-index: 6;
   position: absolute;
-  bottom: 2px;
+  bottom: 5px;
   width: 200px;
   left: 10px;
 }
+#prices-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+#currency-btn {
+  position: absolute;
+  top: 10px;
+  right: 170px;
+  display: none;
+}
+#ocean-background {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+.btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 9px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    outline: 0;
+    padding: 0 .5rem;
+  }
 .headline{
   bottom: 15px;
   left: 0;
@@ -123,44 +150,45 @@ body {
 .perspective {
   font-family: 'Righteous', cursive;
   position: absolute;
-  top: 10px;
-  left: 40%;
+  top: 30%;
+  left: 30%;
+  margin: 0;
   display: none;
-  color: white
+  color: cyan;
 }
 .country {
   font-family: 'Righteous', cursive;
   position: absolute;
-  top: 10px;
-  left: 45%;
+  top: 45%;
+  left: 35%;
+  margin: 0;
   display: none;
-  color: red
+  color: red;
 }
-.top-banner {
-  background-color: darkred;
-  opacity: .6;
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  display: none;
-}
+// .top-banner {
+//   background-color: darkred;
+//   opacity: .6;
+//   z-index: 1;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   height: 50px;
+//   display: none;
+// }
 .background-banner {
-  background-color: dimgrey;
+  background-color: black;
   opacity: 1;
   z-index: 0;
   position: fixed;
   width: 100%;
   height: 100%;
-  display: none;
   bottom: 0;
 }
 .main-map {
   margin: auto;
   height: 600px;
   width: 900px;
-  // opacity: 0;
+  display: none;
   z-index: 0;
 }
 .holder {

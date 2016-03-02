@@ -29,7 +29,7 @@ class StaticController < ApplicationController
 
   def generate_map_data
     latest = DataFactory.exchange_rates(params)
-    gon.percent = DataFactory.compare(latest, params)
+    gon.percent = DataFactory.compare_exchange_rates(latest, params)
     gon.relative_prices = DataFactory.relative_prices(params)
   end
 

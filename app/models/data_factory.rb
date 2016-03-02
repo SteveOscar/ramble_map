@@ -32,7 +32,7 @@ class DataFactory
     latest
   end
 
-  def self.compare(latest, params)
+  def self.compare_exchange_rates(latest, params)
     date = format_date(params)
     old = historical_data(date, params)
     change = {}

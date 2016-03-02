@@ -28,11 +28,13 @@ $(document).ready(function(){
   });
   $('.top-banner').delay( 100 ).slideDown( 2000, function() {
   });
-  $('.background-banner').delay( 100 ).slideDown( 2000, function() {
-  });
+  $('.background-banner').delay( 3100 ).fadeTo('slow', 0.5);
   $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
-  $('.perspective').delay( 1800 ).fadeTo('slow', 0.9).delay( 700 ).fadeTo('fast', 0);
-  $('.country').delay( 3100 ).fadeTo('slow', 0.9);
+  $('.perspective').delay( 200 ).fadeTo('slow', 0.9).delay( 1500 ).fadeTo('fast', 0);
+  $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 1300 ).fadeTo('fast', 0);;
+  $('#prices-btn').delay( 3100 ).fadeTo('slow', 0.9);
+  $('#currency-btn').delay( 3100 ).fadeTo('slow', 0.9);
+  $('.main-map').delay( 3100 ).fadeTo('slow', 0.9);
 
   // Potential code for selection box reaction
   // $('.selectChange').change(function() {

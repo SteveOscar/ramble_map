@@ -48,16 +48,22 @@ $(document).ready(function(){
     });
     var mapObject = $('#world').vectorMap('get', 'mapObject');
 
-    $('#update').on('click', function() {
+    $('#prices-btn').on('click', function() {
       var mapObject = $('#world').vectorMap('get', 'mapObject');
       var r=mapObject.series.regions[0];
       mapObject.series.regions[0].clear();
       r.params.min = 0.1;
       r.params.max = 0.5;
-
       r.setValues(gon.relative_prices);
+    });
 
-      // clearMap();
+    $('#currency-btn').on('click', function() {
+      var mapObject = $('#world').vectorMap('get', 'mapObject');
+      var r=mapObject.series.regions[0];
+      mapObject.series.regions[0].clear();
+      r.params.min = -15;
+      r.params.max = 50;
+      r.setValues(gon.percent);
     });
   })
 

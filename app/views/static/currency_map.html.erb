@@ -1,11 +1,14 @@
 <%= Gon::Base.render_data %>
 <%= image_tag('title2.png', id: 'map-title') %>
+<%= image_tag('ocean2.jpg', id: 'ocean-background') %>
+
 <div class="background-banner"></div>
+<h4 class="perspective">Perspective:</h4><h3 class="country"> <%= Country.find(@country).country_name %></h3>
 
 <div class="holder">
   <h6 class="headline"> <%= @title %> </h6>
   <div class="main-map" id="<%= @map %>"style="width: 990px; height: 660px"></div>
   <!-- <div class="slider" style="width: 280px; margin: 10px"></div> -->
 </div>
-<h4 class="perspective">Perspective:</h4><h3 class="country"> <%= Country.find(@country).country_name %></h3>
-<button type="submit" name="update" id="update">Relative Prices</button>
+<button type="submit" id="prices-btn" class="waves-effect waves-light btn red darken-4">Relative Prices</button>
+<button type="submit" id="currency-btn" class="waves-effect waves-light btn cyan darken-2">Currency Trend</button>
