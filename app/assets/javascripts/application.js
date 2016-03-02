@@ -31,8 +31,8 @@ $(document).ready(function(){
   $('.background-banner').delay( 100 ).slideDown( 2000, function() {
   });
   $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
-  $('.perspective').delay( 2100 ).fadeTo('slow', 0.9).delay( 1000 ).fadeTo('slow', 0);
-  $('.country').delay( 2500 ).fadeTo('slow', 0.9).delay( 1400 ).fadeTo('slow', 0);
+  $('.perspective').delay( 1800 ).fadeTo('slow', 0.9).delay( 700 ).fadeTo('fast', 0);
+  $('.country').delay( 3100 ).fadeTo('slow', 0.9);
 
   // Potential code for selection box reaction
   // $('.selectChange').change(function() {

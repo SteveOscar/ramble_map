@@ -109,12 +109,12 @@ body {
 #map-title {
   z-index: 6;
   position: absolute;
-  top: 2px;
+  bottom: 2px;
   width: 200px;
   left: 10px;
 }
 .headline{
-  top: 15px;
+  bottom: 15px;
   left: 0;
   right: 0;
   position: absolute;
@@ -123,16 +123,16 @@ body {
 .perspective {
   font-family: 'Righteous', cursive;
   position: absolute;
-  top: 30px;
-  right: 200px;
+  top: 10px;
+  left: 40%;
   display: none;
-  color: black
+  color: white
 }
 .country {
   font-family: 'Righteous', cursive;
   position: absolute;
-  top: 60px;
-  right: 140px;
+  top: 10px;
+  left: 45%;
   display: none;
   color: red
 }

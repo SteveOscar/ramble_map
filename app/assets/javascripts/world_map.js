@@ -8,12 +8,14 @@ $(document).ready(function(){
                   initial: {
                     fill: 'grey',
                     "fill-opacity": 1,
-                    stroke: 'none',
-                    "stroke-width": 0,
+                    stroke: 'white',
+                    "stroke-width": 0.4,
                     "stroke-opacity": 1
                   },
                   hover: {
-                    "fill-opacity": 0.5,
+                    "fill-opacity": 0.2,
+                    stroke: 'red',
+                    "stroke-width": 2,
                     cursor: 'pointer'
                   },
                   selected: {
@@ -33,11 +35,11 @@ $(document).ready(function(){
             },
     // Sets the pop-up descriptions when hovering over a country
     onRegionTipShow: function(e, el, code){
-      if (gon.percent[code].to_i > 0) {
+      if (gon.percent[code] > 0) {
         el.html(el.html()+'\'s currency has become '+gon.percent[code]+'% cheaper');
       } else if (gon.percent[code] < 0) {
         el.html(el.html()+'\'s currency has become '+gon.percent[code]*(-1)+'% more expensive');
-      } else if (gon.percent[code].to_i === 0) {
+      } else if (gon.percent[code] === 0) {
         el.html(el.html()+'\ uses the same currency');
       } else {
         el.html(el.html() + ' N/A');

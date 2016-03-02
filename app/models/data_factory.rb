@@ -37,40 +37,39 @@ class DataFactory
     old = historical_data(date, params)
     change = {}
     latest.each do |rate|
-      change[rate[0]] = (((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f) * 100).round(0).to_s
+      change[rate[0]] = (((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f) * 100).round(1).to_s
     end
-    binding.pry
     change
   end
 
   # Breaks up the data for the color scale on the map.
-  def self.set_range(change)
-    data = {}
-    change.each do |rate|
-      diff = rate[1].to_f
-      data[rate[0]] = 1 if diff < -0.1
-      data[rate[0]] = 2 if diff >= -0.1 && diff < 0
-      data[rate[0]] = 3 if diff > 0 && diff < 0.01
-      data[rate[0]] = 4 if diff >= 0.01 && diff < 0.02
-      data[rate[0]] = 5 if diff >= 0.02 && diff < 0.03
-      data[rate[0]] = 1 if diff >= 0.03
-    end
-    data
-  end
-
-  def self.set_range_for_relative_prices(prices)
-    data = {}
-    prices.each do |price|
-      diff = price[1].to_f
-      data[price[0]] = 1 if diff < 0.9
-      data[price[0]] = 2 if diff >= 0.9 && diff < 1
-      data[price[0]] = 3 if diff > 1 && diff < 2
-      data[price[0]] = 4 if diff >= 2 && diff < 3
-      data[price[0]] = 5 if diff >= 3 && diff < 4
-      data[price[0]] = 1 if diff >= 4
-    end
-    data
-  end
+  # def self.set_range(change)
+  #   data = {}
+  #   change.each do |rate|
+  #     diff = rate[1].to_f
+  #     data[rate[0]] = 1 if diff < -0.1
+  #     data[rate[0]] = 2 if diff >= -0.1 && diff < 0
+  #     data[rate[0]] = 3 if diff > 0 && diff < 0.01
+  #     data[rate[0]] = 4 if diff >= 0.01 && diff < 0.02
+  #     data[rate[0]] = 5 if diff >= 0.02 && diff < 0.03
+  #     data[rate[0]] = 1 if diff >= 0.03
+  #   end
+  #   data
+  # end
+  #
+  # def self.set_range_for_relative_prices(prices)
+  #   data = {}
+  #   prices.each do |price|
+  #     diff = price[1].to_f
+  #     data[price[0]] = 1 if diff < 0.9
+  #     data[price[0]] = 2 if diff >= 0.9 && diff < 1
+  #     data[price[0]] = 3 if diff > 1 && diff < 2
+  #     data[price[0]] = 4 if diff >= 2 && diff < 3
+  #     data[price[0]] = 5 if diff >= 3 && diff < 4
+  #     data[price[0]] = 1 if diff >= 4
+  #   end
+  #   data
+  # end
 
   def self.format_date(params)
     params["time"].to_i.year.ago.strftime('%Y-%m-%d')
