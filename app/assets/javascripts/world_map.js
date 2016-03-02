@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  var currentView = "currency"
   $(function(){
     $('#world').vectorMap({
     map: 'world_mill',
@@ -34,19 +34,39 @@ $(document).ready(function(){
               }]
             },
     // Sets the pop-up descriptions when hovering over a country
+
     onRegionTipShow: function(e, el, code){
-      if (gon.percent[code] > 0) {
-        el.html(el.html()+'\'s currency has become '+gon.percent[code]+'% cheaper');
-      } else if (gon.percent[code] < 0) {
-        el.html(el.html()+'\'s currency has become '+gon.percent[code]*(-1)+'% more expensive');
-      } else if (gon.percent[code] === 0) {
-        el.html(el.html()+'\ uses the same currency');
-      } else {
-        el.html(el.html() + ' N/A');
-      }
+      var currentView = "currency";
+      dataSet(e, el, code);
     }
     });
     var mapObject = $('#world').vectorMap('get', 'mapObject');
+
+
+    var dataSet = function(e, el, code) {
+      console.log(currentView)
+      if (currentView === "currency") {
+        if (gon.percent[code] > 0) {
+          el.html(el.html()+'\'s currency has become '+gon.percent[code]+'% cheaper');
+        } else if (gon.percent[code] < 0) {
+          el.html(el.html()+'\'s currency has become '+gon.percent[code]*(-1)+'% more expensive');
+        } else if (gon.percent[code] === 0) {
+          el.html(el.html()+'\ uses the same currency');
+        } else {
+          el.html(el.html() + ' N/A');
+        }
+      } else{
+        if (gon.relative_prices[code]*10 > 4) {
+          el.html(el.html()+' is very cheap for you');
+        } else if (gon.relative_prices[code]*10 < 4 && gon.relative_prices[code]*10 >1.5) {
+          el.html(el.html()+' is fairly cheap for you');
+        } else if (gon.relative_prices[code]*10 < 1.5  && gon.relative_prices[code]*10 > 0.9) {
+          el.html(el.html()+' has prices similar to your home country');
+        } else {
+          el.html(el.html() + ' is more expensive than your country');
+        }
+      };
+    }
 
     $('#prices-btn').on('click', function() {
       var mapObject = $('#world').vectorMap('get', 'mapObject');
@@ -55,6 +75,9 @@ $(document).ready(function(){
       r.params.min = 0.1;
       r.params.max = 0.5;
       r.setValues(gon.relative_prices);
+      currentView = "prices";
+      console.log("in prices-btn", this.currentView)
+      dataSet()
     });
 
     $('#currency-btn').on('click', function() {
@@ -64,20 +87,15 @@ $(document).ready(function(){
       r.params.min = -15;
       r.params.max = 50;
       r.setValues(gon.percent);
+      currentView = "currency";
+      console.log("in currency-btn", this.currentView)
+      dataSet()
     });
   })
 
 });
 
-// if (gon.relative_prices[code]*10 > 4) {
-//   el.html(el.html()+' is very cheap for you');
-// } else if (gon.relative_prices[code]*10 < 4 && gon.relative_prices[code]*10 >1.5) {
-//   el.html(el.html()+' is fairly fairly cheap for you');
-// } else if (gon.relative_prices[code]*10 < 1.5  && gon.relative_prices[code]*10 > 0.9) {
-//   el.html(el.html()+' has prices similar to your home country');
-// } else {
-//   el.html(el.html() + ' is more expensive than your country');
-// }
+
 
 // $(".slider").slider({
 //   value: val,
