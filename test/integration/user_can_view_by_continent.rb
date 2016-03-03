@@ -1,15 +1,13 @@
 require 'test_helper'
 
-class UserCanViewPppDataTest < ActionDispatch::IntegrationTest
+class UserCanViewByContinent < ActionDispatch::IntegrationTest
   VCR.use_cassette('PPP_from_USA') do
     visit root_path
 
     assert_equal '/', current_path
 
     select('United States', :from => 'country')
-    select('World', :from => 'region')
-    select('Relatie Expense', :from => 'data_type')
-    select('1 Year', :from => 'time')
+    select('Europe', :from => 'region')
 
     click_on "Submit"
 

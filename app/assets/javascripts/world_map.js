@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var currentView = "currency"
-  var val = 2012
+  var currentYear = gon.percent_one_year
   $(function(){
     $('#world').vectorMap({
     map: 'world_mill',
@@ -27,7 +27,7 @@ $(document).ready(function(){
                 },
     series: {
               regions: [{
-                values: gon.percent_two_years,
+                values: gon.percent_one_year,
                 scale: ['#C8EEFF', '#002333'],
                 min: gon.percent_min,
                 max: gon.percent_max,
@@ -39,23 +39,23 @@ $(document).ready(function(){
                 //         }
               }]
             },
-    // Sets the pop-up descriptions when hovering over a country
 
+    // Sets the pop-up descriptions when hovering over a country
     onRegionTipShow: function(e, el, code){
       var currentView = "currency";
+      var currentYear = gon.percent_one_year;
       dataSet(e, el, code);
     }
     });
     var mapObject = $('#world').vectorMap('get', 'mapObject');
 
-
     var dataSet = function(e, el, code) {
       if (currentView === "currency") {
-        if (gon.percent_two_years[code] > 0) {
-          el.html(el.html()+'\'s currency has become '+gon.percent_two_years[code]+'% cheaper');
-        } else if (gon.percent_two_years[code] < 0) {
-          el.html(el.html()+'\'s currency has become '+gon.percent_two_years[code]*(-1)+'% more expensive');
-        } else if (gon.percent_two_years[code] === 0) {
+        if (currentYear[code] > 0) {
+          el.html(el.html()+'\'s currency has become '+currentYear[code]+'% cheaper');
+        } else if (currentYear[code] < 0) {
+          el.html(el.html()+'\'s currency has become '+currentYear[code]*(-1)+'% more expensive');
+        } else if (currentYear[code] === 0) {
           el.html(el.html()+'\ uses the same currency');
         } else {
           el.html(el.html() + ' N/A');
@@ -112,6 +112,7 @@ $(document).ready(function(){
       r.params.min = gon.percent_min;
       r.params.max = gon.percent_max;
       r.setValues(gon.percent_one_year);
+      currentYear = gon.percent_one_year;
       dataSet()
     });
 
@@ -122,6 +123,7 @@ $(document).ready(function(){
       r.params.min = gon.percent_min;
       r.params.max = gon.percent_max;
       r.setValues(gon.percent_two_years);
+      currentYear = gon.percent_two_years;
       dataSet()
     });
 
@@ -132,11 +134,8 @@ $(document).ready(function(){
       r.params.min = gon.percent_min;
       r.params.max = gon.percent_max;
       r.setValues(gon.percent_three_years);
+      currentYear = gon.percent_three_years;
       dataSet()
     });
-
-
   })
-
-
 });

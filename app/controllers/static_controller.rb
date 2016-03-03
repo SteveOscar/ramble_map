@@ -12,6 +12,7 @@ class StaticController < ApplicationController
     @country = params["country"]
     @map = params["region"]
     @title = DataFactory.generate_title_from_params(params)
+    gon.region = params["region"]
   end
 
   private
