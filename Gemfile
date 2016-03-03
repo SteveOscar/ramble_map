@@ -12,6 +12,8 @@ gem 'faraday'
 gem 'jvectormap-rails', '~> 1.0.0'
 gem 'gon'
 gem 'rails_12factor', group: :production
+gem "omniauth-twitter"
+gem "skylight"
 
 group :development, :test do
   gem 'byebug'

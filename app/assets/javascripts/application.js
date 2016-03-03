@@ -37,6 +37,7 @@ $(document).ready(function(){
   $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.9);
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.9);
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
+  $('#map-headline').delay(3100).fadeTo('slow', 1);
 
   // Potential code for selection box reaction
   // $('.selectChange').change(function() {

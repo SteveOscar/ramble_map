@@ -33,22 +33,15 @@
                                                     ["Africa", "africa"]]),
         prompt: "Which Region?") %>
       </div>
-      <!-- <div class="select select-box">
-        <%= select_tag(:data_type, options_for_select([["Currency Exchange", "-map"],
-                                                       ["Relative Expense", "-expense-map"],
-                                                       ["Today's Price", 3]]),
-                                                       prompt: "Data Type?") %>
-      </div> -->
-      <!-- <div class="select select-box">
-        <%= select_tag(:time, options_for_select([["1 Year", 1],
-                                                 ["2 Years", 2],
-                                                 ["3 Years", 3],
-                                                 ["4 Years", 4]]),
-                                                 prompt: "How Far Back?") %>
-      </div> -->
+      <% if current_user %>
+        <p>hello, <%= current_user.name %></p>
+        <%= link_to "logout", logout_path %>
+      <% else %>
+        <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter" %>
+      <% end %>
 
       <%= submit_tag "Submit" %>
     </div>
-    <% end -%>
+  <% end -%>
 
 </div>

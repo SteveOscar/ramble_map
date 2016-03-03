@@ -1,10 +1,10 @@
+/* line 1, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 body {
   background-color: white;
-  // font-family: 'Alegreya Sans', sans-serif;
   font-family: 'Nunito', sans-serif;
 }
 
-// WELCOME PAGE
+/* line 8, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #site-title {
   z-index: 6;
   position: absolute;
@@ -15,6 +15,8 @@ body {
   left: 0;
   right: 0;
 }
+
+/* line 18, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .show-map {
   margin: auto;
   height: 600px;
@@ -22,6 +24,8 @@ body {
   opacity: 0;
   z-index: 0;
 }
+
+/* line 25, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .left-card {
   background-color: darkred;
   opacity: .6;
@@ -33,6 +37,8 @@ body {
   height: 100%;
   display: none;
 }
+
+/* line 36, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .right-card {
   background-color: cyan;
   opacity: .3;
@@ -44,6 +50,8 @@ body {
   height: 100%;
   display: none;
 }
+
+/* line 47, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #globe {
   width: 60vh;
   min-width: 250px;
@@ -52,40 +60,44 @@ body {
   right: 0;
   top: 25vh;
   margin: auto;
-  z-index: 3
+  z-index: 3;
 }
+
+/* line 57, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .circle {
   width: 60vh;
   height: 60vh;
   border-radius: 30vh;
   background: gainsboro;
-  position:absolute;
-  left:0;
-  right:0;
+  position: absolute;
+  left: 0;
+  right: 0;
   top: 25vh;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 3;
   min-height: 250px;
   min-width: 250px;
   text-align: -webkit-center;
   opacity: 0;
 }
+
+/* line 74, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .select {
   font-size: 13px;
-  font-weight:bold;
-  color: white
+  font-weight: bold;
+  color: white;
 }
+
+/* line 79, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .select select {
   -webkit-appearance: none;
   display: block;
   padding: 1.2em 1.2em 1.2em 1.2em;
   margin: 5px;
-
   transition: border-color 0.2s;
   border: 3px solid white;
   border-radius: 10px;
-
   background: darkred;
   color: white;
   line-height: normal;
@@ -96,16 +108,21 @@ body {
   width: 190px;
   height: 50px;
 }
+
+/* line 99, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .select-box {
   margin: auto;
   position: relative;
   display: block;
 }
+
+/* line 104, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .welcome-form {
   position: relative;
   top: 15%;
 }
-// MAP DISPLAY PAGE
+
+/* line 109, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #map-title {
   z-index: 6;
   position: absolute;
@@ -113,6 +130,8 @@ body {
   width: 200px;
   left: 10px;
 }
+
+/* line 116, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #map-headline {
   bottom: 15px;
   left: 0;
@@ -121,51 +140,67 @@ body {
   color: white;
   display: none;
 }
+
+/* line 124, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #expenses-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   display: none;
 }
+
+/* line 130, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #currency-btn {
   position: absolute;
   top: 10px;
   right: 170px;
   display: none;
 }
+
+/* line 136, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #currency-one-year {
   position: absolute;
   top: 10px;
   right: 270px;
   display: none;
 }
+
+/* line 142, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #currency-two-years {
   position: absolute;
   top: 10px;
   right: 220px;
   display: none;
 }
+
+/* line 148, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #currency-three-years {
   position: absolute;
   top: 10px;
   right: 170px;
   display: none;
 }
+
+/* line 154, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 #ocean-background {
   position: fixed;
   z-index: 0;
   width: 100%;
   min-height: 100vh;
 }
+
+/* line 160, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .btn, .btn-large, .btn-flat {
-    border: none;
-    border-radius: 9px;
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    outline: 0;
-    padding: 0 .5rem;
-  }
+  border: none;
+  border-radius: 9px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  outline: 0;
+  padding: 0 .5rem;
+}
+
+/* line 169, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .perspective {
   font-family: 'Righteous', cursive;
   position: absolute;
@@ -175,6 +210,8 @@ body {
   display: none;
   color: cyan;
 }
+
+/* line 178, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .country {
   font-family: 'Righteous', cursive;
   position: absolute;
@@ -184,6 +221,8 @@ body {
   display: none;
   color: red;
 }
+
+/* line 187, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .background-banner {
   background-color: black;
   opacity: 1;
@@ -193,6 +232,8 @@ body {
   height: 100%;
   bottom: 0;
 }
+
+/* line 196, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .main-map {
   padding-top: 50px;
   margin: auto;
@@ -201,6 +242,8 @@ body {
   display: none;
   z-index: 0;
 }
+
+/* line 204, /Users/stevenolson/Turing/projects/globe_squatter/app/assets/stylesheets/custom.scss */
 .holder {
   text-align: center;
   height: 100vh;

@@ -56,7 +56,7 @@ class DataFactory
   end
 
   def self.generate_title_from_params(params)
-    "Currency & expense trends, base currency: #{Country.find(params[:country]).currency.code}"
+    "Perspective: #{Country.find(params[:country]).country_name}, base currency: #{Country.find(params[:country]).currency.code}"
   end
 
   def self.time_frame(params)

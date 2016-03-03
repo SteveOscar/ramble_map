@@ -6,7 +6,7 @@
 <h4 class="perspective">Perspective:</h4><h3 class="country"> <%= Country.find(@country).country_name %></h3>
 
 <div class="holder">
-  <h6 class="headline"> <%= @title %> </h6>
+  <h6 id="map-headline"> <%= @title %> </h6>
   <div class="main-map" id="<%= @map %>"style=""></div>
   <!-- <div class="slider" style="width: 280px; margin: 10px"></div> -->
 </div>
@@ -15,3 +15,8 @@
 <button type="submit" id="currency-one-year" class="waves-effect waves-light btn cyan darken-2">1yrs</button>
 <button type="submit" id="currency-two-years" class="waves-effect waves-light btn cyan darken-3">2yrs</button>
 <button type="submit" id="currency-three-years" class="waves-effect waves-light btn cyan darken-4">3yrs</button>
+<% if current_user %>
+  <p>hello, <%= current_user.name %></p>
+<% else %>
+  <%= link_to "login", login_path %>
+<% end %>
