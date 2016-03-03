@@ -12,7 +12,7 @@ class StaticController < ApplicationController
     @country = params["country"]
     @map = params["region"]
     @title = DataFactory.generate_title_from_params(params)
-    gon.region = params["region"]
+    gon.region = params["region"].gsub("-", "_")
   end
 
   private
