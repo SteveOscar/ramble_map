@@ -29,8 +29,18 @@ class StaticController < ApplicationController
 
   def generate_map_data
     latest = DataFactory.exchange_rates(params)
-    gon.percent = DataFactory.compare_exchange_rates(latest, params)
-    gon.relative_prices = DataFactory.relative_prices(params)
+    gon.relative_expenses = DataFactory.relative_prices(params)
+    gon.expenses_max = gon.relative_expenses.sort_by{|k, v| -v.to_f}[3].last.to_f.round(4)
+    gon.expenses_min = gon.relative_expenses.sort_by{|k, v| v.to_f}[3].last.to_f.round(4)
+    generate_yearly_currency_trends(latest)
+  end
+
+  def generate_yearly_currency_trends(latest)
+    gon.percent_one_year = DataFactory.compare_exchange_rates(latest, params, 1)
+    gon.percent_two_years = DataFactory.compare_exchange_rates(latest, params, 2)
+    gon.percent_three_years = DataFactory.compare_exchange_rates(latest, params, 3)
+    gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[3].last.to_i
+    gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[3].last.to_i
   end
 
 end

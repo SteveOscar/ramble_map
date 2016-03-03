@@ -1,8 +1,8 @@
-<%= image_tag('title2.png', id: 'site-title') %>
+<%= image_tag('title.png', id: 'site-title') %>
 <!-- <%= image_tag('globe.png', id: 'globe') %> -->
 
 <div class="holder">
-  <div id="blank-map" class="show-map"></div>
+  <div id="blank-map" class="main-map"></div>
 </div>
 
 <div class="col s12 m6 left-card">
@@ -39,13 +39,13 @@
                                                        ["Today's Price", 3]]),
                                                        prompt: "Data Type?") %>
       </div> -->
-      <div class="select select-box">
+      <!-- <div class="select select-box">
         <%= select_tag(:time, options_for_select([["1 Year", 1],
                                                  ["2 Years", 2],
                                                  ["3 Years", 3],
                                                  ["4 Years", 4]]),
                                                  prompt: "How Far Back?") %>
-      </div>
+      </div> -->
 
       <%= submit_tag "Submit" %>
     </div>

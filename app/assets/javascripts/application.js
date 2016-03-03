@@ -30,11 +30,13 @@ $(document).ready(function(){
   });
   $('.background-banner').delay( 3100 ).fadeTo('slow', 0.5);
   $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
-  $('.perspective').delay( 200 ).fadeTo('slow', 0.9).delay( 1500 ).fadeTo('fast', 0);
-  $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 1300 ).fadeTo('fast', 0);;
-  $('#prices-btn').delay( 3100 ).fadeTo('slow', 0.9);
-  $('#currency-btn').delay( 3100 ).fadeTo('slow', 0.9);
-  $('.main-map').delay( 3100 ).fadeTo('slow', 0.9);
+  $('.perspective').delay( 200 ).fadeTo('slow', 0.9).delay( 1300 ).fadeTo('slow', 0);
+  $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 2300 ).fadeTo('slow', 0);;
+  $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.9);
+  $('#currency-one-year').delay( 3100 ).fadeTo('slow', 0.9);
+  $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.9);
+  $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.9);
+  $('.main-map').delay( 3100 ).fadeTo('slow', 1);
 
   // Potential code for selection box reaction
   // $('.selectChange').change(function() {

@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var currentView = "currency"
+  var val = 2012
   $(function(){
     $('#world').vectorMap({
     map: 'world_mill',
@@ -26,11 +27,16 @@ $(document).ready(function(){
                 },
     series: {
               regions: [{
-                values: gon.percent,
-                scale: ['#C8EEFF', '#0071A4'],
-                min: -15,
-                max: 50,
-                normalizeFunction: 'linear'
+                values: gon.percent_two_years,
+                scale: ['#C8EEFF', '#002333'],
+                min: gon.percent_min,
+                max: gon.percent_max,
+                normalizeFunction: 'linear',
+                // legend: {
+                //           vertical: true,
+                //           title: 'Currency Trends',
+                //           cssClass: 'legend',
+                //         }
               }]
             },
     // Sets the pop-up descriptions when hovering over a country
@@ -44,66 +50,93 @@ $(document).ready(function(){
 
 
     var dataSet = function(e, el, code) {
-      console.log(currentView)
       if (currentView === "currency") {
-        if (gon.percent[code] > 0) {
-          el.html(el.html()+'\'s currency has become '+gon.percent[code]+'% cheaper');
-        } else if (gon.percent[code] < 0) {
-          el.html(el.html()+'\'s currency has become '+gon.percent[code]*(-1)+'% more expensive');
-        } else if (gon.percent[code] === 0) {
+        if (gon.percent_two_years[code] > 0) {
+          el.html(el.html()+'\'s currency has become '+gon.percent_two_years[code]+'% cheaper');
+        } else if (gon.percent_two_years[code] < 0) {
+          el.html(el.html()+'\'s currency has become '+gon.percent_two_years[code]*(-1)+'% more expensive');
+        } else if (gon.percent_two_years[code] === 0) {
           el.html(el.html()+'\ uses the same currency');
         } else {
           el.html(el.html() + ' N/A');
         }
       } else{
-        if (gon.relative_prices[code]*10 > 4) {
-          el.html(el.html()+' is very cheap for you');
-        } else if (gon.relative_prices[code]*10 < 4 && gon.relative_prices[code]*10 >1.5) {
-          el.html(el.html()+' is fairly cheap for you');
-        } else if (gon.relative_prices[code]*10 < 1.5  && gon.relative_prices[code]*10 > 0.9) {
-          el.html(el.html()+' has prices similar to your home country');
+        if (gon.relative_expenses[code]*10 > 4) {
+          el.html(el.html()+' is EXTREMELY CHEAP for you');
+        } else if (gon.relative_expenses[code]*10 < 4 && gon.relative_expenses[code]*10 >2) {
+          el.html(el.html()+' is QUITE CHEAP for you');
+        } else if (gon.relative_expenses[code]*10 < 2 && gon.relative_expenses[code]*10 >1.2) {
+          el.html(el.html()+' is a LITTLE CHEAPER for you');
+        } else if (gon.relative_expenses[code]*10 < 1.2  && gon.relative_expenses[code]*10 > 0.8) {
+          el.html(el.html()+' has SIMILAR EXPENSES to your home country');
         } else {
-          el.html(el.html() + ' is more expensive than your country');
+          el.html(el.html() + ' is MORE EXPENSIVE than your country');
         }
       };
     }
 
-    $('#prices-btn').on('click', function() {
+    $('#expenses-btn').on('click', function() {
       var mapObject = $('#world').vectorMap('get', 'mapObject');
       var r=mapObject.series.regions[0];
       mapObject.series.regions[0].clear();
-      r.params.min = 0.1;
-      r.params.max = 0.5;
-      r.setValues(gon.relative_prices);
-      currentView = "prices";
-      console.log("in prices-btn", this.currentView)
+      $('#currency-one-year').hide();
+      $('#currency-two-years').hide();
+      $('#currency-three-years').hide();
+      $('#currency-btn').fadeTo('fast', 1);
+      r.params.min = gon.expenses_min;
+      r.params.max = gon.expenses_max;
+      r.setValues(gon.relative_expenses);
+      currentView = "expenses";
       dataSet()
     });
 
     $('#currency-btn').on('click', function() {
+      $(this).fadeTo('fast', 0);
       var mapObject = $('#world').vectorMap('get', 'mapObject');
       var r=mapObject.series.regions[0];
       mapObject.series.regions[0].clear();
-      r.params.min = -15;
-      r.params.max = 50;
-      r.setValues(gon.percent);
+      $('#currency-one-year').fadeTo('fast', 1);
+      $('#currency-two-years').fadeTo('fast', 1);
+      $('#currency-three-years').fadeTo('fast', 1);
+      r.params.min = gon.percent_min;
+      r.params.max = gon.percent_max;
+      r.setValues(gon.percent_two_years);
       currentView = "currency";
-      console.log("in currency-btn", this.currentView)
       dataSet()
     });
+
+    $('#currency-one-year').on('click', function() {
+      var mapObject = $('#world').vectorMap('get', 'mapObject');
+      var r=mapObject.series.regions[0];
+      mapObject.series.regions[0].clear();
+      r.params.min = gon.percent_min;
+      r.params.max = gon.percent_max;
+      r.setValues(gon.percent_one_year);
+      dataSet()
+    });
+
+    $('#currency-two-years').on('click', function() {
+      var mapObject = $('#world').vectorMap('get', 'mapObject');
+      var r=mapObject.series.regions[0];
+      mapObject.series.regions[0].clear();
+      r.params.min = gon.percent_min;
+      r.params.max = gon.percent_max;
+      r.setValues(gon.percent_two_years);
+      dataSet()
+    });
+
+    $('#currency-three-years').on('click', function() {
+      var mapObject = $('#world').vectorMap('get', 'mapObject');
+      var r=mapObject.series.regions[0];
+      mapObject.series.regions[0].clear();
+      r.params.min = gon.percent_min;
+      r.params.max = gon.percent_max;
+      r.setValues(gon.percent_three_years);
+      dataSet()
+    });
+
+
   })
 
+
 });
-
-
-
-// $(".slider").slider({
-//   value: val,
-//   min: 2013,
-//   max: 2015,
-//   step: 1,
-//   slide: function( event, ui ) {
-//     val = ui.value;
-//     mapObject.series.regions[0].setValues(gon.test);
-//   }
-// });

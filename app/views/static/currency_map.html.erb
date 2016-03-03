@@ -1,5 +1,5 @@
 <%= Gon::Base.render_data %>
-<%= image_tag('title2.png', id: 'map-title') %>
+<%= image_tag('title_small.png', id: 'map-title') %>
 <%= image_tag('ocean2.jpg', id: 'ocean-background') %>
 
 <div class="background-banner"></div>
@@ -7,8 +7,11 @@
 
 <div class="holder">
   <h6 class="headline"> <%= @title %> </h6>
-  <div class="main-map" id="<%= @map %>"style="width: 990px; height: 660px"></div>
+  <div class="main-map" id="<%= @map %>"style=""></div>
   <!-- <div class="slider" style="width: 280px; margin: 10px"></div> -->
 </div>
-<button type="submit" id="prices-btn" class="waves-effect waves-light btn red darken-4">Relative Prices</button>
+<button type="submit" id="expenses-btn" class="waves-effect waves-light btn red darken-4">Relative Prices</button>
 <button type="submit" id="currency-btn" class="waves-effect waves-light btn cyan darken-2">Currency Trend</button>
+<button type="submit" id="currency-one-year" class="waves-effect waves-light btn cyan darken-2">1yrs</button>
+<button type="submit" id="currency-two-years" class="waves-effect waves-light btn cyan darken-3">2yrs</button>
+<button type="submit" id="currency-three-years" class="waves-effect waves-light btn cyan darken-4">3yrs</button>
