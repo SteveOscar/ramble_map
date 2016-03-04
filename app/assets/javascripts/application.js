@@ -17,6 +17,7 @@
 //= require_tree .
 
 $(document).ready(function(){
+  // Welcome Page
   $('#blank-map').delay( 300 ).fadeTo('slow', 0.7);
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
   $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
@@ -28,19 +29,21 @@ $(document).ready(function(){
   });
   $('.top-banner').delay( 100 ).slideDown( 2000, function() {
   });
+
+  // Map Intro
   $('.background-banner').delay( 3100 ).fadeTo('slow', 0.5);
   $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
   $('.perspective').delay( 200 ).fadeTo('slow', 0.9).delay( 1300 ).fadeTo('slow', 0);
   $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 2300 ).fadeTo('slow', 0);;
+  // Map Buttons
   $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.9);
+  $('#peace-btn').delay( 3300 ).fadeTo('slow', 0.9);
   $('#currency-one-year').delay( 3100 ).fadeTo('slow', 0.9);
   $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.9);
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.9);
+
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
 
-  // Potential code for selection box reaction
-  // $('.selectChange').change(function() {
-  //   updateAllCSS($(this).attr('data-element'), $(this).attr('data-property'), $(this).val() + $(this).attr('data-unit'))
-  // });
+
 });

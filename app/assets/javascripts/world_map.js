@@ -90,6 +90,21 @@ $(document).ready(function(){
         dataSet()
       });
 
+      $('#peace-btn').on('click', function() {
+        var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
+        var r=mapObject.series.regions[0];
+        mapObject.series.regions[0].clear();
+        $('#currency-one-year').fadeTo('fast', 0.2);
+        $('#currency-two-years').fadeTo('fast', 0.2);
+        $('#currency-three-years').fadeTo('fast', 0.2);
+        $('#expenses-btn').fadeTo('fast', 0.2);
+        r.params.min = "1.148";
+        r.params.max = "3.645";
+        r.setValues(gon.peace_index);
+        currentView = "expenses";
+        dataSet()
+      });
+
       $('#currency-btn').on('click', function() {
         $(this).fadeTo('fast', 0);
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');

@@ -65,4 +65,12 @@ class DataFactory
     time
   end
 
+  def self.peace_index
+    peace_index = {}
+    Country.all.each do |country|
+      peace_index[country.map_code] = country.peace_score.to_s unless country.peace_score.nil?
+    end
+    peace_index
+  end
+
 end

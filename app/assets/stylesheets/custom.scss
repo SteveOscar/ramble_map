@@ -126,6 +126,14 @@ body {
   top: 10px;
   right: 10px;
   display: none;
+  width: 140px;
+}
+#peace-btn {
+  position: absolute;
+  top: 43px;
+  right: 10px;
+  display: none;
+  width: 140px;
 }
 #currency-btn {
   position: absolute;
@@ -162,6 +170,7 @@ body {
     border-radius: 9px;
     display: inline-block;
     height: 30px;
+    font-size: 12px;
     line-height: 30px;
     outline: 0;
     padding: 0 .5rem;

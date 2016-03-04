@@ -8,13 +8,14 @@
 <div class="holder">
   <h6 id="map-headline"> <%= @title %> </h6>
   <div class="main-map" id="<%= @map %>"style=""></div>
-  <!-- <div class="slider" style="width: 280px; margin: 10px"></div> -->
 </div>
+
 <button type="submit" id="expenses-btn" class="waves-effect waves-light btn red darken-4">Relative Prices</button>
 <button type="submit" id="currency-btn" class="waves-effect waves-light btn cyan darken-2">Currency Trend</button>
 <button type="submit" id="currency-one-year" class="waves-effect waves-light btn cyan darken-2">1yrs</button>
 <button type="submit" id="currency-two-years" class="waves-effect waves-light btn cyan darken-3">2yrs</button>
 <button type="submit" id="currency-three-years" class="waves-effect waves-light btn cyan darken-4">3yrs</button>
+<button type="submit" id="peace-btn" class="waves-effect waves-light btn red darken-6">Peace Index</button>
 
 <% if current_user %>
   <p>hello, <%= current_user.name %></p>
