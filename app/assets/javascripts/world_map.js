@@ -60,7 +60,23 @@ $(document).ready(function(){
           } else {
             el.html(el.html() + ' N/A');
           }
-        } else{
+        } else if (currentView === "peace") {
+            if (gon.peace_index[code] > 3) {
+              el.html(el.html()+': high levels of violence, PeaceScore: 0');
+            } else if (gon.peace_index[code] < 3 && gon.peace_index[code] >2.5) {
+              el.html(el.html()+': medium levels of violence, PeaceScore: 1');
+            } else if (gon.peace_index[code] < 2.5 && gon.peace_index[code] >2) {
+              el.html(el.html()+': moderate levels of violence, PeaceScore: 3');
+            } else if (gon.peace_index[code] < 2  && gon.peace_index[code] > 1.6) {
+              el.html(el.html()+': low levels of violence, PeaceScore: 4');
+            } else if (gon.peace_index[code] < 1.6  && gon.peace_index[code] > 1.35) {
+              el.html(el.html()+': very low levels of violence, PeaceScore: 5');
+            } else if (gon.peace_index[code] < 1.35  && gon.peace_index[code] > 0.1) {
+              el.html(el.html()+': among the safest countries on Earth, PeaceScore: 6');
+            } else {
+              el.html(el.html() + ': no data');
+            }
+        } else {
           if (gon.relative_expenses[code]*10 > 4) {
             el.html(el.html()+' is EXTREMELY CHEAP for you');
           } else if (gon.relative_expenses[code]*10 < 4 && gon.relative_expenses[code]*10 >2) {
@@ -73,7 +89,7 @@ $(document).ready(function(){
             el.html(el.html() + ' is MORE EXPENSIVE than your country');
           }
         };
-      }
+      };
 
       $('#expenses-btn').on('click', function() {
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
@@ -82,7 +98,9 @@ $(document).ready(function(){
         $('#currency-one-year').hide();
         $('#currency-two-years').hide();
         $('#currency-three-years').hide();
-        $('#currency-btn').fadeTo('fast', 1);
+        $('#currency-btn').fadeTo('fast', 0.5);
+        $('#peace-btn').fadeTo('fast', 0.5);
+        $('#expenses-btn').fadeTo('fast', 1);
         r.params.min = gon.expenses_min;
         r.params.max = gon.expenses_max;
         r.setValues(gon.relative_expenses);
@@ -94,14 +112,13 @@ $(document).ready(function(){
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
         var r=mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
-        $('#currency-one-year').fadeTo('fast', 0.2);
-        $('#currency-two-years').fadeTo('fast', 0.2);
-        $('#currency-three-years').fadeTo('fast', 0.2);
-        $('#expenses-btn').fadeTo('fast', 0.2);
+        $('#currency-btn').fadeTo('fast', 0.5);
+        $('#expenses-btn').fadeTo('fast', 0.5);
+        $('#peace-btn').fadeTo('fast', 1)
         r.params.min = "1.148";
         r.params.max = "3.645";
         r.setValues(gon.peace_index);
-        currentView = "expenses";
+        currentView = "peace";
         dataSet()
       });
 
@@ -111,11 +128,13 @@ $(document).ready(function(){
         var r=mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
         $('#currency-one-year').fadeTo('fast', 1);
-        $('#currency-two-years').fadeTo('fast', 1);
-        $('#currency-three-years').fadeTo('fast', 1);
+        $('#currency-two-years').fadeTo('fast', 0.5);
+        $('#currency-three-years').fadeTo('fast', 0.5);
+        $('#peace-btn').fadeTo('fast', 0.5);
+        $('#expenses-btn').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
-        r.setValues(gon.percent_two_years);
+        r.setValues(gon.percent_one_year);
         currentView = "currency";
         dataSet()
       });
@@ -124,6 +143,9 @@ $(document).ready(function(){
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
         var r=mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
+        $('#currency-one-year').fadeTo('fast', 1);
+        $('#currency-two-years').fadeTo('fast', 0.5);
+        $('#currency-three-years').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_one_year);
@@ -135,6 +157,9 @@ $(document).ready(function(){
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
         var r=mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
+        $('#currency-two-years').fadeTo('fast', 1);
+        $('#currency-one-year').fadeTo('fast', 0.5);
+        $('#currency-three-years').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_two_years);
@@ -146,6 +171,9 @@ $(document).ready(function(){
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
         var r=mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
+        $('#currency-three-years').fadeTo('fast', 1);
+        $('#currency-two-years').fadeTo('fast', 0.5);
+        $('#currency-one-year').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_three_years);

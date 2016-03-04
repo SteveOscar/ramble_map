@@ -36,11 +36,11 @@ $(document).ready(function(){
   $('.perspective').delay( 200 ).fadeTo('slow', 0.9).delay( 1300 ).fadeTo('slow', 0);
   $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 2300 ).fadeTo('slow', 0);;
   // Map Buttons
-  $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.9);
-  $('#peace-btn').delay( 3300 ).fadeTo('slow', 0.9);
+  $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.5);
+  $('#peace-btn').delay( 3300 ).fadeTo('slow', 0.5);
   $('#currency-one-year').delay( 3100 ).fadeTo('slow', 0.9);
-  $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.9);
-  $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.9);
+  $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.5);
+  $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.5);
 
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
