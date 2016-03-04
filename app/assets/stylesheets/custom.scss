@@ -159,6 +159,30 @@ body {
   right: 170px;
   display: none;
 }
+#sources-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: none;
+}
+#sources-card {
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 12px;
+  opacity: 0.9;
+  border-radius: 15px;
+  position: fixed;
+  width: 280px;
+  height: 330px;
+  background: black;
+  z-index: 11;
+  display: none;
+}
+.source-text {
+  color: white;
+}
 #ocean-background {
   position: fixed;
   z-index: 0;

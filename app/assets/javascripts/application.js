@@ -42,8 +42,15 @@ $(document).ready(function(){
   $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.5);
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.5);
 
+  $('#sources-btn').delay(3600).fadeTo('slow', 0.9)
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
 
+  $('#sources-btn').on('click', function() {
+    $('#sources-card').toggle();
+  });
+  $('#sources-card').on('click', function() {
+    $('#sources-card').hide();
+  });
 
 });

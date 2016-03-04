@@ -62,17 +62,19 @@ $(document).ready(function(){
           }
         } else if (currentView === "peace") {
             if (gon.peace_index[code] > 3) {
-              el.html(el.html()+': high levels of violence, PeaceScore: 0');
-            } else if (gon.peace_index[code] < 3 && gon.peace_index[code] >2.5) {
-              el.html(el.html()+': medium levels of violence, PeaceScore: 1');
-            } else if (gon.peace_index[code] < 2.5 && gon.peace_index[code] >2) {
-              el.html(el.html()+': moderate levels of violence, PeaceScore: 3');
-            } else if (gon.peace_index[code] < 2  && gon.peace_index[code] > 1.6) {
-              el.html(el.html()+': low levels of violence, PeaceScore: 4');
-            } else if (gon.peace_index[code] < 1.6  && gon.peace_index[code] > 1.35) {
-              el.html(el.html()+': very low levels of violence, PeaceScore: 5');
-            } else if (gon.peace_index[code] < 1.35  && gon.peace_index[code] > 0.1) {
-              el.html(el.html()+': among the safest countries on Earth, PeaceScore: 6');
+              el.html(el.html()+': highly violent, PeaceRank: '+gon.peace_index[code][1]+'/162');
+            } else if (gon.peace_index[code][0] < 3 && gon.peace_index[code][0] >2.5) {
+              el.html(el.html()+': violent, PeaceRank: '+gon.peace_index[code][1]+'/162');
+            } else if (gon.peace_index[code][0] < 2.5 && gon.peace_index[code][0] >2) {
+              el.html(el.html()+': moderately violent, PeaceRank: '+gon.peace_index[code][1]+'/162');
+            } else if (gon.peace_index[code][0] < 2  && gon.peace_index[code][0] > 1.6) {
+              el.html(el.html()+': average, PeaceRank: '+gon.peace_index[code][1]+'/162');
+            } else if (gon.peace_index[code][0] < 1.6  && gon.peace_index[code][0] > 1.35) {
+              el.html(el.html()+': peaceful, PeaceRank: '+gon.peace_index[code][1]+'/162');
+            } else if (gon.peace_index[code][0] < 1.35  && gon.peace_index[code][0] > 0.1) {
+              el.html(el.html()+': very peaceful, PeaceRank: '+gon.peace_index[code][1]+'/162');
+            } else if (gon.peace_index[code][0] === 1.148) {
+              el.html(el.html()+': the most peaceful country on Earth, PeaceRank: '+gon.peace_index[code][1]+'/162');
             } else {
               el.html(el.html() + ': no data');
             }
@@ -114,7 +116,10 @@ $(document).ready(function(){
         mapObject.series.regions[0].clear();
         $('#currency-btn').fadeTo('fast', 0.5);
         $('#expenses-btn').fadeTo('fast', 0.5);
-        $('#peace-btn').fadeTo('fast', 1)
+        $('#peace-btn').fadeTo('fast', 1);
+        $('#currency-one-year').fadeTo('fast', 0);
+        $('#currency-two-years').fadeTo('fast', 0);
+        $('#currency-three-years').fadeTo('fast', 0);
         r.params.min = "1.148";
         r.params.max = "3.645";
         r.setValues(gon.peace_index);
@@ -123,7 +128,6 @@ $(document).ready(function(){
       });
 
       $('#currency-btn').on('click', function() {
-        $(this).fadeTo('fast', 0);
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
         var r=mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
@@ -132,6 +136,7 @@ $(document).ready(function(){
         $('#currency-three-years').fadeTo('fast', 0.5);
         $('#peace-btn').fadeTo('fast', 0.5);
         $('#expenses-btn').fadeTo('fast', 0.5);
+        $('#currency-btn').fadeTo('fast', 0);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_one_year);
@@ -146,10 +151,13 @@ $(document).ready(function(){
         $('#currency-one-year').fadeTo('fast', 1);
         $('#currency-two-years').fadeTo('fast', 0.5);
         $('#currency-three-years').fadeTo('fast', 0.5);
+        $('#currency-btn').fadeTo('fast', 0);
+        $('#peace-btn').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_one_year);
         currentYear = gon.percent_one_year;
+        currentView = "currency";
         dataSet()
       });
 
@@ -160,10 +168,13 @@ $(document).ready(function(){
         $('#currency-two-years').fadeTo('fast', 1);
         $('#currency-one-year').fadeTo('fast', 0.5);
         $('#currency-three-years').fadeTo('fast', 0.5);
+        $('#currency-btn').fadeTo('fast', 0);
+        $('#peace-btn').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_two_years);
         currentYear = gon.percent_two_years;
+        currentView = "currency";
         dataSet()
       });
 
@@ -174,10 +185,13 @@ $(document).ready(function(){
         $('#currency-three-years').fadeTo('fast', 1);
         $('#currency-two-years').fadeTo('fast', 0.5);
         $('#currency-one-year').fadeTo('fast', 0.5);
+        $('#currency-btn').fadeTo('fast', 0);
+        $('#peace-btn').fadeTo('fast', 0.5);
         r.params.min = gon.percent_min;
         r.params.max = gon.percent_max;
         r.setValues(gon.percent_three_years);
         currentYear = gon.percent_three_years;
+        currentView = "currency";
         dataSet()
       });
     })

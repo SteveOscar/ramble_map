@@ -17,6 +17,12 @@
 <button type="submit" id="currency-three-years" class="waves-effect waves-light btn cyan darken-2">3yrs</button>
 <button type="submit" id="peace-btn" class="waves-effect waves-light btn red darken-6">Peace Index</button>
 
+<button type="submit" id="sources-btn" class="waves-effect waves-light btn red darken-6">Sources</button>
+<div id="sources-card">
+  <p class="source-text">Current and historical exchange rates: <a href="https://openexchangerates.org/", target = "blank">OpenExchangeRates API</a></p>
+  <p class="source-text">Purchasing Power Parity: <a href="http://data.worldbank.org/indicator/PA.NUS.PPP", target = "blank">World Bank</a></p>
+  <p class="source-text">Peace Rankings: <a href="http://economicsandpeace.org/reports/", target = "blank">IEP</a></p>
+</div>
 <% if current_user %>
   <p>hello, <%= current_user.name %></p>
 <% else %>
