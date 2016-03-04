@@ -6,8 +6,7 @@ class Seed
     currency_codes
     country_data
     ppp_data
-    # historical_data
-
+    peace_data
   end
 
   def currency_codes
@@ -40,15 +39,16 @@ class Seed
     end
   end
 
-  # def historical_data
-  #   @stats = {}
-  #   rates = ExchangeRateService.new.get_historical_data('2015-02-16')["rates"]
-  #   Country.all.each do |country|
-  #     @stats[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?
-  #   end
-  #   HistoricalData.create(date: "2015-02-16", data: @stats)
-  # end
-
+  def peace_data
+    data = CSV.read("./public/peace_index.csv")
+    data.each do |row|
+      country = Country.where("country_name LIKE ?", "%#{row.first}%").first
+      if country
+        country.update(peace_rank: row[1], peace_score: row[2])
+        puts "#{country.country_name} peace score is #{row.last}"
+      end
+    end
+  end
 
 end
 
