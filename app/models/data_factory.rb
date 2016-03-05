@@ -13,10 +13,10 @@ class DataFactory
       prices[country.map_code] = calc_relative_expense(country, rates, params) unless rates[country.currency.code].nil? || country.ppp.nil?
     end
     # set_range_for_relative_prices(prices)
-    trim_outliers(prices)
+    format_data(prices)
   end
 
-  def trim_outliers(prices)
+  def format_data(prices)
     prices.each {|k, v| prices[k] = v / 10}
     prices
   end
@@ -76,5 +76,4 @@ class DataFactory
     end
     peace_index
   end
-
 end

@@ -190,7 +190,6 @@
         null,
         3,
         null,
-        null,
         null
       ],
       "/Users/stevenolson/Turing/projects/globe_squatter/app/services/exchange_rate_service.rb": [
@@ -224,6 +223,6 @@
         null
       ]
     },
-    "timestamp": 1457212500
+    "timestamp": 1457213234
   }
 }
