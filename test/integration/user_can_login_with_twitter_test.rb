@@ -1,14 +1,14 @@
 require "test_helper"
 
+
 class User_Can_Login_With_Twitter < ActionDispatch::IntegrationTest
   test "user can login with twitter" do
-    VCR.use_cassette('basic_USD_trend') do
-      visit root_path
+    visit root_path
+    click_link("twitter")
+    sleep 0.1
 
-      click_link("twitter")
+    assert_equal root_path, current_path
 
-      assert_equal display_map_path, current_path
-
-    end
+    assert page.has_content?("hello, Steven Olson")
   end
 end

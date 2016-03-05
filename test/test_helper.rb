@@ -11,7 +11,7 @@ require 'vcr'
 require "minitest-vcr"
 require 'mocha/mini_test'
 
-# OmniAuth.config.test_mode = true
+OmniAuth.config.test_mode = true
 # omniauth_hash = { 'provider' => 'twitter',
 #                   'uid' => '12345',
 #                   'info' => {
@@ -24,11 +24,24 @@ require 'mocha/mini_test'
 #                       'secret' => ENV['USER_SECRET']
 #                   }
 # }
-#
 # OmniAuth.config.add_mock(:twitter, omniauth_hash)
-#
-# invalid_user = { 'provider' => 'github'}
-# OmniAuth.config.add_mock(:github, invalid_user)
+
+OmniAuth.config.mock_auth[:twitter] = {
+                  'provider' => 'twitter',
+                  'uid' => '12345',
+                  'info' => {
+                      'name' => 'Steven Olson',
+                      'description' => 'Angry neighor with inflatable pool',
+                      'image' => 'http://pbs.twimg.com/profile_images/676288331215335424/xFUgQmzk_normal.jpg'
+                  },
+                  'credentials' => {
+                      'token' => ENV['USER_TOKEN'],
+                      'secret' => ENV['USER_SECRET']
+                  }
+}
+
+invalid_user = { 'provider' => 'github'}
+OmniAuth.config.add_mock(:github, invalid_user)
 
 class ActiveSupport::TestCase
   # Rails.application.load_seed
@@ -50,8 +63,13 @@ module ActionDispatch
   class IntegrationTest
     include Capybara::DSL
 
+    def setup
+      OmniAuth.config.mock_auth[:twitter]
+    end
+
     def teardown
       reset_session!
+      OmniAuth.config.mock_auth[:twitter] = nil
     end
   end
 end
