@@ -1,7 +1,7 @@
 require 'json'
 require 'csv'
 
-class StaticController < ApplicationController
+class MapController < ApplicationController
   attr_reader :data_factory
 
   def welcome

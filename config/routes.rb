@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'static#welcome'
-  get '/display_map', to: 'static#currency_map'
+  root 'map#welcome'
+  get '/display_map', to: 'map#currency_map'
   get '/auth/twitter', as: :login
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
