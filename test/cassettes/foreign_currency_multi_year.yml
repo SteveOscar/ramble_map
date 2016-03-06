@@ -2,6 +2,226 @@
 http_interactions:
 - request:
     method: get
+    uri: https://openexchangerates.org/api/latest.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=RUB
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Mar 2016 19:03:22 GMT
+      Server:
+      - Apache
+      Last-Modified:
+      - Sun, 06 Mar 2016 18:00:10 GMT
+      Cache-Control:
+      - public
+      Etag:
+      - '"babdf8d6a34ff8a29caed58f09e03714"'
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Length:
+      - '4533'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "disclaimer": "Exchange rates provided for informational purposes only and do not constitute financial advice of any kind. Although every attempt is made to ensure quality, no guarantees are made of accuracy, validity, availability, or fitness for any purpose. All usage subject to acceptance of Terms: https://openexchangerates.org/terms/",
+          "license": "Data sourced from various providers; resale prohibited; no warranties given of any kind. All usage subject to License Agreement: https://openexchangerates.org/license/",
+          "timestamp": 1457287210,
+          "base": "RUB",
+          "rates": {
+            "AED": 0.05097682,
+            "AFN": 0.95209851,
+            "ALL": 1.74253315,
+            "AMD": 6.80889218,
+            "ANG": 0.02482604,
+            "AOA": 2.20491298,
+            "ARS": 0.2108801,
+            "AUD": 0.01865522,
+            "AWG": 0.02488965,
+            "AZN": 0.02248431,
+            "BAM": 0.02466551,
+            "BBD": 0.02775797,
+            "BDT": 1.08741209,
+            "BGN": 0.02467509,
+            "BHD": 0.0052325,
+            "BIF": 21.73969796,
+            "BMD": 0.01387899,
+            "BND": 0.01910616,
+            "BOB": 0.09499056,
+            "BRL": 0.05214902,
+            "BSD": 0.01387899,
+            "BTC": 3.404082e-5,
+            "BTN": 0.93104385,
+            "BWP": 0.15565198,
+            "BYR": 293.64813318,
+            "BZD": 0.02765909,
+            "CAD": 0.01848056,
+            "CDF": 12.84317027,
+            "CHF": 0.01378057,
+            "CLF": 0.0003414,
+            "CLP": 9.45635057,
+            "CNY": 0.09038204,
+            "COP": 43.9510038,
+            "CRC": 7.42414767,
+            "CUC": 0.01387899,
+            "CUP": 0.01387049,
+            "CVE": 1.39298766,
+            "CZK": 0.34103585,
+            "DJF": 2.46482133,
+            "DKK": 0.09407966,
+            "DOP": 0.63530923,
+            "DZD": 1.5100346,
+            "EEK": 0.19729743,
+            "EGP": 0.10864696,
+            "ERN": 0.20820562,
+            "ETB": 0.29675328,
+            "EUR": 0.01261075,
+            "FJD": 0.0293337,
+            "FKP": 0.00975272,
+            "GBP": 0.00975272,
+            "GEL": 0.0342346,
+            "GGP": 0.00975272,
+            "GHS": 0.05356942,
+            "GIP": 0.00975272,
+            "GMD": 0.54797696,
+            "GNF": 105.81374241,
+            "GTQ": 0.10646154,
+            "GYD": 2.86270298,
+            "HKD": 0.10775355,
+            "HNL": 0.31373477,
+            "HRK": 0.09568788,
+            "HTG": 0.85389772,
+            "HUF": 3.88857015,
+            "IDR": 181.55796596,
+            "ILS": 0.05427214,
+            "IMP": 0.00975272,
+            "INR": 0.93001968,
+            "IQD": 15.10797093,
+            "IRR": 419.29113103,
+            "ISK": 1.78551916,
+            "JEP": 0.00975272,
+            "JMD": 1.68681042,
+            "JOD": 0.00983673,
+            "JPY": 1.57905813,
+            "KES": 1.40620505,
+            "KGS": 1.01138466,
+            "KHR": 55.40040434,
+            "KMF": 6.16457762,
+            "KPW": 12.49233724,
+            "KRW": 16.6567043,
+            "KWD": 0.00417039,
+            "KYD": 0.0114343,
+            "KZT": 4.78571047,
+            "LAK": 113.27959369,
+            "LBP": 20.92465424,
+            "LKR": 2.00767872,
+            "LRD": 1.17487758,
+            "LSL": 0.21297115,
+            "LTL": 0.04292467,
+            "LVL": 0.00877893,
+            "LYD": 0.01920002,
+            "MAD": 0.13632206,
+            "MDL": 0.27600308,
+            "MGA": 44.51731328,
+            "MKD": 0.7767418,
+            "MMK": 17.01390279,
+            "MNT": 28.23217234,
+            "MOP": 0.11090948,
+            "MRO": 4.76181098,
+            "MTL": 0.0094877,
+            "MUR": 0.49686495,
+            "MVR": 0.21208757,
+            "MWK": 10.14828737,
+            "MXN": 0.24667248,
+            "MYR": 0.05665028,
+            "MZN": 0.69804321,
+            "NAD": 0.21291601,
+            "NGN": 2.76445823,
+            "NIO": 0.39172247,
+            "NOK": 0.11765459,
+            "NPR": 1.4913332,
+            "NZD": 0.02035474,
+            "OMR": 0.00534319,
+            "PAB": 0.01387899,
+            "PEN": 0.04796772,
+            "PGK": 0.04251585,
+            "PHP": 0.64926664,
+            "PKR": 1.45390714,
+            "PLN": 0.05447959,
+            "PYG": 78.91129268,
+            "QAR": 0.05054533,
+            "RON": 0.05625929,
+            "RSD": 1.55615337,
+            "RUB": 1,
+            "RWF": 10.52693389,
+            "SAR": 0.05204978,
+            "SBD": 0.11283347,
+            "SCR": 0.18273948,
+            "SDG": 0.08457283,
+            "SEK": 0.1177461,
+            "SGD": 0.01907957,
+            "SHP": 0.00975272,
+            "SLL": 56.41808138,
+            "SOS": 8.46670246,
+            "SRD": 0.05541185,
+            "STD": 309.39037397,
+            "SVC": 0.12122879,
+            "SYP": 3.04968064,
+            "SZL": 0.21294377,
+            "THB": 0.49076375,
+            "TJS": 0.10922207,
+            "TMT": 0.04859681,
+            "TND": 0.02829884,
+            "TOP": 0.03140869,
+            "TRY": 0.04032957,
+            "TTD": 0.09061244,
+            "TWD": 0.45275073,
+            "TZS": 30.32535486,
+            "UAH": 0.36385235,
+            "UGX": 46.61489037,
+            "USD": 0.01387899,
+            "UYU": 0.44976467,
+            "UZS": 39.70528231,
+            "VEF": 0.0876737,
+            "VND": 309.18218917,
+            "VUV": 1.56036243,
+            "WST": 0.03546753,
+            "XAF": 8.27742801,
+            "XAG": 0.0008895112,
+            "XAU": 1.09991e-5,
+            "XCD": 0.03748742,
+            "XDR": 0.00999184,
+            "XOF": 8.33360543,
+            "XPD": 2.465e-5,
+            "XPF": 1.50630291,
+            "XPT": 1.407e-5,
+            "YER": 2.98348252,
+            "ZAR": 0.21304273,
+            "ZMK": 72.90736218,
+            "ZMW": 0.15788406,
+            "ZWL": 4.47440835
+          }
+        }
+    http_version: 
+  recorded_at: Sun, 06 Mar 2016 19:03:22 GMT
+- request:
+    method: get
     uri: http://openexchangerates.org/api/historical/2015-03-06.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=RUB
     body:
       encoding: US-ASCII
@@ -19,7 +239,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Mar 2016 03:27:30 GMT
+      - Sun, 06 Mar 2016 19:03:22 GMT
       Server:
       - Apache
       Last-Modified:
@@ -217,7 +437,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sun, 06 Mar 2016 03:27:30 GMT
+  recorded_at: Sun, 06 Mar 2016 19:03:22 GMT
 - request:
     method: get
     uri: http://openexchangerates.org/api/historical/2014-03-06.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=RUB
@@ -237,7 +457,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Mar 2016 03:27:30 GMT
+      - Sun, 06 Mar 2016 19:03:22 GMT
       Server:
       - Apache
       Last-Modified:
@@ -432,7 +652,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sun, 06 Mar 2016 03:27:30 GMT
+  recorded_at: Sun, 06 Mar 2016 19:03:22 GMT
 - request:
     method: get
     uri: http://openexchangerates.org/api/historical/2013-03-06.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=RUB
@@ -452,7 +672,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 06 Mar 2016 03:27:31 GMT
+      - Sun, 06 Mar 2016 19:03:23 GMT
       Server:
       - Apache
       Last-Modified:
@@ -643,5 +863,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Sun, 06 Mar 2016 03:27:31 GMT
+  recorded_at: Sun, 06 Mar 2016 19:03:23 GMT
 recorded_with: VCR 3.0.1
