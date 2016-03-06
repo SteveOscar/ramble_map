@@ -22,35 +22,9 @@
 
 <button type="submit" id="stats-btn" class="waves-effect waves-light btn red darken-6">View Report</button>
 <button type="submit" id="sources-btn" class="waves-effect waves-light btn red darken-6">Sources</button>
-<div id="sources-card">
-  <p class="source-text">Current and historical exchange rates: <a href="https://openexchangerates.org/", target = "blank">OpenExchangeRates API</a></p>
-  <p class="source-text">Purchasing Power Parity: <a href="http://data.worldbank.org/indicator/PA.NUS.PPP", target = "blank">World Bank</a></p>
-  <p class="source-text">Peace Rankings: <a href="http://economicsandpeace.org/reports/", target = "blank">IEP</a></p>
-</div>
 
-<div id="stats-card">
-  <h5 class="red-text">Perspective: <%= @country %></h5>
-  <h6 class="red-text">Over the previous year,</h6>
-  <h6 class="cyan-text"><%= @country %>'s currency gained the most against:</h6>
-  <% @stats[:cheap].reverse.each do |rate| %>
-    <span class="white-text"><%=rate.first%>: <%= rate.last %>%</span><br>
-  <% end %>
-  <h6 class="cyan-text">And fell the most against:</h6>
-  <% @stats[:expensive].each do |rate| %>
-    <span class="white-text"> <%=rate.first%>: <%= rate.last %>%</span><br>
-  <% end %>
-  <h6 class="red-text">*The most expensive countries for someone from <%= @country %>: </h6>
-  <% @stats[:highest_price].each do |expense| %>
-    <span class="white-text"><%=expense%></span><br>
-  <% end %>
-  <h6 class="red-text">*And the cheapest countries are: </h6>
-  <% @stats[:lowest_price].each do |expense| %>
-    <span class="white-text"><%=expense%></span><br>
-  <% end %>
-  <br>
-  <p class="white-text disclaimer">*Some countries with extreme currency swings have may have been excluded from
-  this list, as these trends can give an inaccurate calculation of the country's relative price. AKA Somalia.</p>
-</div>
+<%= render "sources_card" %>
+<%= render "stats_card" %>
 <!-- <% if current_user %>
   <p>hello, <%= current_user.name %></p>
 <% else %>

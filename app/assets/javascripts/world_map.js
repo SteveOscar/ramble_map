@@ -23,7 +23,7 @@ $(document).ready(function(){
                     },
                     selected: {
                       fill: 'white',
-                      "fill-opacity": 0.9,
+                      "fill-opacity": 0.2,
                     },
                     selectedHover: {
                     }

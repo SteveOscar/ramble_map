@@ -1,0 +1,25 @@
+<div id="stats-card">
+  <h5 class="red-text">Perspective: <%= @country %></h5>
+  <h6 class="red-text">Over the previous year,</h6>
+  <h6 class="cyan-text"><%= @country %>'s currency gained the most against:</h6>
+  <% @stats[:cheap].reverse.each do |rate| %>
+    <span class="white-text"><%=rate.first%>: <%= rate.last %>%</span><br>
+  <% end %>
+  <h6 class="cyan-text">And fell the most against:</h6>
+  <% @stats[:expensive].each do |rate| %>
+    <span class="white-text"> <%=rate.first%>: <%= rate.last %>%</span><br>
+  <% end %>
+  <h6 class="red-text">*The most expensive countries for someone from <%= @country %>: </h6>
+  <% @stats[:highest_price].each do |expense| %>
+    <span class="white-text"><%=expense%></span><br>
+  <% end %>
+  <h6 class="red-text">*And the cheapest countries are: </h6>
+  <% @stats[:lowest_price].each do |expense| %>
+    <span class="white-text"><%=expense%></span><br>
+  <% end %>
+  <br>
+  <p class="white-text disclaimer">*Rapid currency swings may give an
+    inaccurate calculation of a country's relative price. Relative price is
+    calculated using exchange rate data and purchasing power parity statistics,
+    and while the former can vary day-to-day, the latter is only calculated annually.</p>
+</div>
