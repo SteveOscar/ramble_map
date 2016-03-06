@@ -61,7 +61,7 @@ $(document).ready(function(){
             el.html(el.html() + ' N/A');
           }
         } else if (currentView === "peace") {
-            if (gon.peace_index[code] > 3) {
+            if (gon.peace_index[code][0] > 3) {
               el.html(el.html()+': highly violent, PeaceRank: '+gon.peace_index[code][1]+'/162');
             } else if (gon.peace_index[code][0] < 3 && gon.peace_index[code][0] >2.5) {
               el.html(el.html()+': violent, PeaceRank: '+gon.peace_index[code][1]+'/162');

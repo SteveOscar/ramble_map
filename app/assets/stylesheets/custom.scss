@@ -183,6 +183,39 @@ body {
 .source-text {
   color: white;
 }
+#price-legend {
+  bottom: 50px;
+  left: 5px;
+  padding: 5px;
+  position: fixed;
+  z-index: 12;
+  height: 35%;
+  min-height: 200px;
+  max-height: 250px;
+  opacity: 0;
+}
+#peace-legend {
+  bottom: 50px;
+  left: 5px;
+  padding: 5px;
+  position: fixed;
+  z-index: 12;
+  height: 35%;
+  min-height: 200px;
+  max-height: 250px;
+  display: none;
+}
+#hidden-legend {
+  bottom: 50px;
+  left: 5px;
+  padding: 5px;
+  position: fixed;
+  z-index: 12;
+  height: 5%;
+  min-height: 25px;
+  max-width: 100px;
+  display: none;
+}
 #ocean-background {
   position: fixed;
   z-index: 0;

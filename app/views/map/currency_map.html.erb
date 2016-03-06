@@ -1,6 +1,9 @@
 <%= Gon::Base.render_data %>
 <%= image_tag('title_small.png', id: 'map-title') %>
 <%= image_tag('ocean2.jpg', id: 'ocean-background') %>
+<%= image_tag('cost_key.png', id: 'price-legend') %>
+<%= image_tag('peace_key.png', id: 'peace-legend') %>
+<%= image_tag('hidden_key.png', id: 'hidden-legend') %>
 
 <div class="background-banner"></div>
 <h4 class="perspective">Perspective:</h4><h3 class="country"> <%= Country.find(@country).country_name %></h3>

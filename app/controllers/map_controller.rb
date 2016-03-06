@@ -31,8 +31,8 @@ class MapController < ApplicationController
     gon.percent_one_year = data_factory.compare_exchange_rates(latest, params, 1)
     gon.percent_two_years = data_factory.compare_exchange_rates(latest, params, 2)
     gon.percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)
-    gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[2].last.to_i
-    gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[2].last.to_i
+    gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[3].last.to_i
+    gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[3].last.to_i
     gon.peace_index = data_factory.peace_index
   end
 end

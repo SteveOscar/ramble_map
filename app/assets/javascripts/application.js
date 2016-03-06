@@ -33,7 +33,7 @@ $(document).ready(function(){
   // Map Intro
   $('.background-banner').delay( 3100 ).fadeTo('slow', 0.5);
   $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
-  $('.perspective').delay( 200 ).fadeTo('slow', 0.9).delay( 1300 ).fadeTo('slow', 0);
+  $('.perspective').fadeTo('slow', 0.9).delay( 1300 ).fadeTo('slow', 0);
   $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 2300 ).fadeTo('slow', 0);;
   // Map Buttons
   $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.5);
@@ -45,12 +45,61 @@ $(document).ready(function(){
   $('#sources-btn').delay(3600).fadeTo('slow', 0.9)
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
+  $('#price-legend').delay(3100).fadeTo('slow', 1);
 
   $('#sources-btn').on('click', function() {
     $('#sources-card').toggle();
   });
   $('#sources-card').on('click', function() {
     $('#sources-card').hide();
+  });
+  $('#price-legend').on('click', function() {
+    $('#price-legend').toggle();
+    $('#hidden-legend').toggle();
+  });
+  $('#hidden-legend').on('click', function() {
+    $('#price-legend').toggle();
+    $('#hidden-legend').toggle();
+  });
+  $('#peace-legend').on('click', function() {
+    $('#peace-legend').toggle();
+    $('#hidden-legend').toggle();
+  });
+
+  $('#peace-btn').on('click', function() {
+    $('#price-legend').hide();
+    $('#peace-legend').show();
+    $('#hidden-legend').hide();
+  });
+
+  $('#expenses-btn').on('click', function() {
+    $('#price-legend').show();
+    $('#peace-legend').hide();
+    $('#hidden-legend').hide();
+  });
+
+  $('#currency-btn').on('click', function() {
+    $('#price-legend').show();
+    $('#peace-legend').hide();
+    $('#hidden-legend').hide();
+  });
+
+  $('#currency-one-year').on('click', function() {
+    $('#price-legend').show();
+    $('#peace-legend').hide();
+    $('#hidden-legend').hide();
+  });
+
+  $('#currency-two-years').on('click', function() {
+    $('#price-legend').show();
+    $('#peace-legend').hide();
+    $('#hidden-legend').hide();
+  });
+
+  $('#currency-three-years').on('click', function() {
+    $('#price-legend').show();
+    $('#peace-legend').hide();
+    $('#hidden-legend').hide();
   });
 
 });

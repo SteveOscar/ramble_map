@@ -121,13 +121,16 @@ Russia	RUB	RU
 Ukraine	RUB	UA
 Rwanda	RWF	RW
 Saudi Arabia	SAR	SA
+Sierra Leone	SLL	SL
+West Sahara	MAD	EH
 Solomon Islands	SBD	SB
 Sudan	SDG	SD
 Sweden	SEK	SE
 Somalia	SOS	SO
 Suriname	SRD	SR
-South Sudan	SSP	SS
+South Sudan	SDG	SS
 Syria	SYP	SY
+Somaliland	SOS	XS
 Swaziland	SZL	SZ
 Thailand	THB	TH
 Tajikistan	TJS	TJ
@@ -136,6 +139,7 @@ Turkey	TRY	TR
 Trinidad and Tobago	TTD	TT
 Taiwan	TWD	TW
 Tanzania	TZS	TZ
+Turkmenistan	TMT	TM
 Uganda	UGX	UG
 Ecuador	USD	EC
 El Salvador	USD	SV
@@ -151,6 +155,7 @@ Cameroon	XAF	CM
 Central African Republic	XAF	CF
 Chad	XAF	TD
 Congo	XAF	CG
+Democratic Republic of Congo	CDF	CD
 Equatorial Guinea	XAF	GQ
 Gabon	XAF	GA
 Grenada	XCD	GL

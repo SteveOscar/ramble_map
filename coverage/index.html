@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-05T14:27:14-07:00">2016-03-05T14:27:14-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-05T20:29:10-07:00">2016-03-05T20:29:10-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         72.7
+         74.8
        </span>
     </span> hits/line)
   </h2>
@@ -67,7 +67,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>99.9</td>
+        <td>102.9</td>
       </tr>
       
       <tr>
@@ -117,7 +117,7 @@
         <td>49</td>
         <td>46</td>
         <td>3</td>
-        <td>134.6</td>
+        <td>138.5</td>
       </tr>
       
       <tr>
@@ -153,7 +153,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         57.9
+         59.62
        </span>
     </span> hits/line)
   </h2>
@@ -195,7 +195,7 @@
         <td>27</td>
         <td>27</td>
         <td>0</td>
-        <td>99.9</td>
+        <td>102.9</td>
       </tr>
       
       <tr>
@@ -220,7 +220,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         98.71
+         101.56
        </span>
     </span> hits/line)
   </h2>
@@ -272,7 +272,7 @@
         <td>49</td>
         <td>46</td>
         <td>3</td>
-        <td>134.6</td>
+        <td>138.5</td>
       </tr>
       
       <tr>
@@ -590,8 +590,8 @@
           <code class="ruby">  def welcome</code>
         </li>
       
-        <li class="covered" data-hits="676" data-linenumber="8">
-          <span class="hits">676</span>
+        <li class="covered" data-hits="696" data-linenumber="8">
+          <span class="hits">696</span>
           
           <code class="ruby">    @countries = Country.all.order(:country_name).map{|u| [ u.country_name, u.id ] }</code>
         </li>
@@ -692,14 +692,14 @@
           <code class="ruby">    gon.relative_expenses = data_factory.relative_prices(params)</code>
         </li>
       
-        <li class="covered" data-hits="483" data-linenumber="25">
-          <span class="hits">483</span>
+        <li class="covered" data-hits="495" data-linenumber="25">
+          <span class="hits">495</span>
           
           <code class="ruby">    gon.expenses_max = gon.relative_expenses.sort_by{|k, v| -v.to_f}[2].last.to_f.round(4)</code>
         </li>
       
-        <li class="covered" data-hits="483" data-linenumber="26">
-          <span class="hits">483</span>
+        <li class="covered" data-hits="495" data-linenumber="26">
+          <span class="hits">495</span>
           
           <code class="ruby">    gon.expenses_min = gon.relative_expenses.sort_by{|k, v| v.to_f}[2].last.to_f.round(4)</code>
         </li>
@@ -746,16 +746,16 @@
           <code class="ruby">    gon.percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)</code>
         </li>
       
-        <li class="covered" data-hits="504" data-linenumber="34">
-          <span class="hits">504</span>
+        <li class="covered" data-hits="522" data-linenumber="34">
+          <span class="hits">522</span>
           
-          <code class="ruby">    gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[2].last.to_i</code>
+          <code class="ruby">    gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[3].last.to_i</code>
         </li>
       
-        <li class="covered" data-hits="504" data-linenumber="35">
-          <span class="hits">504</span>
+        <li class="covered" data-hits="522" data-linenumber="35">
+          <span class="hits">522</span>
           
-          <code class="ruby">    gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[2].last.to_i</code>
+          <code class="ruby">    gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[3].last.to_i</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="36">
@@ -1142,8 +1142,8 @@
           <code class="ruby">    countries.each do |country|</code>
         </li>
       
-        <li class="covered" data-hits="504" data-linenumber="13">
-          <span class="hits">504</span>
+        <li class="covered" data-hits="519" data-linenumber="13">
+          <span class="hits">519</span>
           
           <code class="ruby">      prices[country.map_code] = calc_relative_expense(country, rates, params) unless rates[country.currency.code].nil? || country.ppp.nil?</code>
         </li>
@@ -1184,8 +1184,8 @@
           <code class="ruby">  def format_data(prices)</code>
         </li>
       
-        <li class="covered" data-hits="483" data-linenumber="20">
-          <span class="hits">483</span>
+        <li class="covered" data-hits="495" data-linenumber="20">
+          <span class="hits">495</span>
           
           <code class="ruby">    prices.each {|k, v| prices[k] = v / 10}</code>
         </li>
@@ -1214,20 +1214,20 @@
           <code class="ruby">  def calc_relative_expense(country, rates, params)</code>
         </li>
       
-        <li class="covered" data-hits="480" data-linenumber="25">
-          <span class="hits">480</span>
+        <li class="covered" data-hits="492" data-linenumber="25">
+          <span class="hits">492</span>
           
           <code class="ruby">    exchange_rate = rates[country.currency.code]</code>
         </li>
       
-        <li class="covered" data-hits="480" data-linenumber="26">
-          <span class="hits">480</span>
+        <li class="covered" data-hits="492" data-linenumber="26">
+          <span class="hits">492</span>
           
           <code class="ruby">    expense_factor = (base_country.ppp.to_f * exchange_rate) / country.ppp.to_f</code>
         </li>
       
-        <li class="covered" data-hits="480" data-linenumber="27">
-          <span class="hits">480</span>
+        <li class="covered" data-hits="492" data-linenumber="27">
+          <span class="hits">492</span>
           
           <code class="ruby">    expense_factor.round(2)</code>
         </li>
@@ -1268,8 +1268,8 @@
           <code class="ruby">    countries.each do |country|</code>
         </li>
       
-        <li class="covered" data-hits="504" data-linenumber="34">
-          <span class="hits">504</span>
+        <li class="covered" data-hits="519" data-linenumber="34">
+          <span class="hits">519</span>
           
           <code class="ruby">      latest[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?</code>
         </li>
@@ -1328,8 +1328,8 @@
           <code class="ruby">    latest.each do |rate|</code>
         </li>
       
-        <li class="covered" data-hits="1503" data-linenumber="44">
-          <span class="hits">1503</span>
+        <li class="covered" data-hits="1557" data-linenumber="44">
+          <span class="hits">1557</span>
           
           <code class="ruby">      change[rate[0]] = (((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f) * 100).round(1).to_s</code>
         </li>
@@ -1406,8 +1406,8 @@
           <code class="ruby">    countries.each do |country|</code>
         </li>
       
-        <li class="covered" data-hits="1512" data-linenumber="57">
-          <span class="hits">1512</span>
+        <li class="covered" data-hits="1557" data-linenumber="57">
+          <span class="hits">1557</span>
           
           <code class="ruby">      historical_rates[country.map_code] = rates[country.currency.code].to_s unless rates[country.currency.code].nil?</code>
         </li>
@@ -1514,8 +1514,8 @@
           <code class="ruby">    countries.each do |country|</code>
         </li>
       
-        <li class="covered" data-hits="504" data-linenumber="75">
-          <span class="hits">504</span>
+        <li class="covered" data-hits="519" data-linenumber="75">
+          <span class="hits">519</span>
           
           <code class="ruby">      peace_index[country.map_code] = [country.peace_score.to_s, country.peace_rank.to_s] unless country.peace_score.nil?</code>
         </li>

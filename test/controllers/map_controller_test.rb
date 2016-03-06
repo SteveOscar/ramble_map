@@ -14,8 +14,8 @@ class MapControllerTest < ActionController::TestCase
       all_countries = assigns["data_factory"].countries
       result = assigns["data_factory"].base_country.country_name
 
-      assert_equal "United States", result
-      assert_equal 168, all_countries.count
+      assert_equal "Ecuador", result
+      assert_equal 173, all_countries.count
       assert assigns["data_factory"].rates
     end
   end
