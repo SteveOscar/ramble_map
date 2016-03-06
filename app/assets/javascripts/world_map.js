@@ -5,6 +5,8 @@ $(document).ready(function(){
       $('#' + gon.region).vectorMap({
       map: gon.region + '_mill',
       backgroundColor: ['transparent'],
+      regionsSelectable: true,
+      regionsSelectableOne: true,
       regionStyle: {
                     initial: {
                       fill: 'grey',
@@ -20,7 +22,8 @@ $(document).ready(function(){
                       cursor: 'pointer'
                     },
                     selected: {
-                      fill: 'red'
+                      fill: 'white',
+                      "fill-opacity": 0.9,
                     },
                     selectedHover: {
                     }
@@ -32,11 +35,6 @@ $(document).ready(function(){
                   min: gon.percent_min,
                   max: gon.percent_max,
                   normalizeFunction: 'linear',
-                  // legend: {
-                  //           vertical: true,
-                  //           title: 'Currency Trends',
-                  //           cssClass: 'legend',
-                  //         }
                 }]
               },
       // Sets the pop-up descriptions when hovering over a country
@@ -52,11 +50,11 @@ $(document).ready(function(){
       var dataSet = function(e, el, code) {
         if (currentView === "currency") {
           if (currentYear[code] > 0) {
-            el.html(el.html()+'\'s currency has become '+currentYear[code]+'% cheaper');
+            el.html(el.html()+'\'s currency has become '+currentYear[code]+'% weaker than '+gon.country+' \'s');
           } else if (currentYear[code] < 0) {
-            el.html(el.html()+'\'s currency has become '+currentYear[code]*(-1)+'% more expensive');
+            el.html(el.html()+'\'s currency has become '+currentYear[code]*(-1)+'% stronger than '+gon.country+' \'s');
           } else if (currentYear[code] === 0) {
-            el.html(el.html()+'\ uses the same currency');
+            el.html(el.html()+' uses the same currency');
           } else {
             el.html(el.html() + ' N/A');
           }

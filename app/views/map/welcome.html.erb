@@ -16,10 +16,10 @@
     <%= form_tag('/display_map', :method => "get") do %>
 
     <h5>Set your perspective</h5>
-    <span>You're home country, or get a different view</span>
+    <span>(Your home country, or get a different view...)</span>
 
       <div class="select select-box">
-        <%= select_tag(:country, options_for_select(@countries), prompt: "What Perspective?") %>
+        <%= select_tag(:country, options_for_select(@countries, selected: @countries[163]), prompt: "What Perspective?") %>
       </div>
 
       <h5>View data for...
@@ -30,7 +30,7 @@
                                                     ["South America", "south_america"],
                                                     ["Australia / NZ", "oceania"],
                                                     ["Asia", "asia"],
-                                                    ["Africa", "africa"]]),
+                                                    ["Africa", "africa"]], ["World", "world"]),
         prompt: "Which Region?") %>
       </div>
       <% if current_user %>

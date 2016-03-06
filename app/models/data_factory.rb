@@ -1,8 +1,9 @@
 class DataFactory
-  attr_reader :countries, :rates, :base_country
+  attr_reader :countries, :rates, :base_country, :country_names
 
   def initialize(params)
     @countries = Country.includes(:currency).all
+    @country_names = Hash[countries.pluck(:map_code).zip(countries.pluck(:country_name))]
     @rates = ExchangeRateService.new(params).get_data["rates"]
     @base_country = Country.includes(:currency).find(params[:country])
   end
@@ -75,5 +76,16 @@ class DataFactory
       peace_index[country.map_code] = [country.peace_score.to_s, country.peace_rank.to_s] unless country.peace_score.nil?
     end
     peace_index
+  end
+
+  def stat_card_data(currency_trends, country_expenses)
+    stats = {"cheap": [], "expensive": [], "highest_price": [], "lowest_price": [] }
+    rate_trends = currency_trends.sort_by{|k, v| v.to_f}
+    rate_trends[0..4].each {|data| stats[:expensive] << [country_names[data.first], data.last] }
+    rate_trends[-5..-1].each {|data| stats[:cheap] << [country_names[data.first], data.last] }
+    expense = country_expenses.sort_by{|k, v| v.to_f}
+    expense[0..4].each {|data| stats[:highest_price] << country_names[data.first] }
+    expense.reverse[0..4].each {|data| stats[:lowest_price] << country_names[data.first] }
+    stats
   end
 end

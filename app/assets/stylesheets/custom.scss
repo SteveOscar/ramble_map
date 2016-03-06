@@ -3,6 +3,17 @@ body {
   // font-family: 'Alegreya Sans', sans-serif;
   font-family: 'Nunito', sans-serif;
 }
+::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+::-webkit-scrollbar-track-piece  {
+background-color: white;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 30px;
+background-color: darkred;
+}
 
 // WELCOME PAGE
 #site-title {
@@ -165,6 +176,12 @@ body {
   right: 10px;
   display: none;
 }
+#stats-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  display: none;
+}
 #sources-card {
   bottom: 50px;
   right: 0;
@@ -179,6 +196,28 @@ body {
   background: black;
   z-index: 11;
   display: none;
+  text-align: center;
+}
+#stats-card {
+  bottom: 70px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 12px;
+  opacity: 0.9;
+  border-radius: 15px;
+  position: fixed;
+  width: 290px;
+  height: 330px;
+  background: currentColor;
+  z-index: 11;
+  display: none;
+  text-align: center;
+  font-size: .8em;
+  overflow-y: scroll;
+}
+.disclaimer {
+  font-size: .8em;
 }
 .source-text {
   color: white;

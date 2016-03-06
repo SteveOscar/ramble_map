@@ -42,7 +42,8 @@ $(document).ready(function(){
   $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.5);
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.5);
 
-  $('#sources-btn').delay(3600).fadeTo('slow', 0.9)
+  $('#sources-btn').delay(3600).fadeTo('slow', 0.7)
+  $('#stats-btn').delay(3600).fadeTo('slow', 0.7)
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
   $('#price-legend').delay(3100).fadeTo('slow', 1);
@@ -53,6 +54,14 @@ $(document).ready(function(){
   $('#sources-card').on('click', function() {
     $('#sources-card').hide();
   });
+
+  $('#stats-btn').on('click', function() {
+    $('#stats-card').toggle();
+  });
+  $('#stats-card').on('click', function() {
+    $('#stats-card').hide();
+  });
+
   $('#price-legend').on('click', function() {
     $('#price-legend').toggle();
     $('#hidden-legend').toggle();
