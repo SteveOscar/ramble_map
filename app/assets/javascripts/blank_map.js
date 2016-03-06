@@ -11,15 +11,6 @@ $(document).ready(function(){
                     stroke: 'none',
                     "stroke-width": 0,
                     "stroke-opacity": 1
-                  },
-                  hover: {
-                    "fill-opacity": 0,
-                    cursor: 'pointer'
-                  },
-                  selected: {
-                    fill: 'red'
-                  },
-                  selectedHover: {
                   }
                 },
               });

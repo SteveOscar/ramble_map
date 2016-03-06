@@ -20,7 +20,8 @@ $(document).ready(function(){
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
   $('#price-legend').delay(3100).fadeTo('slow', 1);
-  // Map Buttons
+
+  // Map Button setup
   $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.5);
   $('#peace-btn').delay( 3300 ).fadeTo('slow', 0.5);
   $('#currency-one-year').delay( 3100 ).fadeTo('slow', 0.9);
@@ -29,6 +30,7 @@ $(document).ready(function(){
   $('#sources-btn').delay(3600).fadeTo('slow', 0.8);
   $('#stats-btn').delay(3600).fadeTo('slow', 0.8);
 
+  // Sources and Report Elements
   $('#sources-btn').on('click', function() {
     $('#sources-card').toggle();
     $('#stats-card').hide();
@@ -45,6 +47,7 @@ $(document).ready(function(){
     $('#stats-card').hide();
   });
 
+  // Legends
   $('#price-legend').on('click', function() {
     $('#price-legend').toggle();
     $('#hidden-legend').toggle();
@@ -58,6 +61,7 @@ $(document).ready(function(){
     $('#hidden-legend').toggle();
   });
 
+  // Map button behaviors
   $('#peace-btn').on('click', function() {
     $('#price-legend').hide();
     $('#peace-legend').show();
