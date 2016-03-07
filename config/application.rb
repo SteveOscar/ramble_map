@@ -23,5 +23,7 @@ module GlobeSquatter
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.skylight.environments += ['development']
+    
+    config.action_controller.page_cache_directory = "#{Rails.root.to_s}/public/deploy"
   end
 end

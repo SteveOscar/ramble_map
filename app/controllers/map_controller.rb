@@ -3,6 +3,7 @@ require 'csv'
 
 class MapController < ApplicationController
   attr_reader :data_factory
+  caches_page :welcome
 
   def welcome
     @countries = Country.all.order(:country_name).map{|u| [ u.country_name, u.id ] }

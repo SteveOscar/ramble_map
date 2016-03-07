@@ -5,6 +5,7 @@
 <%= image_tag('cost_key.png', id: 'price-legend') %>
 <%= image_tag('peace_key.png', id: 'peace-legend') %>
 <%= image_tag('hidden_key.png', id: 'hidden-legend') %>
+<!-- <%= image_tag('bird.png', id: 'tweet-bird') %> -->
 
 <div class="background-banner"></div>
 <h4 class="perspective">Perspective:</h4><h3 class="country"> <%= @country %></h3>
@@ -23,9 +24,11 @@
 
 <button type="submit" id="stats-btn" class="waves-effect waves-light btn red darken-6">View Report</button>
 <button type="submit" id="sources-btn" class="waves-effect waves-light btn red darken-6">Sources</button>
+<button type="submit" id="tweet-btn" class="waves-effect waves-light btn red darken-6">Tweet</button>
 
 <%= render "sources_card" %>
 <%= render "stats_card" %>
+<%= render "tweet_card" %>
 <!-- <% if current_user %>
   <p>hello, <%= current_user.name %></p>
 <% else %>

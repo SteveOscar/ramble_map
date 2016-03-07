@@ -30,8 +30,12 @@ $(document).ready(function(){
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.5);
   $('#sources-btn').delay(3600).fadeTo('slow', 0.8);
   $('#stats-btn').delay(3600).fadeTo('slow', 0.8);
+  $('#tweet-btn').delay(3600).fadeTo('slow', 0.8);
 
   // Sources and Report Elements
+  $('#tweet-btn').on('click', function() {
+    $('#tweet-card').show();
+  });
   $('#sources-btn').on('click', function() {
     $('#sources-card').toggle();
     $('#stats-card').hide();

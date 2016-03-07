@@ -1,0 +1,10 @@
+<div id="tweet-card">
+  <div class="tweet-form">
+    <% binding.pry %>
+    <%= form_tag('/posts', :method => "post") do %>
+        <%= label_tag(:q, "Tweet:", class: "small-text") %>
+        <%= text_field_tag(:q) %>
+        <div><%= image_submit_tag('bird.png', class: "tweet-bird", id: "send-tweet") %></div>
+    <% end %>
+  </div>
+</div>
