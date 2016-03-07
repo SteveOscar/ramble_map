@@ -50,9 +50,9 @@ $(document).ready(function(){
       var dataSet = function(e, el, code) {
         if (currentView === "currency") {
           if (currentYear[code] > 0) {
-            el.html(el.html()+'\'s currency has become '+currentYear[code]+'% weaker than '+gon.country+' \'s');
+            el.html(el.html()+'\'s currency has become '+currentYear[code]+'% weaker than '+gon.country+'\'s');
           } else if (currentYear[code] < 0) {
-            el.html(el.html()+'\'s currency has become '+currentYear[code]*(-1)+'% stronger than '+gon.country+' \'s');
+            el.html(el.html()+'\'s currency has become '+currentYear[code]*(-1)+'% stronger than '+gon.country+'\'s');
           } else if (currentYear[code] === 0) {
             el.html(el.html()+' uses the same currency');
           } else {
@@ -101,8 +101,8 @@ $(document).ready(function(){
         $('#currency-btn').fadeTo('fast', 0.5);
         $('#peace-btn').fadeTo('fast', 0.5);
         $('#expenses-btn').fadeTo('fast', 1);
-        r.params.min = gon.expenses_min;
-        r.params.max = gon.expenses_max;
+        r.params.min = "0.08";
+        r.params.max = "0.56";
         r.setValues(gon.relative_expenses);
         currentView = "expenses";
         dataSet()

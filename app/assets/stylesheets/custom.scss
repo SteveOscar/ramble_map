@@ -55,28 +55,27 @@ background-color: darkred;
   height: 100%;
   display: none;
 }
-#globe {
-  width: 60vh;
-  min-width: 250px;
+#glass {
+  width: 450px;
   position: absolute;
-  left: 0;
+  top: 50px;
+  left: 10%;
   right: 0;
-  top: 25vh;
   margin: auto;
-  z-index: 3
+  z-index: 3;
+  display: none;
 }
 .circle {
-  width: 60vh;
-  height: 60vh;
-  border-radius: 30vh;
-  background: gainsboro;
+  width: 300px;
+  height: 300px;
+  background: transparent;
   position:absolute;
-  left:0;
-  right:0;
-  top: 25vh;
-  margin-left:auto;
-  margin-right:auto;
-  z-index: 3;
+
+  top: 170px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 4;
   min-height: 250px;
   min-width: 250px;
   text-align: -webkit-center;
@@ -92,11 +91,9 @@ background-color: darkred;
   display: block;
   padding: 1.2em 1.2em 1.2em 1.2em;
   margin: 5px;
-
   transition: border-color 0.2s;
   border: 3px solid white;
   border-radius: 10px;
-
   background: darkred;
   color: white;
   line-height: normal;
@@ -116,12 +113,16 @@ background-color: darkred;
   position: relative;
   top: 15%;
 }
+.welcome-text {
+  text-shadow: 1px 1px white;
+}
 // MAP DISPLAY PAGE
 #map-title {
   z-index: 6;
   position: absolute;
   bottom: 5px;
-  width: 200px;
+  width: 15%;
+  min-width: 120px;
   left: 10px;
 }
 #map-headline {

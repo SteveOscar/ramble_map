@@ -1,5 +1,5 @@
 <%= image_tag('title.png', id: 'site-title') %>
-<!-- <%= image_tag('globe.png', id: 'globe') %> -->
+<%= image_tag('glass.png', id: 'glass') %>
 
 <div class="holder">
   <div id="blank-map" class="main-map"></div>
@@ -15,14 +15,14 @@
   <div class="welcome-form">
     <%= form_tag('/display_map', :method => "get") do %>
 
-    <h5>Set your perspective</h5>
-    <span>(Your home country, or get a different view...)</span>
+    <h5 class="welcome-text">Set your perspective</h5>
+    <!-- <span>(Your home country, or get a different view...)</span> -->
 
       <div class="select select-box">
         <%= select_tag(:country, options_for_select(@countries, selected: @countries[163])) %>
       </div>
 
-      <h5>View data for...
+      <h5 class="welcome-text">View data for...
       <div class="select select-box">
         <%= select_tag(:region, options_for_select([["Entire World", "world"],
                                                     ["Europe", "europe"],
@@ -33,15 +33,14 @@
                                                     ["Africa", "africa"]], ["Entire World", "world"]),
         prompt: "Which Region?") %>
       </div>
-      <% if current_user %>
-        <p>hello, <%= current_user.name %></p>
-        <%= link_to "logout", logout_path %>
-      <% else %>
-        <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter" %>
-      <% end %>
-
-      <%= submit_tag "Submit" %>
+      <%= submit_tag "Submit", class: "btn btn-lg btn-default btn-home blue lighten-2" %>
     </div>
   <% end -%>
 
+  <!-- <% if current_user %>
+    <p>hello, <%= current_user.name %></p>
+    <%= link_to "logout", logout_path %>
+  <% else %>
+    <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter" %>
+  <% end %> -->
 </div>

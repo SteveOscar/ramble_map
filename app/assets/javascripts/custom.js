@@ -3,6 +3,7 @@ $(document).ready(function(){
   $('#blank-map').delay( 300 ).fadeTo('slow', 0.7);
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
   $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
+  $('#glass').delay(1500).fadeTo('slow', 1);
   $('.left-card').delay( 100 ).slideDown( 1000, function() {
     // Animation complete.
   });

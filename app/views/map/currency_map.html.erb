@@ -1,5 +1,6 @@
 <%= Gon::Base.render_data %>
-<%= image_tag('title_small.png', id: 'map-title') %>
+<!-- <%= image_tag('title_small.png', id: 'map-title') %> -->
+<%= link_to(image_tag("title_small.png", id: 'map-title'), root_path) %>
 <%= image_tag('ocean2.jpg', id: 'ocean-background') %>
 <%= image_tag('cost_key.png', id: 'price-legend') %>
 <%= image_tag('peace_key.png', id: 'peace-legend') %>

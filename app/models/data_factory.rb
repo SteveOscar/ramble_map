@@ -8,6 +8,7 @@ class DataFactory
     @country_names = Hash[countries.pluck(:map_code).zip(countries.pluck(:country_name))]
     @rates = ExchangeRateService.new(params).get_data["rates"]
     @base_country = Country.includes(:currency).find(params[:country])
+    remove_outliers
   end
 
   def relative_prices(params)
@@ -78,5 +79,11 @@ class DataFactory
     expense[0..4].each {|data| stats[:highest_price] << country_names[data.first] }
     expense.reverse[0..4].each {|data| stats[:lowest_price] << country_names[data.first] }
     stats
+  end
+
+  def remove_outliers
+    rates.delete("SOS")
+    country_names.delete("XS")
+    country_names.delete("SO") #remove Somalia from report, an extreme outlier
   end
 end

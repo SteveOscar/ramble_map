@@ -23,8 +23,6 @@ class MapController < ApplicationController
     @data_factory = DataFactory.new(params)
     latest = data_factory.exchange_rates(params)
     gon.relative_expenses = data_factory.relative_prices(params)
-    gon.expenses_max = 0.56
-    gon.expenses_min = 0.08
     currency_trends = data_factory.compare_exchange_rates(latest, params, 1)
     generate_yearly_currency_trends(latest, currency_trends)
     @stats = data_factory.stat_card_data(currency_trends, gon.relative_expenses)
