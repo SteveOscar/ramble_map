@@ -36,11 +36,11 @@
       <%= submit_tag "Submit", class: "btn btn-lg btn-default btn-home blue lighten-2" %>
     </div>
   <% end -%>
-
-  <!-- <% if current_user %>
-    <p>hello, <%= current_user.name %></p>
-    <%= link_to "logout", logout_path %>
-  <% else %>
-    <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter" %>
-  <% end %> -->
 </div>
+
+<% if current_user %>
+  <p>hello, <%= current_user.name %></p>
+  <%= link_to "logout", logout_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signin" %>
+<% else %>
+  <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signin" %>
+<% end %>

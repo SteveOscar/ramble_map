@@ -24,11 +24,14 @@
 
 <button type="submit" id="stats-btn" class="waves-effect waves-light btn red darken-6">View Report</button>
 <button type="submit" id="sources-btn" class="waves-effect waves-light btn red darken-6">Sources</button>
-<button type="submit" id="tweet-btn" class="waves-effect waves-light btn red darken-6">Tweet</button>
-
+<% unless tweeted? %>
+  <%= render "tweet_card" %>
+  <button type="submit" id="tweet-btn" class="waves-effect waves-light btn red darken-6">Tweet</button>
+  <% else %>
+    <button type="submit" id="tweet-btn" class="waves-effect waves-light btn red darken-6 disabled">Tweeted</button>
+<% end %>
 <%= render "sources_card" %>
 <%= render "stats_card" %>
-<%= render "tweet_card" %>
 <!-- <% if current_user %>
   <p>hello, <%= current_user.name %></p>
 <% else %>

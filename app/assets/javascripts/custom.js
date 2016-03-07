@@ -4,6 +4,7 @@ $(document).ready(function(){
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
   $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
   $('#glass').delay(1500).fadeTo('slow', 1);
+    $('#twitter-signin').delay(1500).fadeTo('slow', 1);
   $('.left-card').delay( 100 ).slideDown( 1000, function() {
     // Animation complete.
   });
@@ -28,13 +29,13 @@ $(document).ready(function(){
   $('#currency-one-year').delay( 3100 ).fadeTo('slow', 0.9);
   $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.5);
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.5);
-  $('#sources-btn').delay(3600).fadeTo('slow', 0.8);
-  $('#stats-btn').delay(3600).fadeTo('slow', 0.8);
-  $('#tweet-btn').delay(3600).fadeTo('slow', 0.8);
+  $('#sources-btn').delay(3600).fadeTo('slow', 0.5);
+  $('#stats-btn').delay(3600).fadeTo('slow', 0.5);
+  $('#tweet-btn').delay(3600).fadeTo('slow', 0.7);
 
   // Sources and Report Elements
   $('#tweet-btn').on('click', function() {
-    $('#tweet-card').show();
+    $('#tweet-card').toggle();
   });
   $('#sources-btn').on('click', function() {
     $('#sources-card').toggle();

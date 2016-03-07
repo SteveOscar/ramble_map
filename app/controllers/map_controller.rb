@@ -6,6 +6,7 @@ class MapController < ApplicationController
   caches_page :welcome
 
   def welcome
+    session[:tweeted] = false
     @countries = Country.all.order(:country_name).map{|u| [ u.country_name, u.id ] }
   end
 

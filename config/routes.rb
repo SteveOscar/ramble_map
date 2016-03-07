@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   root 'map#welcome'
   get '/display_map', to: 'map#currency_map'
   get '/auth/twitter', as: :login

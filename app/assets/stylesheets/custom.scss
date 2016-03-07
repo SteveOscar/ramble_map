@@ -117,6 +117,13 @@ background-color: darkred;
 .welcome-text {
   text-shadow: 1px 1px white;
 }
+#twitter-signin {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 15;
+}
 // MAP DISPLAY PAGE
 #map-title {
   z-index: 6;
