@@ -3,6 +3,8 @@ require 'csv'
 
 class MapController < ApplicationController
   attr_reader :data_factory
+  before_action :save_country, only: :currency_map
+  before_action :save_region, only: :currency_map
   caches_page :welcome
 
   def welcome
@@ -37,5 +39,13 @@ class MapController < ApplicationController
     gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[3].last.to_i
     gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[3].last.to_i
     gon.peace_index = data_factory.peace_index
+  end
+
+  def save_country
+    session[:country] = params["country"]
+  end
+
+  def save_region
+    session[:region] = params["region"]
   end
 end

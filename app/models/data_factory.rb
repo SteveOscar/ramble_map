@@ -58,12 +58,6 @@ class DataFactory
     "Perspective: #{base_country.country_name}, base currency: #{base_country.currency.code}"
   end
 
-  def time_frame(params)
-    time = "#{params[:time]} year" if params[:time] == "1"
-    time = "#{params[:time]} years" if params[:time] != "1"
-    time
-  end
-
   def peace_index
     countries.each_with_object({}) do |country, hash|
       hash[country.map_code] = [country.peace_score.to_s, country.peace_rank.to_s] unless country.peace_score.nil?

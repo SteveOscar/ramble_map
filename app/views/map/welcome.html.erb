@@ -19,7 +19,7 @@
     <!-- <span>(Your home country, or get a different view...)</span> -->
 
       <div class="select select-box">
-        <%= select_tag(:country, options_for_select(@countries, selected: @countries[163])) %>
+        <%= select_tag(:country, options_for_select(@countries, selected: country_to_view)) %>
       </div>
 
       <h5 class="welcome-text">View data for...
@@ -30,7 +30,7 @@
                                                     ["South America", "south_america"],
                                                     ["Australia / NZ", "oceania"],
                                                     ["Asia", "asia"],
-                                                    ["Africa", "africa"]], ["Entire World", "world"]),
+                                                    ["Africa", "africa"]], region_to_view),
         prompt: "Which Region?") %>
       </div>
       <%= submit_tag "Submit", class: "btn btn-lg btn-default btn-home blue lighten-2" %>
@@ -40,7 +40,7 @@
 
 <% if current_user %>
   <p>hello, <%= current_user.name %></p>
-  <%= link_to "logout", logout_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signin" %>
+  <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signout" %>
 <% else %>
   <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signin" %>
 <% end %>

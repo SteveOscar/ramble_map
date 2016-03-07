@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :tweeted?
+  helper_method :current_user, :tweeted?, :country_to_view, :region_to_view
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
@@ -12,5 +12,21 @@ class ApplicationController < ActionController::Base
 
   def tweeted?
     session[:tweeted]
+  end
+
+  def country_to_view
+    if session[:country]
+      session[:country]
+    else
+      Country.find_by(country_name: 'United States')
+    end
+  end
+
+  def region_to_view
+    if session[:region]
+      session[:region]
+    else
+      'world'
+    end
   end
 end
