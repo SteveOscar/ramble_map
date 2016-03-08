@@ -73,36 +73,61 @@ $(document).ready(function(){
     $('#price-legend').hide();
     $('#peace-legend').show();
     $('#hidden-legend').hide();
+    $('#currency-btn').fadeTo('fast', 0.5);
+    $('#expenses-btn').fadeTo('fast', 0.5);
+    $('#peace-btn').fadeTo('fast', 1);
+    $('#currency-one-year').fadeTo('fast', 0);
+    $('#currency-two-years').fadeTo('fast', 0);
+    $('#currency-three-years').fadeTo('fast', 0);
   });
 
   $('#expenses-btn').on('click', function() {
-    $('#price-legend').show();
-    $('#peace-legend').hide();
-    $('#hidden-legend').hide();
+    currencyBehavior();
+    $('#currency-one-year').hide();
+    $('#currency-two-years').hide();
+    $('#currency-three-years').hide();
+    $('#currency-btn').fadeTo('fast', 0.5);
+    $('#expenses-btn').fadeTo('fast', 1);
   });
 
   $('#currency-btn').on('click', function() {
-    $('#price-legend').show();
-    $('#peace-legend').hide();
-    $('#hidden-legend').hide();
+    currencyBehavior();
+    $('#currency-one-year').fadeTo('fast', 1);
+    $('#currency-two-years').fadeTo('fast', 0.5);
+    $('#currency-three-years').fadeTo('fast', 0.5);
+    $('#expenses-btn').fadeTo('fast', 0.5);
+    $('#currency-btn').fadeTo('fast', 0);
   });
 
   $('#currency-one-year').on('click', function() {
-    $('#price-legend').show();
-    $('#peace-legend').hide();
-    $('#hidden-legend').hide();
+    currencyBehavior();
+    $('#currency-one-year').fadeTo('fast', 1);
+    $('#currency-two-years').fadeTo('fast', 0.5);
+    $('#currency-three-years').fadeTo('fast', 0.5);
+    $('#currency-btn').fadeTo('fast', 0);
   });
 
   $('#currency-two-years').on('click', function() {
-    $('#price-legend').show();
-    $('#peace-legend').hide();
-    $('#hidden-legend').hide();
+    currencyBehavior();
+    $('#currency-two-years').fadeTo('fast', 1);
+    $('#currency-one-year').fadeTo('fast', 0.5);
+    $('#currency-three-years').fadeTo('fast', 0.5);
+    $('#currency-btn').fadeTo('fast', 0);
   });
 
   $('#currency-three-years').on('click', function() {
+    currencyBehavior();
+    $('#currency-three-years').fadeTo('fast', 1);
+    $('#currency-two-years').fadeTo('fast', 0.5);
+    $('#currency-one-year').fadeTo('fast', 0.5);
+    $('#currency-btn').fadeTo('fast', 0);
+  });
+
+  var currencyBehavior = function() {
     $('#price-legend').show();
     $('#peace-legend').hide();
     $('#hidden-legend').hide();
-  });
+    $('#peace-btn').fadeTo('fast', 0.5);
+  }
 
 });

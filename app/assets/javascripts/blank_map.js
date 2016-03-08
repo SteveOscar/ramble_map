@@ -6,13 +6,13 @@ $(document).ready(function(){
     backgroundColor: ['white'],
     regionStyle: {
                   initial: {
-                    fill: 'black',
-                    "fill-opacity": 1,
-                    stroke: 'none',
-                    "stroke-width": 0,
-                    "stroke-opacity": 1
-                  }
-                },
-              });
-            })
-          });
+                            fill: 'black',
+                            "fill-opacity": 1,
+                            stroke: 'none',
+                            "stroke-width": 0,
+                            "stroke-opacity": 1
+                           }
+                  },
+    });
+  })
+});

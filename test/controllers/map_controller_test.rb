@@ -22,13 +22,11 @@ class MapControllerTest < ActionController::TestCase
   end
 
   test "should get welcome" do
-    VCR.use_cassette('welcome_action') do
-      get :welcome
-      assert_response :success
-      assert assigns["countries"]
+    get :welcome
+    assert_response :success
+    assert assigns["countries"]
 
-      all_countries = assigns["countries"]
-      assert_equal 173, all_countries.count
-    end
+    all_countries = assigns["countries"]
+    assert_equal 173, all_countries.count
   end
 end
