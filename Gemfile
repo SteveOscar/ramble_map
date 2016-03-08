@@ -14,6 +14,7 @@ gem 'gon'
 gem 'rails_12factor', group: :production
 gem "omniauth-twitter"
 gem 'twitter'
+gem 'twitter-text'
 gem "skylight"
 gem 'actionpack-page_caching'
 

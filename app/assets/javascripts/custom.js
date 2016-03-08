@@ -4,7 +4,8 @@ $(document).ready(function(){
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
   $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
   $('#glass').delay(1500).fadeTo('slow', 1);
-    $('#twitter-signin').delay(1500).fadeTo('slow', 1);
+  $('#twitter-signin').delay(1500).fadeTo('slow', 1);
+  $('#twitter-signout').delay(1500).fadeTo('slow', 1);
   $('.left-card').delay( 100 ).slideDown( 1000, function() {
     // Animation complete.
   });
@@ -14,11 +15,12 @@ $(document).ready(function(){
   $('.top-banner').delay( 100 ).slideDown( 2000, function() {
   });
 
+
   // Map Intro
   $('.background-banner').delay( 3100 ).fadeTo('slow', 0.5);
   $('.headline').delay( 2000 ).fadeTo('slow', 0.9);
-  $('.perspective').fadeTo('slow', 0.9).delay( 1300 ).fadeTo('slow', 0);
-  $('.country').delay( 1200 ).fadeTo('slow', 0.9).delay( 2300 ).fadeTo('slow', 0);
+  $('.perspective').fadeTo('fast', 0.9).delay( 1300 ).fadeTo('slow', 0);
+  $('.country').delay( 1000 ).fadeTo('slow', 0.9).delay( 1400 ).fadeTo('slow', 0);
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
   $('#price-legend').delay(3100).fadeTo('slow', 1);
@@ -44,7 +46,6 @@ $(document).ready(function(){
   $('#sources-card').on('click', function() {
     $('#sources-card').hide();
   });
-
   $('#stats-btn').on('click', function() {
     $('#stats-card').toggle();
     $('#sources-card').hide();

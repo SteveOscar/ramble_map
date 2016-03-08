@@ -115,10 +115,17 @@ background-color: darkred;
   top: 15%;
 }
 .welcome-text {
-  text-shadow: 2px 1px black;
-  color: lightblue;
+  text-shadow: 2px 1px red;
+  color: white;
 }
-#twitter-signin #twitter-signout {
+#twitter-signin {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 15;
+}
+#twitter-signout {
   position: absolute;
   bottom: 0;
   left: 0;

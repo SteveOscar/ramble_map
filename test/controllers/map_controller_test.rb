@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class MapControllerTest < ActionController::TestCase
-  test "should get welcome" do
+  test "should get map" do
     VCR.use_cassette('currency_map_action') do
       get(:currency_map, { "utf8"=>"✓",
                            "country"=>"144",
@@ -18,6 +18,17 @@ class MapControllerTest < ActionController::TestCase
       assert_equal "Ecuador", result
       assert_equal 173, all_countries.count
       assert assigns["data_factory"].rates
+    end
+  end
+
+  test "should get welcome" do
+    VCR.use_cassette('welcome_action') do
+      get :welcome
+      assert_response :success
+      assert assigns["countries"]
+
+      all_countries = assigns["countries"]
+      assert_equal 173, all_countries.count
     end
   end
 end

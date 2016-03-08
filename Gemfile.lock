@@ -246,6 +246,8 @@ GEM
       memoizable (~> 0.4.0)
       naught (~> 1.0)
       simple_oauth (~> 0.3.0)
+    twitter-text (1.13.4)
+      unf (~> 0.1.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -299,6 +301,7 @@ DEPENDENCIES
   skylight
   spring
   twitter
+  twitter-text
   uglifier (>= 1.3.0)
   vcr
   web-console (~> 2.0)

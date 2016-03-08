@@ -27,9 +27,9 @@
 <% if current_user %>
   <% unless tweeted? %>
     <%= render "tweet_card" %>
-    <button type="submit" id="tweet-btn" class="waves-effect waves-light btn red darken-6">Tweet</button>
+    <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3">Tweet</button>
     <% else %>
-      <button type="submit" id="tweet-btn" class="waves-effect waves-light btn red darken-6 disabled">Tweeted</button>
+      <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3 disabled">Tweeted</button>
   <% end %>
 <% end %>
 <%= render "sources_card" %>

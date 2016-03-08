@@ -55,7 +55,7 @@ class DataFactory
   end
 
   def generate_title_from_params(params)
-    "Perspective: #{base_country.country_name}, base currency: #{base_country.currency.code}"
+    "Base currency: #{base_country.currency.code}"
   end
 
   def peace_index
