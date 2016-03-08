@@ -30,7 +30,7 @@ OmniAuth.config.mock_auth[:twitter] = {
                   'provider' => 'twitter',
                   'uid' => '12345',
                   'info' => {
-                      'name' => 'Steven Olson',
+                      'name' => 'Carl Sagan',
                       'description' => 'Angry neighor with inflatable pool',
                       'image' => 'http://pbs.twimg.com/profile_images/676288331215335424/xFUgQmzk_normal.jpg'
                   },

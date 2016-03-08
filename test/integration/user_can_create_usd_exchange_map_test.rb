@@ -15,7 +15,6 @@ class User_Can_Create_USD_Exchange_Map_Test < ActionDispatch::IntegrationTest
 
       assert_equal display_map_path, current_path
       assert page.has_content?('currency: USD')
-
     end
   end
 

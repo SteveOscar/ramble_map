@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates_presence_of :provider, :uid, :name
+  validates_presence_of :provider, :uid
 
   def self.find_or_create_by_auth(auth)
     return if invalid_attributes?(auth)
