@@ -27,16 +27,10 @@
 <% if current_user %>
   <% unless tweeted? %>
     <%= render "tweet_card" %>
-    <%= image_tag('tweet-bird.png', id: 'tweet-btn') %>
-    <!-- <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3">Tweet</button> -->
+    <%= image_tag('tweet-bird.png', id: 'tweet-btn', alt: "tweet-btn") %>
     <% else %>
-      <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3 disabled">Tweeted</button>
+      <p id="tweeted" class="white-text">(Tweeted!)</p>
   <% end %>
 <% end %>
 <%= render "sources_card" %>
 <%= render "stats_card" %>
-<!-- <% if current_user %>
-  <p>hello, <%= current_user.name %></p>
-<% else %>
-  <%= link_to "login", login_path %>
-<% end %> -->

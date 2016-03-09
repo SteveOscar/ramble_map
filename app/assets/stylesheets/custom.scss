@@ -288,6 +288,14 @@ background-color: darkred;
 #dead-bird:hover {
   width: 77px;
 }
+#tweeted {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 15;
+  font-size: .8em;
+  display: none;
+}
 #price-legend {
   bottom: 50px;
   left: 5px;

@@ -24,6 +24,8 @@ $(document).ready(function(){
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
   $('#price-legend').delay(3100).fadeTo('slow', 1);
+    $('#tweeted').delay(3100).fadeTo('slow', 1);
+
 
   // Map Button setup
   $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.5);
