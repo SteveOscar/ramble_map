@@ -31,9 +31,9 @@ $(document).ready(function(){
   $('#currency-one-year').delay( 3100 ).fadeTo('slow', 0.9);
   $('#currency-two-years').delay( 3300 ).fadeTo('slow', 0.5);
   $('#currency-three-years').delay( 3500 ).fadeTo('slow', 0.5);
-  $('#sources-btn').delay(3600).fadeTo('slow', 0.5);
-  $('#stats-btn').delay(3600).fadeTo('slow', 0.5);
-  $('#tweet-btn').delay(3600).fadeTo('slow', 0.7);
+  $('#sources-btn').delay(3600).fadeTo('slow', 0.7);
+  $('#stats-btn').delay(3600).fadeTo('slow', 0.7);
+  $('#tweet-btn').delay(3600).fadeTo('slow', 0.9);
   $('#question-mark').delay(3800).fadeTo('slow', 0.9);
 
   // Sources, Tweet, Help and Report elements
