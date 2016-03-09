@@ -2,7 +2,7 @@
   <div class="tweet-form">
     <span>Tweet this map?</span>
     <%= link_to(image_tag("tweet-bird.png", id: "tweet-bird"),
-        posts_tweet_path(tweet: "#{@map}.capitalize expense trends: #{request.original_url}"),
+        posts_tweet_path(tweet: "#{@map.capitalize} expense trends: #{request.original_url}"),
         remote: true,
         id: "send-tweet",
         method: :post ) %>

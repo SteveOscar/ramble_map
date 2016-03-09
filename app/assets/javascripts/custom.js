@@ -34,10 +34,23 @@ $(document).ready(function(){
   $('#sources-btn').delay(3600).fadeTo('slow', 0.5);
   $('#stats-btn').delay(3600).fadeTo('slow', 0.5);
   $('#tweet-btn').delay(3600).fadeTo('slow', 0.7);
+  $('#question-mark').delay(3800).fadeTo('slow', 0.9);
 
-  // Sources, Tweet and Report Elements
+  // Sources, Tweet, Help and Report elements
+  $('#question-mark').on('click', function() {
+    $('#help-card').toggle();
+    $('#price-legend').hide();
+    $('#peace-legend').hide();
+    $('#hidden-legend').show();
+    $('#sources-card').hide();
+    $('#stats-card').hide();
+    $('#tweet-card').hide();
+  });
   $('#tweet-btn').on('click', function() {
     $('#tweet-card').toggle();
+    $('#help-card').hide();
+    $('#sources-card').hide();
+    $('#stats-card').hide();
   });
   $('#tweet-bird').on('click', function() {
     $('#tweet-card').hide();
@@ -50,6 +63,7 @@ $(document).ready(function(){
   $('#sources-btn').on('click', function() {
     $('#sources-card').toggle();
     $('#stats-card').hide();
+    $('#help-card').hide();
   });
   $('#sources-card').on('click', function() {
     $('#sources-card').hide();
@@ -60,6 +74,7 @@ $(document).ready(function(){
     $('#price-legend').hide();
     $('#peace-legend').hide();
     $('#hidden-legend').show();
+    $('#help-card').hide();
   });
   $('#stats-card').on('click', function() {
     $('#stats-card').hide();

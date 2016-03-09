@@ -76,16 +76,10 @@ $(document).ready(function(){
               el.html(el.html() + ': no data');
             }
         } else {
-          if (gon.relative_expenses[code] > 4) {
-            el.html(el.html()+' is extremely CHEAP compared to ' + gon.country);
-          } else if (gon.relative_expenses[code] < 4 && gon.relative_expenses[code] >2) {
-            el.html(el.html()+' is moderately CHEAP compared to ' + gon.country);
-          } else if (gon.relative_expenses[code] < 2 && gon.relative_expenses[code] >1.2) {
-            el.html(el.html()+' is a little CHEAPER compared to ' + gon.country);
-          } else if (gon.relative_expenses[code] < 1.2  && gon.relative_expenses[code] > 0.8) {
-            el.html(el.html()+' has SIMILAR expenses to ' + gon.country);
+          if (isNaN(gon.relative_expenses[code])) {
+            el.html('Data unavailable for ' + el.html());
           } else {
-            el.html(el.html() + ' is more EXPENSIVE than ' + gon.country);
+            el.html(el.html()+' is '+Math.round((100/gon.relative_expenses[code]) * 10)/10 + '% as expensive as '+ gon.country)
           }
         };
       };

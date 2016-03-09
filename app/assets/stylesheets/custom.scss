@@ -191,6 +191,18 @@ background-color: darkred;
   right: 130px;
   display: none;
 }
+#question-mark {
+  position: absolute;
+  top: 43px;
+  right: 130px;
+  width: 40px;
+  z-index: 15;
+  display: none;
+}
+#question-mark:hover {
+  width: 42px;
+  cursor: pointer;
+}
 #sources-btn {
   position: absolute;
   bottom: 3px;
@@ -199,10 +211,34 @@ background-color: darkred;
 }
 #stats-btn {
   position: absolute;
-  // top: 76px;
   bottom: 3px;
   right: 90px;
   display: none;
+}
+#help-card {
+  bottom: 15%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 12px;
+  opacity: 0.95;
+  border-radius: 15px;
+  position: fixed;
+  width: 50%;
+  min-width: 300px;
+  height: 400px;
+  background: currentColor;
+  z-index: 15;
+  display: none;
+  text-align: center;
+  overflow-y: scroll;
+}
+.help-text {
+  color: white;
+  font-size: .8em;
+}
+.help-header {
+  color: cyan;
 }
 #sources-card {
   bottom: 30%;
@@ -216,6 +252,7 @@ background-color: darkred;
   width: 280px;
   height: 230px;
   background: currentColor;
+  color: white;
   z-index: 15;
   display: none;
   text-align: center;

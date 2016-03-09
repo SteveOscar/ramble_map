@@ -208,28 +208,6 @@
         null,
         null
       ],
-      "/Users/stevenolson/Turing/projects/globe_squatter/app/models/user.rb": [
-        1,
-        1,
-        null,
-        1,
-        4,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        null,
-        null,
-        1,
-        4,
-        null,
-        null
-      ],
       "/Users/stevenolson/Turing/projects/globe_squatter/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -256,6 +234,28 @@
         null,
         1,
         2,
+        null,
+        null
+      ],
+      "/Users/stevenolson/Turing/projects/globe_squatter/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        4,
         null,
         null
       ],
@@ -291,7 +291,7 @@
         null
       ]
     },
-    "timestamp": 1457549353
+    "timestamp": 1457558999
   },
   "Unit Tests": {
     "coverage": {
