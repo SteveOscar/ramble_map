@@ -1,6 +1,5 @@
 require "test_helper"
 
-
 class User_Can_Login_With_Twitter < ActionDispatch::IntegrationTest
   test "user can login with twitter" do
     visit root_path

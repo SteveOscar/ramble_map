@@ -32,8 +32,8 @@ class UserTest < ActiveSupport::TestCase
     before = User.count
     User.find_or_create_by_auth(auth)
     after = User.count
-    
+
     refute_equal before, after
-    assert User.last.name == "Carl Sagan"
+    assert_equal User.last.name, "Carl Sagan"
   end
 end
