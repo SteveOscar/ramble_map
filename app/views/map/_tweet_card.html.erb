@@ -1,11 +1,19 @@
 <div id="tweet-card">
   <div class="tweet-form">
-    <%= form_tag('/posts', :method => "post") do %>
+    <!-- <%= form_tag('/posts', :method => "post") do %>
         <%= label_tag(:q, "Tweet This Map?", class: "medium-text") %>
         <%= hidden_field_tag(:q, "View my RambleMap: #{request.original_url}") %>
         <%= image_submit_tag('tweet-bird.png', class: "tweet-bird", id: "send-tweet", remote: true) %>
         <%= label_tag(:q, "Nevermind", class: "medium-text") %>
         <%= image_tag('dead-bird.png', id: "dead-bird") %>
-    <% end %>
+    <% end %> -->
+    <span>Tweet this map?</span>
+    <%= link_to(image_tag("tweet-bird.png", id: "tweet-bird"),
+        posts_tweet_path(tweet: "View my RambleMap: #{request.original_url}"),
+        remote: true,
+        id: "send-tweet",
+        method: :post ) %>
+    <span>Nevermind</span>
+    <%= image_tag('dead-bird.png', id: "dead-bird") %>
   </div>
 </div>

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  def create
-    TwitterService.new(current_user).tweet(params["q"])
+  def tweet
+    TwitterService.new(current_user).tweet(params["tweet"])
     respond_to do |format|
       format.html {redirect_to :back}
       format.js
