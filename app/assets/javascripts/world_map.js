@@ -28,15 +28,15 @@ $(document).ready(function(){
                     selectedHover: {
                     }
                   },
-      series: {
-                regions: [{
-                  values: gon.percent_one_year,
-                  scale: ['#C8EEFF', '#002333'],
-                  min: gon.percent_min,
-                  max: gon.percent_max,
-                  normalizeFunction: 'linear',
-                }]
-              },
+        series: {
+                  regions: [{
+                    values: gon.percent_one_year,
+                    scale: ['#C8EEFF', '#002333'],
+                    min: gon.percent_min,
+                    max: gon.percent_max,
+                    normalizeFunction: 'linear',
+                  }]
+                },
       // Sets the dataset pop-up descriptions when hovering over a country
       onRegionTipShow: function(e, el, code){
         var currentView = "currency";

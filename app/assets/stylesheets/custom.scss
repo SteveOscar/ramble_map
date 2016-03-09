@@ -41,8 +41,8 @@ background-color: darkred;
   left: 0;
   top: 0;
   width: 50%;
-  height: 100%;
-  min-height: 500px;
+  height: 100vh;
+  // min-height: 500px;
   display: none;
 }
 .right-card {
@@ -53,8 +53,8 @@ background-color: darkred;
   right: 0;
   top: 0;
   width: 50%;
-  height: 100%;
-  min-height: 500px;
+  height: 100vh;
+  // min-height: 500px;
   display: none;
 }
 #glass {
@@ -145,49 +145,50 @@ background-color: darkred;
   left: 10px;
 }
 #map-headline {
-  bottom: 27px;
+  top: 36px;
   left: 0;
   right: 0;
   position: absolute;
   color: cyan;
   display: none;
+  font-size: .9em;
 }
 #expenses-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   display: none;
-  width: 120px;
+  width: 110px;
 }
 #peace-btn {
   position: absolute;
   top: 43px;
   right: 10px;
   display: none;
-  width: 120px;
+  width: 110px;
 }
 #currency-btn {
   position: absolute;
   top: 10px;
-  right: 140px;
+  right: 130px;
   display: none;
 }
 #currency-one-year {
   position: absolute;
   top: 10px;
-  right: 240px;
+  right: 230px;
   display: none;
 }
 #currency-two-years {
   position: absolute;
   top: 10px;
-  right: 190px;
+  right: 180px;
   display: none;
 }
 #currency-three-years {
   position: absolute;
   top: 10px;
-  right: 140px;
+  right: 130px;
   display: none;
 }
 #sources-btn {
