@@ -52,6 +52,9 @@ $(document).ready(function(){
   $('#stats-btn').on('click', function() {
     $('#stats-card').toggle();
     $('#sources-card').hide();
+    $('#price-legend').hide();
+    $('#peace-legend').hide();
+    $('#hidden-legend').show();
   });
   $('#stats-card').on('click', function() {
     $('#stats-card').hide();

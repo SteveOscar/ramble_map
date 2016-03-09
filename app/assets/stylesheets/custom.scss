@@ -142,11 +142,11 @@ background-color: darkred;
   left: 10px;
 }
 #map-headline {
-  bottom: 15px;
+  bottom: 27px;
   left: 0;
   right: 0;
   position: absolute;
-  color: white;
+  color: cyan;
   display: none;
 }
 #expenses-btn {
@@ -189,18 +189,19 @@ background-color: darkred;
 }
 #sources-btn {
   position: absolute;
-  bottom: 10px;
+  bottom: 3px;
   right: 10px;
   display: none;
 }
 #stats-btn {
   position: absolute;
-  top: 76px;
-  right: 10px;
+  // top: 76px;
+  bottom: 3px;
+  right: 90px;
   display: none;
 }
 #sources-card {
-  bottom: 50px;
+  bottom: 30%;
   right: 0;
   left: 0;
   margin: auto;
@@ -209,8 +210,8 @@ background-color: darkred;
   border-radius: 15px;
   position: fixed;
   width: 280px;
-  height: 330px;
-  background: black;
+  height: 230px;
+  background: currentColor;
   z-index: 15;
   display: none;
   text-align: center;
