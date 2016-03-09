@@ -8,5 +8,4 @@ class PostsController < ApplicationController
       session[:tweeted] = true
     end
   end
-
 end

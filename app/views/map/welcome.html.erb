@@ -14,9 +14,7 @@
 <div class="col s12 m6 circle welcome-circle">
   <div class="welcome-form">
     <%= form_tag('/display_map', :method => "get") do %>
-
     <h5 class="welcome-text">Set your perspective</h5>
-    <!-- <span>(Your home country, or get a different view...)</span> -->
 
       <div class="select select-box">
         <%= select_tag(:country, options_for_select(@countries, selected: country_to_view)) %>
@@ -30,17 +28,15 @@
                                                     ["South America", "south_america"],
                                                     ["Australia / NZ", "oceania"],
                                                     ["Asia", "asia"],
-                                                    ["Africa", "africa"]], region_to_view),
-        prompt: "Which Region?") %>
+                                                    ["Africa", "africa"]], region_to_view)) %>
       </div>
       <%= submit_tag "Submit", class: "btn btn-lg btn-default btn-home blue lighten-2" %>
-    </div>
-  <% end -%>
+    <% end %>
+  </div>
 </div>
 
 <% if current_user %>
-  <p>hello, <%= current_user.name %></p>
   <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signout" %>
 <% else %>
-  <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signin" %>
+  <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home blue lighten-2", id: "twitter-signin" %>
 <% end %>

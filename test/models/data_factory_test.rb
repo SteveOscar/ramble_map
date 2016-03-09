@@ -5,7 +5,7 @@ class DataFactoryTest < ActiveSupport::TestCase
     params = {utf8: "✓", country: "128",
               region: "south_america",
               commit: "Submit", controller: "map",
-              action: "currency_map"}
+              action: "ramble_map"}
 
     df = DataFactory.new(params)
 

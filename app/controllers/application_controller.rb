@@ -14,14 +14,16 @@ class ApplicationController < ActionController::Base
     session[:tweeted]
   end
 
+  # Remembers search params
   def country_to_view
     if session[:country]
       session[:country]
     else
-      Country.find_by(country_name: 'United States')
+      Country.find_by(country_name: 'United States').id
     end
   end
 
+  # Remembers search params
   def region_to_view
     if session[:region]
       session[:region]
@@ -29,4 +31,5 @@ class ApplicationController < ActionController::Base
       'world'
     end
   end
+
 end

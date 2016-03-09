@@ -3,8 +3,7 @@ require 'csv'
 
 class MapController < ApplicationController
   attr_reader :data_factory
-  before_action :save_country, only: :currency_map
-  before_action :save_region, only: :currency_map
+  before_action :save_search_values, only: :ramble_map
   caches_page :welcome
 
   def welcome
@@ -12,21 +11,23 @@ class MapController < ApplicationController
     @countries = Country.all.order(:country_name).map{|u| [ u.country_name, u.id ] }
   end
 
-  def currency_map
-    generate_map_data
+  def ramble_map
+    @data_factory = DataFactory.new(params)
     @map = params["region"]
     @title = data_factory.generate_title_from_params(params)
     @country = Country.find(params["country"]).country_name
-    gon.country = @country
-    gon.region = params["region"].gsub("-", "_")
+    generate_map_data
   end
 
   private
 
   def generate_map_data
-    @data_factory = DataFactory.new(params)
-    latest = data_factory.exchange_rates(params)
+    gon.country = @country
+    gon.region = params["region"].gsub("-", "_")
     gon.relative_expenses = data_factory.relative_prices(params)
+    gon.peace_index = data_factory.peace_index
+
+    latest = data_factory.exchange_rates(params)
     currency_trends = data_factory.compare_exchange_rates(latest, params, 1)
     generate_yearly_currency_trends(latest, currency_trends)
     @stats = data_factory.stat_card_data(currency_trends, gon.relative_expenses)
@@ -38,14 +39,11 @@ class MapController < ApplicationController
     gon.percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)
     gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[3].last.to_i
     gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[3].last.to_i
-    gon.peace_index = data_factory.peace_index
   end
 
-  def save_country
+  def save_search_values
     session[:country] = params["country"]
-  end
-
-  def save_region
     session[:region] = params["region"]
   end
+
 end

@@ -2,13 +2,13 @@ require 'test_helper'
 
 class MapControllerTest < ActionController::TestCase
   test "should get map" do
-    VCR.use_cassette('currency_map_action') do
-      get(:currency_map, { "utf8"=>"✓",
+    VCR.use_cassette('ramble_map_action') do
+      get(:ramble_map, { "utf8"=>"✓",
                            "country"=>"144",
                            "region"=>"world",
                            "commit"=>"Submit",
                            "controller"=>"map",
-                           "action"=>"currency_map"})
+                           "action"=>"ramble_map"})
       assert_response :success
 
       all_countries = assigns["data_factory"].countries
