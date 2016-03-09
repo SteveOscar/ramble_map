@@ -154,37 +154,37 @@ background-color: darkred;
   top: 10px;
   right: 10px;
   display: none;
-  width: 140px;
+  width: 120px;
 }
 #peace-btn {
   position: absolute;
   top: 43px;
   right: 10px;
   display: none;
-  width: 140px;
+  width: 120px;
 }
 #currency-btn {
   position: absolute;
   top: 10px;
-  right: 170px;
+  right: 140px;
   display: none;
 }
 #currency-one-year {
   position: absolute;
   top: 10px;
-  right: 270px;
+  right: 240px;
   display: none;
 }
 #currency-two-years {
   position: absolute;
   top: 10px;
-  right: 220px;
+  right: 190px;
   display: none;
 }
 #currency-three-years {
   position: absolute;
   top: 10px;
-  right: 170px;
+  right: 140px;
   display: none;
 }
 #sources-btn {
@@ -195,7 +195,7 @@ background-color: darkred;
 }
 #stats-btn {
   position: absolute;
-  bottom: 40px;
+  top: 76px;
   right: 10px;
   display: none;
 }
@@ -241,7 +241,7 @@ background-color: darkred;
   color: white;
 }
 #tweet-card {
-  bottom: 50px;
+  bottom: 35%;
   right: 0;
   left: 0;
   margin: auto;
@@ -249,9 +249,9 @@ background-color: darkred;
   opacity: 0.9;
   border-radius: 15px;
   position: fixed;
-  width: 280px;
-  height: 330px;
-  background: black;
+  width: 150px;
+  height: 200px;
+  background: white;
   z-index: 15;
   display: none;
   text-align: center;
@@ -265,12 +265,27 @@ background-color: darkred;
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
+  width: 40px;
+}
+#tweet-btn:hover {
+  cursor: pointer;
 }
 .tweet-bird {
-  height: 80px;
+  width: 70px;
+  display: block;
+  margin: auto;
 }
 .tweet-bird:hover {
-  height: 90px;
+  width: 77px;
+}
+#dead-bird {
+  width: 70px;
+  display: block;
+  margin: auto;
+}
+#dead-bird:hover {
+  width: 77px;
 }
 #price-legend {
   bottom: 50px;

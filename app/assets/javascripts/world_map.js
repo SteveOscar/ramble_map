@@ -92,7 +92,7 @@ $(document).ready(function(){
 
       var clearMap = function() {
         var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
-        var r=mapObject.series.regions[0];
+        var r = mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
         return r;
       }

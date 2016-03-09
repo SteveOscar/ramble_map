@@ -35,8 +35,11 @@ $(document).ready(function(){
   $('#stats-btn').delay(3600).fadeTo('slow', 0.5);
   $('#tweet-btn').delay(3600).fadeTo('slow', 0.7);
 
-  // Sources and Report Elements
+  // Sources, Tweet and Report Elements
   $('#tweet-btn').on('click', function() {
+    $('#tweet-card').toggle();
+  });
+  $('#dead-bird').on('click', function() {
     $('#tweet-card').toggle();
   });
   $('#sources-btn').on('click', function() {

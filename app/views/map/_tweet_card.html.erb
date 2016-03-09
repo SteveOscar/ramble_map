@@ -3,7 +3,9 @@
     <%= form_tag('/posts', :method => "post") do %>
         <%= label_tag(:q, "Tweet This Map?", class: "medium-text") %>
         <%= hidden_field_tag(:q, "View my RambleMap: #{request.original_url}") %>
-        <%= image_submit_tag('bird.png', class: "tweet-bird", id: "send-tweet", remote: true) %>
+        <%= image_submit_tag('tweet-bird.png', class: "tweet-bird", id: "send-tweet", remote: true) %>
+        <%= label_tag(:q, "Nevermind", class: "medium-text") %>
+        <%= image_tag('dead-bird.png', id: "dead-bird") %>
     <% end %>
   </div>
 </div>

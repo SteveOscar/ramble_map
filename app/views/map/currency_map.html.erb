@@ -5,7 +5,7 @@
 <%= image_tag('cost_key.png', id: 'price-legend') %>
 <%= image_tag('peace_key.png', id: 'peace-legend') %>
 <%= image_tag('hidden_key.png', id: 'hidden-legend') %>
-<!-- <%= image_tag('bird.png', id: 'tweet-bird') %> -->
+
 
 <div class="background-banner"></div>
 <h4 class="perspective">Perspective:</h4><h3 class="country"> <%= @country %></h3>
@@ -15,7 +15,7 @@
   <div class="main-map" id="<%= @map %>"style=""></div>
 </div>
 
-<button type="submit" id="expenses-btn" class="waves-effect waves-light btn red darken-4">Relative Prices</button>
+<button type="submit" id="expenses-btn" class="waves-effect waves-light btn red darken-4">Expense</button>
 <button type="submit" id="currency-btn" class="waves-effect waves-light btn cyan darken-2">Currency Trends</button>
 <button type="submit" id="currency-one-year" class="waves-effect waves-light btn cyan">1yrs</button>
 <button type="submit" id="currency-two-years" class="waves-effect waves-light btn cyan darken-1">2yrs</button>
@@ -27,7 +27,8 @@
 <% if current_user %>
   <% unless tweeted? %>
     <%= render "tweet_card" %>
-    <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3">Tweet</button>
+    <%= image_tag('tweet-bird.png', id: 'tweet-btn') %>
+    <!-- <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3">Tweet</button> -->
     <% else %>
       <button type="submit" id="tweet-btn" class="waves-effect waves-light btn blue darken-3 disabled">Tweeted</button>
   <% end %>
