@@ -18,6 +18,11 @@ class MapControllerTest < ActionController::TestCase
       assert_equal "Ecuador", result
       assert_equal 173, all_countries.count
       assert assigns["data_factory"].rates
+      assert assigns["stats"]
+      assert_equal 5, assigns["stats"][:cheap].count
+      assert_equal 5, assigns["stats"][:expensive].count
+      assert_equal 5, assigns["stats"][:highest_price].count
+      assert_equal 5, assigns["stats"][:lowest_price].count
     end
   end
 

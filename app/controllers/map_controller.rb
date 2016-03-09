@@ -26,19 +26,16 @@ class MapController < ApplicationController
     gon.region = params["region"].gsub("-", "_")
     gon.relative_expenses = data_factory.relative_prices(params)
     gon.peace_index = data_factory.peace_index
-
-    latest = data_factory.exchange_rates(params)
-    currency_trends = data_factory.compare_exchange_rates(latest, params, 1)
-    generate_yearly_currency_trends(latest, currency_trends)
-    @stats = data_factory.stat_card_data(currency_trends, gon.relative_expenses)
+    generate_yearly_currency_trends(data_factory.exchange_rates(params))
   end
 
-  def generate_yearly_currency_trends(latest, currency_trends)
-    gon.percent_one_year = currency_trends
+  def generate_yearly_currency_trends(latest)
+    gon.percent_one_year = data_factory.compare_exchange_rates(latest, params, 1)
     gon.percent_two_years = data_factory.compare_exchange_rates(latest, params, 2)
     gon.percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)
     gon.percent_max = gon.percent_two_years.sort_by{|k, v| -v.to_f}[3].last.to_i
     gon.percent_min = gon.percent_two_years.sort_by{|k, v| v.to_f}[3].last.to_i
+    @stats = data_factory.stat_card_data(gon.percent_one_year, gon.relative_expenses)
   end
 
   def save_search_values

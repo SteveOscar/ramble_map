@@ -15,11 +15,6 @@ class DataFactory
     prices = countries.each_with_object({}) do |country, hash|
       hash[country.map_code] = calc_relative_expense(country, rates, params) unless rates[country.currency.code].nil? || country.ppp.nil?
     end
-    format_data(prices)
-  end
-
-  def format_data(prices)
-    prices.each {|k, v| prices[k] = v / 10}
     prices
   end
 
