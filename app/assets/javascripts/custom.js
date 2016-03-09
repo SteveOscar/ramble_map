@@ -46,6 +46,9 @@ $(document).ready(function(){
     $('#stats-card').hide();
     $('#tweet-card').hide();
   });
+  $('#help-card').on('click', function() {
+    $('#help-card').hide();
+  });
   $('#tweet-btn').on('click', function() {
     $('#tweet-card').toggle();
     $('#help-card').hide();
