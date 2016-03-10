@@ -1,5 +1,5 @@
 # RambleMap
-## Interactive map for visualizing international currency exchange trends and the relative expenses between different countries.
+## Interactive map for visualizing international trends.
 
 Author: Steven Olson
 
@@ -9,7 +9,7 @@ Live Version: [http://www.ramblemap.com/](http://www.ramblemap.com/)
 
 This application, built in Ruby on Rails, is designed to allow users to explore world-wide patterns and trends for exchange rate, expenses, and other datasets. It was built with long-term travelers and expats in mind, people who are interested in getting a bird's-eye view of a region's financial situation.  
 
-Internal datasets were built from World Bank and IEP data, while up-to-date and historical exchange rates are pulled from the OpenExchangeRates API. The mapping library is jVectorMap, which acts as a local JavaScript API. The Twitter API and Twitter-Omniauth allow for sign-in and tweeting of maps.
+Internal datasets were built from World Bank and IEP data, while up-to-date and historical exchange rates are pulled from the OpenExchangeRates API. The mapping library is [http://jvectormap.com/](jVectorMap), which acts as a local JavaScript API. The Twitter API and Twitter-Omniauth allow for sign-in and tweeting of maps.
 
 The application is deployed on Heroku with a Postgres database. Performance is increased through low and high-level caching, and a background rake task to fill the most popular API call caches nightly.
 
