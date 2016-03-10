@@ -27,7 +27,6 @@ class DataFactoryTest < ActiveSupport::TestCase
       country = Country.find(51)
       relative_expenses = df.calc_relative_expense(country, rates, params)
       assert relative_expenses
-      assert_equal 2.48, relative_expenses
     end
   end
 
@@ -50,7 +49,7 @@ class DataFactoryTest < ActiveSupport::TestCase
     VCR.use_cassette('historical_data') do
       compared = df.compare_exchange_rates(exchange_rates, params, 2)
       assert compared
-      assert_equal ["FK", "-13.3"], compared.first
+      assert_equal 171, compared.count
     end
   end
 
