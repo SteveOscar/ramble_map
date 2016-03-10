@@ -19,7 +19,7 @@ The application is deployed on Heroku with a Postgres database. Performance is i
 
 ### Dependencies
 
-To run this application locally, you would need to obtain API keys from OpenExchangeRates and Twitter
+To run this application locally, you would need to obtain API keys from OpenExchangeRates and Twitter.
 
 Gem dependencies can be found in the Gemfile.
 
@@ -34,6 +34,6 @@ If you wish to download the project and set it up locally, run the following com
 
 ### Test Suite
 
-The application is tested with Minitest, using [Capybara](https://github.com/jnicklas/capybara) for feature tests, and [VCR](https://github.com/vcr/vcr) API call stubbing. [SimpleCov](https://github.com/colszowka/simplecov) is used to provide basic test coverage results.
+The application is tested with Minitest, using [Capybara](https://github.com/jnicklas/capybara) for feature tests, and [VCR](https://github.com/vcr/vcr) for API call stubbing. [SimpleCov](https://github.com/colszowka/simplecov) is used to provide basic test coverage results.
 
 The test suite can be run from the main directory of the project by running the command `rake test`. The project has test coverage at the following levels: model, service, controller, and integration.
