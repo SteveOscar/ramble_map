@@ -32,10 +32,12 @@ class DataFactoryTest < ActiveSupport::TestCase
   end
 
   test "data exchange rates" do
-    countries = Country.includes(:currency).all
-    exchange_rates = df.exchange_rates(params)
-    assert exchange_rates
-    assert_equal ["FK", "0.08320955"], exchange_rates.first
+    VCR.use_cassette('exchange_rates') do
+      countries = Country.includes(:currency).all
+      exchange_rates = df.exchange_rates(params)
+      assert exchange_rates
+      assert_equal "FK", exchange_rates.first[0]
+    end
   end
 
   # Also hits format_date and historical_data methods
@@ -43,7 +45,7 @@ class DataFactoryTest < ActiveSupport::TestCase
     countries = Country.includes(:currency).all
     exchange_rates = df.exchange_rates(params)
     assert exchange_rates
-    assert_equal ["FK", "0.08320955"], exchange_rates.first
+    assert_equal "FK", exchange_rates.first[0]
 
     VCR.use_cassette('historical_data') do
       compared = df.compare_exchange_rates(exchange_rates, params, 2)
@@ -55,7 +57,7 @@ class DataFactoryTest < ActiveSupport::TestCase
   test "peace index" do
     index = df.peace_index
     assert index
-    assert_equal ["ME", ["1.854", "57"]], index.first
+    assert_equal "ME", index.first[0]
   end
 
 
