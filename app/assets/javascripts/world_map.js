@@ -49,9 +49,9 @@ $(document).ready(function(){
       var dataSet = function(e, el, code) {
         if (currentView === "currency") {
           if (currentYear[code] > 0) {
-            el.html(el.html()+'\'s currency has become '+currentYear[code]+'% weaker than '+gon.country+'\'s');
+            el.html(el.html()+'\'s currency has become \n'+currentYear[code]+'% weaker than that of '+gon.country);
           } else if (currentYear[code] < 0) {
-            el.html(el.html()+'\'s currency has become '+currentYear[code]*(-1)+'% stronger than '+gon.country+'\'s');
+            el.html(el.html()+'\'s currency has become \n'+currentYear[code]*(-1)+'% stronger than that of '+gon.country);
           } else if (currentYear[code] === 0) {
             el.html(el.html()+' uses the same currency');
           } else {

@@ -5,7 +5,6 @@ class DataFactory
     @countries = Rails.cache.fetch("#{:updated_at}/countries_and_currency") do
       Country.includes(:currency).all
     end
-    @country_names = Hash[countries.pluck(:map_code).zip(countries.pluck(:country_name))]
     @rates = ExchangeRateService.new(params).get_data["rates"]
     @base_country = Country.includes(:currency).find(params[:country])
     remove_outliers
@@ -15,7 +14,6 @@ class DataFactory
     prices = countries.each_with_object({}) do |country, hash|
       hash[country.map_code] = calc_relative_expense(country, rates, params) unless rates[country.currency.code].nil? || country.ppp.nil?
     end
-    prices
   end
 
   def calc_relative_expense(country, rates, params)
@@ -57,6 +55,10 @@ class DataFactory
     countries.each_with_object({}) do |country, hash|
       hash[country.map_code] = [country.peace_score.to_s, country.peace_rank.to_s] unless country.peace_score.nil?
     end
+  end
+
+  def country_names
+    Hash[countries.pluck(:map_code).zip(countries.pluck(:country_name))]
   end
 
   def stat_card_data(currency_trends, country_expenses)

@@ -38,5 +38,6 @@
 <% if current_user %>
   <%= link_to "Logout", logout_path, class: "btn btn-lg btn-default btn-home", id: "twitter-signout" %>
 <% else %>
+  <%= image_tag('tweet-suggestion.png', id: 'tweet-suggestion') %>
   <%= link_to "Login with Twitter", login_path, class: "btn btn-lg btn-default btn-home blue lighten-2", id: "twitter-signin" %>
 <% end %>

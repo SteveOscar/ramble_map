@@ -3,9 +3,10 @@ $(document).ready(function(){
   $('#blank-map').delay( 300 ).fadeTo('slow', 0.7);
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
   $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
-  $('#glass').delay(1500).fadeTo('slow', 1);
+  $('#glass').delay(800).fadeTo('slow', 1).animate({top: '-=100px'}, 1500).animate({top: '+=100px'}, 800);
   $('#twitter-signin').delay(1500).fadeTo('slow', 1);
   $('#twitter-signout').delay(1500).fadeTo('slow', 1);
+  $('#tweet-suggestion').delay(2800).fadeTo('slow', 1).delay(5000).fadeTo('slow', 0);
   $('.left-card').delay( 100 ).slideDown( 1000, function() {
     // Animation complete.
   });
@@ -34,7 +35,7 @@ $(document).ready(function(){
   $('#sources-btn').delay(3600).fadeTo('slow', 0.7);
   $('#stats-btn').delay(3600).fadeTo('slow', 0.7);
   $('#tweet-btn').delay(3600).fadeTo('slow', 0.9);
-  $('#question-mark').delay(3800).fadeTo('slow', 0.9);
+  $('#question-mark').delay(4200).fadeTo('slow', 0.9);
 
   // Sources, Tweet, Help and Report elements
   $('#question-mark').on('click', function() {

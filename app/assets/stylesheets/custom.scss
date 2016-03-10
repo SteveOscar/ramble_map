@@ -120,6 +120,14 @@ background-color: darkred;
   text-shadow: 2px 1px blue;
   color: white;
 }
+#tweet-suggestion {
+  position: absolute;
+  left: 30px;
+  bottom: 35px;
+  width: 150px;
+  z-index: 15;
+  display: none;
+}
 #twitter-signin {
   position: absolute;
   bottom: 3px;
@@ -251,7 +259,7 @@ background-color: darkred;
   position: fixed;
   width: 280px;
   height: 230px;
-  background: currentColor;
+  background: black;
   color: white;
   z-index: 15;
   display: none;

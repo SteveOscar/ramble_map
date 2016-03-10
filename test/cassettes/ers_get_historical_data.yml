@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 09 Mar 2016 04:35:31 GMT
+      - Thu, 10 Mar 2016 00:01:56 GMT
       Server:
       - Apache
       Last-Modified:
@@ -217,7 +217,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Wed, 09 Mar 2016 04:35:31 GMT
+  recorded_at: Thu, 10 Mar 2016 00:01:56 GMT
 - request:
     method: get
     uri: http://openexchangerates.org/api/historical/2014-03-08.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=SEK
@@ -237,7 +237,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 09 Mar 2016 04:35:31 GMT
+      - Thu, 10 Mar 2016 00:01:57 GMT
       Server:
       - Apache
       Last-Modified:
@@ -432,5 +432,5 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Wed, 09 Mar 2016 04:35:31 GMT
+  recorded_at: Thu, 10 Mar 2016 00:01:57 GMT
 recorded_with: VCR 3.0.1
