@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :tweeted?, :country_to_view, :region_to_view
+  helper_method :current_user, :tweeted?, :country_to_view, :region_to_view, :ua_firefox?
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
     else
       'world'
     end
+  end
+
+  def ua_firefox?
+    @ua_firefox = true if request.env['HTTP_USER_AGENT'].include?('Firefox')
   end
 
 end

@@ -26,6 +26,21 @@ background-color: darkred;
   left: 0;
   right: 0;
 }
+#ua-card {
+  bottom: 35%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  padding: 12px;
+  opacity: 0.9;
+  border-radius: 15px;
+  position: fixed;
+  width: 150px;
+  height: 200px;
+  background: white;
+  z-index: 15;
+  text-align: center;
+}
 .show-map {
   margin: auto;
   height: 600px;
