@@ -1,6 +1,28 @@
 {
   "MiniTest": {
     "coverage": {
+      "/Users/stevenolson/Turing/projects/globe_squatter/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
       "/Users/stevenolson/Turing/projects/globe_squatter/app/controllers/map_controller.rb": [
         1,
         1,
@@ -92,11 +114,6 @@
         null,
         null
       ],
-      "/Users/stevenolson/Turing/projects/globe_squatter/app/models/country.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/stevenolson/Turing/projects/globe_squatter/app/models/data_factory.rb": [
         1,
         1,
@@ -179,6 +196,11 @@
         null,
         null
       ],
+      "/Users/stevenolson/Turing/projects/globe_squatter/app/models/country.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/stevenolson/Turing/projects/globe_squatter/app/services/exchange_rate_service.rb": [
         1,
         1,
@@ -208,28 +230,6 @@
       "/Users/stevenolson/Turing/projects/globe_squatter/app/models/currency.rb": [
         1,
         1,
-        null
-      ],
-      "/Users/stevenolson/Turing/projects/globe_squatter/app/models/user.rb": [
-        1,
-        1,
-        null,
-        1,
-        4,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        3,
-        null,
-        null,
-        1,
-        4,
-        null,
         null
       ],
       "/Users/stevenolson/Turing/projects/globe_squatter/app/controllers/sessions_controller.rb": [
@@ -293,7 +293,7 @@
         null
       ]
     },
-    "timestamp": 1457624679
+    "timestamp": 1457629217
   },
   "Unit Tests": {
     "coverage": {
