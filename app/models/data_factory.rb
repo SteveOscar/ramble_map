@@ -47,10 +47,6 @@ class DataFactory
     end
   end
 
-  def generate_title_from_params(params)
-    "Base currency: \n#{base_country.currency.code}"
-  end
-
   def peace_index
     countries.each_with_object({}) do |country, hash|
       hash[country.map_code] = [country.peace_score.to_s, country.peace_rank.to_s] unless country.peace_score.nil?

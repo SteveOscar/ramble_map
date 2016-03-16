@@ -25,6 +25,7 @@ $(document).ready(function(){
   $('.main-map').delay( 3100 ).fadeTo('slow', 1);
   $('#map-headline').delay(3100).fadeTo('slow', 1);
   $('#price-legend').delay(3100).fadeTo('slow', 1);
+  $('.explanation').delay(3100).fadeTo('slow', 1);
 
   // Map Button setup
   $('#expenses-btn').delay( 3100 ).fadeTo('slow', 0.5);
@@ -109,6 +110,7 @@ $(document).ready(function(){
     $('#currency-one-year').fadeTo('fast', 0);
     $('#currency-two-years').fadeTo('fast', 0);
     $('#currency-three-years').fadeTo('fast', 0);
+    $('.explanation').text('Now viewing abolute peace rankings')
   });
 
   $('#expenses-btn').on('click', function() {
@@ -118,6 +120,7 @@ $(document).ready(function(){
     $('#currency-three-years').hide();
     $('#currency-btn').fadeTo('fast', 0.5);
     $('#expenses-btn').fadeTo('fast', 1);
+    $('.explanation').text('Now viewing relative expenses')
   });
 
   $('#currency-btn').on('click', function() {
@@ -127,6 +130,7 @@ $(document).ready(function(){
     $('#currency-three-years').fadeTo('fast', 0.5);
     $('#expenses-btn').fadeTo('fast', 0.5);
     $('#currency-btn').fadeTo('fast', 0);
+    $('.explanation').text('Now viewing changes in currency exchange rates')
   });
 
   $('#currency-one-year').on('click', function() {
@@ -135,6 +139,7 @@ $(document).ready(function(){
     $('#currency-two-years').fadeTo('fast', 0.5);
     $('#currency-three-years').fadeTo('fast', 0.5);
     $('#currency-btn').fadeTo('fast', 0);
+    $('.explanation').text('Now viewing changes in currency exchange rates')
   });
 
   $('#currency-two-years').on('click', function() {
@@ -143,6 +148,7 @@ $(document).ready(function(){
     $('#currency-one-year').fadeTo('fast', 0.5);
     $('#currency-three-years').fadeTo('fast', 0.5);
     $('#currency-btn').fadeTo('fast', 0);
+    $('.explanation').text('Now viewing changes in currency exchange rates')
   });
 
   $('#currency-three-years').on('click', function() {
@@ -151,6 +157,7 @@ $(document).ready(function(){
     $('#currency-two-years').fadeTo('fast', 0.5);
     $('#currency-one-year').fadeTo('fast', 0.5);
     $('#currency-btn').fadeTo('fast', 0);
+    $('.explanation').text('Now viewing changes in currency exchange rates')
   });
 
   var currencyBehavior = function() {

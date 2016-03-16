@@ -167,12 +167,13 @@ background-color: darkred;
   min-width: 120px;
   left: 10px;
 }
-#map-headline {
+
+.explanation {
   bottom: 33px;
   left: 0;
   right: 0;
   position: absolute;
-  color: red;
+  color: white;
   display: none;
   font-size: .9em;
 }

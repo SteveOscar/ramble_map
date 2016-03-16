@@ -4,7 +4,7 @@ require 'csv'
 class MapController < ApplicationController
   attr_reader :data_factory
   before_action :save_search_values, only: :ramble_map
-  before_action :ua_firefox?
+  # before_action :ua_firefox?
   caches_page :welcome
 
   def welcome
@@ -15,7 +15,6 @@ class MapController < ApplicationController
   def ramble_map
     @data_factory = DataFactory.new(params)
     @map = params["region"]
-    @title = data_factory.generate_title_from_params(params)
     @country = Country.find(params["country"]).country_name
     generate_map_data
   end
