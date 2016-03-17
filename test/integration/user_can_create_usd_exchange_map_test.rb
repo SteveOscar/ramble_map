@@ -14,7 +14,7 @@ class User_Can_Create_USD_Exchange_Map_Test < ActionDispatch::IntegrationTest
       click_on "Submit"
 
       assert_equal display_map_path, current_path
-      assert page.has_content?('currency: USD')
+      assert page.has_content?('Now viewing changes in currency')
     end
   end
 
@@ -28,7 +28,7 @@ class User_Can_Create_USD_Exchange_Map_Test < ActionDispatch::IntegrationTest
       click_on "Submit"
 
       assert_equal display_map_path, current_path
-      assert page.has_content?('currency: RUB')
+      assert page.has_content?('Now viewing changes in currency')
     end
   end
 end
