@@ -1,9 +1,9 @@
 $(document).ready(function(){
   // Welcome Page
-  $('#blank-map').delay( 300 ).fadeTo('slow', 0.7);
+  $('#welcome-background').delay( 300 ).fadeTo('slow', 0.4).delay( 1500 ).fadeTo('slow', 0.7);
   $('.circle').delay( 1500 ).fadeTo('slow', 0.9);
   $('#globe').delay( 1500 ).fadeTo('slow', 0.9);
-  $('#glass').delay(800).fadeTo('slow', 1).animate({top: '-=100px'}, 1500).animate({top: '+=100px'}, 800);
+  $('#glass').delay(400).fadeTo('slow', 1).animate({top: '-=80px'}, 1000).animate({top: '+=80px'}, 600);
   $('#twitter-signin').delay(1500).fadeTo('slow', 1);
   $('#twitter-signout').delay(1500).fadeTo('slow', 1);
   $('#tweet-suggestion').delay(2800).fadeTo('slow', 1).delay(5000).fadeTo('slow', 0);

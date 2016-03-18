@@ -16,6 +16,15 @@ background-color: darkred;
 }
 
 // WELCOME PAGE
+#welcome-background {
+  position: absolute;
+  padding-top: 50px;
+  margin: auto;
+  height: 90vh;
+  width: 90%;
+  display: none;
+  z-index: 0;
+}
 #site-title {
   z-index: 6;
   position: absolute;
@@ -41,13 +50,6 @@ background-color: darkred;
   z-index: 15;
   text-align: center;
 }
-// .show-map {
-//   margin: auto;
-//   height: 600px;
-//   width: 900px;
-//   opacity: 0;
-//   z-index: 0;
-// }
 .left-card {
   background-color: darkred;
   opacity: .6;

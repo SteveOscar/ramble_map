@@ -1,5 +1,4 @@
 <%= Gon::Base.render_data %>
-<!-- <%= image_tag('title_small.png', id: 'map-title') %> -->
 <%= link_to(image_tag("title_small.png", id: 'map-title'), root_path) %>
 <%= image_tag('ocean2.jpg', id: 'ocean-background') %>
 <%= image_tag('cost_key.png', id: 'price-legend') %>
@@ -12,7 +11,6 @@
 <h4 class="perspective">Perspective:</h4><h3 class="country"> <%= @country %></h3>
 
 <div class="holder">
-  <!-- <h6 id="map-headline"> <%= @title %> </h6> -->
   <span class="explanation">Now viewing changes in currency exchange rates</span>
   <div class="main-map" id="<%= @map %>"style=""></div>
 </div>
