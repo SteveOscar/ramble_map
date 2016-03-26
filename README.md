@@ -5,7 +5,7 @@ Author: Steven Olson
 
 Live Version: [http://www.ramblemap.com/](http://www.ramblemap.com/)  
   
-(http://g.recordit.co/75PxAkj6hv.gif)
+![RambleMap](http://g.recordit.co/75PxAkj6hv.gif)
 
 ### Overview
 
