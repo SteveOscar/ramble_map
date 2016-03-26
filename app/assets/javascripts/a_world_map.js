@@ -51,7 +51,7 @@ $(document).ready(function(){
           if (currentYear[code] > 0) {
             el.html(el.html()+': currency has become \n'+currentYear[code]+'% weaker against that of: '+gon.country);
           } else if (currentYear[code] < 0) {
-            el.html(el.html()+': currency has become \n'+currentYear[code]*(-1)+'% stronger  that of: '+gon.country);
+            el.html(el.html()+': currency has become \n'+currentYear[code]*(-1)+'% stronger against that of: '+gon.country);
           } else if (currentYear[code] === 0) {
             el.html(el.html()+' uses the same currency');
           } else {

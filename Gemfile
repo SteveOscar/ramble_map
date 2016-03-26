@@ -17,6 +17,8 @@ gem 'twitter'
 gem 'twitter-text'
 gem "skylight"
 gem 'actionpack-page_caching'
+gem 'resque'
+gem 'resque-scheduler'
 
 group :development, :test do
   gem 'byebug'
