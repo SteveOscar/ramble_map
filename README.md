@@ -17,7 +17,7 @@ The application is deployed on Heroku with a Postgres database. Performance is i
 
 ### Main Application Page
 
-![Screenshot](http://i.imgur.com/I2rk42f.png)
+![Screenshot](http://i.imgur.com/zHZPOfp.png)
 
 ### Dependencies
 
