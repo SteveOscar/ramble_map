@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    var currentView = "currency"
-    var currentYear = gon.percent_one_year
+    var currentView = "currency";
+    var currentYear = gon.percent_one_year;
     $(function(){
       $('#' + gon.region).vectorMap({
       map: gon.region + '_mill',
@@ -79,9 +79,9 @@ $(document).ready(function(){
           if (isNaN(gon.relative_expenses[code])) {
             el.html('Data unavailable for ' + el.html());
           } else {
-            el.html(el.html()+' is '+Math.round((100/gon.relative_expenses[code]) * 10)/10 + '% as expensive as '+ gon.country)
+            el.html(el.html()+' is '+Math.round((100/gon.relative_expenses[code]) * 10)/10 + '% as expensive as '+ gon.country);
           }
-        };
+        }
       };
 
       var clearMap = function() {
@@ -89,52 +89,52 @@ $(document).ready(function(){
         var r = mapObject.series.regions[0];
         mapObject.series.regions[0].clear();
         return r;
-      }
+      };
 
       var updateMap = function(r, min, max, values, view) {
         r.params.min = min;
         r.params.max = max;
         r.setValues(values);
         currentView = view;
-      }
+      };
 
       $('#expenses-btn').on('click', function() {
         var r = clearMap();
-        updateMap(r, "0.8", "05.6", gon.relative_expenses, "expenses")
-        dataSet()
+        updateMap(r, "0.8", "05.6", gon.relative_expenses, "expenses");
+        dataSet();
       });
 
       $('#peace-btn').on('click', function() {
         var r = clearMap();
-        updateMap(r, "1.148", "3.645", gon.peace_index, "peace")
-        dataSet()
+        updateMap(r, "1.148", "3.645", gon.peace_index, "peace");
+        dataSet();
       });
 
       $('#currency-btn').on('click', function() {
         var r = clearMap();
-        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_one_year, "currency")
-        dataSet()
+        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_one_year, "currency");
+        dataSet();
       });
 
       $('#currency-one-year').on('click', function() {
         var r = clearMap();
-        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_one_year, "currency")
+        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_one_year, "currency");
         currentYear = gon.percent_one_year;
-        dataSet()
+        dataSet();
       });
 
       $('#currency-two-years').on('click', function() {
         var r = clearMap();
-        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_two_years, "currency")
+        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_two_years, "currency");
         currentYear = gon.percent_two_years;
-        dataSet()
+        dataSet();
       });
 
       $('#currency-three-years').on('click', function() {
-        var r = clearMap()
-        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_three_years, "currency")
+        var r = clearMap();
+        updateMap(r, gon.percent_min, gon.percent_max, gon.percent_three_years, "currency");
         currentYear = gon.percent_three_years;
-        dataSet()
+        dataSet();
       });
-    })
+    });
 });
