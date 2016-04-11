@@ -19,6 +19,7 @@ gem "skylight"
 gem 'actionpack-page_caching'
 gem 'resque'
 gem 'resque-scheduler'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'

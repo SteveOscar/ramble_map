@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   get '/auth/twitter', as: :login
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+
+  namespace :api do
+    namespace :v1, defaults: {format: :json} do
+      resources :countries, defaults: {format: :json}
+    end
+  end
 end
