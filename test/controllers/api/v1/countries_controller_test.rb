@@ -11,15 +11,15 @@ class Api::V1::CountriesControllerTest < ActionController::TestCase
     assert_equal 173, countries.count
   end
 
-  # test "#show" do
-  #   id = Country.first.id
-  #
-  #   get :show, id: id, format: :json
-  #
-  #   country = JSON.parse(response.body)
-  #
-  #   assert_response :success
-  #   assert_equal 1, country["id"]
-  #   assert_equal country["country_name"], "Heavy Cotton Pants"
-  # end
+  test "#show" do
+    id = Country.first.id
+
+    get :show, id: id, format: :json
+
+    data = JSON.parse(response.body)
+
+    assert_response :success
+    assert_equal 5, data["cheap"].count
+    assert_equal 5, data["highest_price"].count
+  end
 end

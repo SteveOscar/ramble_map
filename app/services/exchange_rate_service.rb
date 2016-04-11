@@ -4,7 +4,11 @@ require 'faraday'
 class ExchangeRateService
 
   def initialize(params)
-    @currency = Country.find(params[:country]).currency.code
+    if !params[:id].nil?
+      @currency = Country.find(params[:id]).currency.code
+    else
+      @currency = Country.find(params[:country]).currency.code
+    end
     @type = params["DataType"]
   end
 

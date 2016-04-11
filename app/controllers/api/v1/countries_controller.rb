@@ -1,7 +1,5 @@
 class Api::V1::CountriesController < Api::V1::BaseController
   respond_to :json
-
-
   attr_reader :data_factory
 
   def index
@@ -10,12 +8,13 @@ class Api::V1::CountriesController < Api::V1::BaseController
 
   def show
     @country = Country.find(params["id"])
-    respond_with @country
+    @data_factory = DataFactory.new(params)
+    generate_map_data
+    respond_with @stats
   end
 
   def ramble_map
     @data_factory = DataFactory.new(params)
-    @map = params["region"]
     @country = Country.find(params["country"]).country_name
     generate_map_data
   end
@@ -24,13 +23,17 @@ class Api::V1::CountriesController < Api::V1::BaseController
 
   def generate_map_data
     country = @country
-    region = params["region"].gsub("-", "_")
+    if params["region"].nil?
+      region = 'world'
+    else
+      region = params["region"].gsub("-", "_")
+    end
     relative_expenses = data_factory.relative_prices(params)
     peace_index = data_factory.peace_index
-    generate_yearly_currency_trends(data_factory.exchange_rates(params))
+    generate_yearly_currency_trends(data_factory.exchange_rates(params), relative_expenses)
   end
 
-  def generate_yearly_currency_trends(latest)
+  def generate_yearly_currency_trends(latest, relative_expenses)
     percent_one_year = data_factory.compare_exchange_rates(latest, params, 1)
     percent_two_years = data_factory.compare_exchange_rates(latest, params, 2)
     percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)

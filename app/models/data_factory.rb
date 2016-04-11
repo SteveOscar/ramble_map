@@ -6,7 +6,11 @@ class DataFactory
       Country.includes(:currency).all
     end
     @rates = ExchangeRateService.new(params).get_data["rates"]
-    @base_country = Country.includes(:currency).find(params[:country])
+    if !params[:id].nil?
+      @base_country = Country.includes(:currency).find(params[:id])
+    else
+      @base_country = Country.includes(:currency).find(params[:country])
+    end
     remove_outliers
   end
 

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var currentView = "currency";
-    var currentYear = gon.percent_one_year;che
+    var currentYear = gon.percent_one_year;
     $(function(){
       $('#' + gon.region).vectorMap({
       map: gon.region + '_mill',
