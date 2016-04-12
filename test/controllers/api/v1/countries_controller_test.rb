@@ -22,4 +22,16 @@ class Api::V1::CountriesControllerTest < ActionController::TestCase
     assert_equal 5, data["cheap"].count
     assert_equal 5, data["highest_price"].count
   end
+
+  test "#trends" do
+    country = Country.first
+
+    get :trends, country: country.country_name, format: :json
+
+    data = JSON.parse(response.body)
+
+    assert_response :success
+    assert_equal data.count, 171
+    assert_equal data.first[0], "Iceland"
+  end
 end
