@@ -110,7 +110,7 @@ $(document).ready(function(){
     $('#currency-one-year').fadeTo('fast', 0);
     $('#currency-two-years').fadeTo('fast', 0);
     $('#currency-three-years').fadeTo('fast', 0);
-    $('.explanation').text('Now viewing abolute peace rankings')
+    $('.explanation').text('Now viewing absolute peace rankings')
   });
 
   $('#expenses-btn').on('click', function() {
