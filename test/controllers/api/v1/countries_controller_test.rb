@@ -34,4 +34,14 @@ class Api::V1::CountriesControllerTest < ActionController::TestCase
     assert_equal data.count, 171
     assert_equal data.first[0], "Iceland"
   end
+
+  test "#expenses" dog
+    get :expenses, country: 'United States', format: :json
+
+    data = JSON.parse(response.body)
+
+    assert_response :success
+    assert_equal data.count, 163
+    assert_equal data.first[0], "Switzerland"
+  end
 end

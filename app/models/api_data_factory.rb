@@ -18,6 +18,7 @@ class APIDataFactory
     prices = countries.each_with_object({}) do |country, hash|
       hash[country.country_name] = calc_relative_expense(country, rates, params) unless rates[country.currency.code].nil? || country.ppp.nil?
     end
+    prices.sort_by{|k, v| v.to_f}
   end
 
   def calc_relative_expense(country, rates, params)

@@ -19,19 +19,19 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 12 Apr 2016 00:00:48 GMT
+      - Tue, 12 Apr 2016 01:34:19 GMT
       Server:
       - Apache
       Last-Modified:
-      - Mon, 11 Apr 2016 23:00:12 GMT
+      - Tue, 12 Apr 2016 01:00:09 GMT
       Cache-Control:
       - public
       Etag:
-      - '"c7d97c003b41f12841ddecdb3da86b59"'
+      - '"56090c136c62292d843e93c444bd696b"'
       Access-Control-Allow-Origin:
       - "*"
       Content-Length:
-      - '4177'
+      - '4185'
       Connection:
       - close
       Content-Type:
@@ -42,184 +42,184 @@ http_interactions:
         {
           "disclaimer": "Exchange rates provided for informational purposes only and do not constitute financial advice of any kind. Although every attempt is made to ensure quality, no guarantees are made of accuracy, validity, availability, or fitness for any purpose. All usage subject to acceptance of Terms: https://openexchangerates.org/terms/",
           "license": "Data sourced from various providers; resale prohibited; no warranties given of any kind. All usage subject to License Agreement: https://openexchangerates.org/license/",
-          "timestamp": 1460415612,
+          "timestamp": 1460422809,
           "base": "USD",
           "rates": {
-            "AED": 3.67325,
+            "AED": 3.67301,
             "AFN": 68.470001,
-            "ALL": 121.937901,
-            "AMD": 483.514996,
-            "ANG": 1.786275,
-            "AOA": 162.809835,
-            "ARS": 14.51087,
-            "AUD": 1.317018,
+            "ALL": 121.803901,
+            "AMD": 483.149996,
+            "ANG": 1.788775,
+            "AOA": 162.803168,
+            "ARS": 14.51181,
+            "AUD": 1.316322,
             "AWG": 1.793333,
-            "AZN": 1.525663,
-            "BAM": 1.715085,
+            "AZN": 1.525713,
+            "BAM": 1.714635,
             "BBD": 2,
-            "BDT": 78.38057,
-            "BGN": 1.71496,
-            "BHD": 0.377048,
-            "BIF": 1552,
+            "BDT": 78.296791,
+            "BGN": 1.71555,
+            "BHD": 0.377072,
+            "BIF": 1560,
             "BMD": 1,
-            "BND": 1.346388,
-            "BOB": 6.86367,
-            "BRL": 3.51216,
+            "BND": 1.345375,
+            "BOB": 6.83429,
+            "BRL": 3.51125,
             "BSD": 1,
-            "BTC": 0.002366275837,
+            "BTC": 0.002362507944,
             "BTN": 66.476067,
-            "BWP": 10.837188,
+            "BWP": 10.825938,
             "BYR": 19997,
-            "BZD": 1.9951,
-            "CAD": 1.292255,
-            "CDF": 925,
-            "CHF": 0.954482,
+            "BZD": 1.994138,
+            "CAD": 1.292592,
+            "CDF": 925.5,
+            "CHF": 0.954383,
             "CLF": 0.024602,
-            "CLP": 680.749004,
-            "CNY": 6.460838,
+            "CLP": 680.237004,
+            "CNY": 6.459708,
             "COP": 3067.046706,
-            "CRC": 535.237999,
+            "CRC": 535.031999,
             "CUC": 1,
-            "CUP": 0.999963,
-            "CVE": 96.581101,
-            "CZK": 23.68674,
-            "DJF": 177.673752,
-            "DKK": 6.525804,
-            "DOP": 45.82498,
-            "DZD": 107.9768,
-            "EEK": 13.71975,
-            "EGP": 8.859698,
-            "ERN": 14.9985,
-            "ETB": 21.55504,
-            "EUR": 0.876557,
+            "CUP": 0.99955,
+            "CVE": 96.5833,
+            "CZK": 23.68536,
+            "DJF": 177.701252,
+            "DKK": 6.526294,
+            "DOP": 45.80236,
+            "DZD": 108.001481,
+            "EEK": 13.72285,
+            "EGP": 8.859928,
+            "ERN": 15.0015,
+            "ETB": 21.54238,
+            "EUR": 0.876737,
             "FJD": 2.0719,
-            "FKP": 0.702751,
-            "GBP": 0.702751,
-            "GEL": 2.27415,
-            "GGP": 0.702751,
-            "GHS": 3.82886,
-            "GIP": 0.702751,
-            "GMD": 42.62686,
-            "GNF": 7601.225098,
-            "GTQ": 7.72664,
+            "FKP": 0.702543,
+            "GBP": 0.702543,
+            "GEL": 2.274225,
+            "GGP": 0.702543,
+            "GHS": 3.84206,
+            "GIP": 0.702543,
+            "GMD": 42.61788,
+            "GNF": 7590.550049,
+            "GTQ": 7.72391,
             "GYD": 205.970002,
-            "HKD": 7.755139,
-            "HNL": 22.5722,
-            "HRK": 6.567634,
-            "HTG": 62.09365,
-            "HUF": 273.515898,
+            "HKD": 7.75578,
+            "HNL": 22.58212,
+            "HRK": 6.568794,
+            "HTG": 61.916125,
+            "HUF": 273.438899,
             "IDR": 13119.433333,
-            "ILS": 3.763509,
-            "IMP": 0.702751,
-            "INR": 66.382429,
+            "ILS": 3.762149,
+            "IMP": 0.702543,
+            "INR": 66.395461,
             "IQD": 1088.549988,
             "IRR": 30235,
-            "ISK": 123.419,
-            "JEP": 0.702751,
-            "JMD": 121.706,
-            "JOD": 0.708374,
-            "JPY": 107.969399,
-            "KES": 101.1212,
+            "ISK": 123.383,
+            "JEP": 0.702543,
+            "JMD": 121.643001,
+            "JOD": 0.708298,
+            "JPY": 108.1079,
+            "KES": 101.110101,
             "KGS": 69.97385,
-            "KHR": 4021.375,
-            "KMF": 432.22252,
+            "KHR": 4021.125,
+            "KMF": 432.163782,
             "KPW": 900.09,
-            "KRW": 1146.998332,
-            "KWD": 0.30134,
+            "KRW": 1146.353333,
+            "KWD": 0.301254,
             "KYD": 0.824517,
-            "KZT": 337.395991,
+            "KZT": 337.095989,
             "LAK": 8115.475098,
             "LBP": 1508.666667,
-            "LKR": 144.845,
-            "LRD": 84.678465,
-            "LSL": 14.78383,
-            "LTL": 3.016886,
-            "LVL": 0.617686,
-            "LYD": 1.348125,
-            "MAD": 9.621853,
-            "MDL": 19.63058,
-            "MGA": 3179.46665,
-            "MKD": 53.98604,
-            "MMK": 1177.075012,
-            "MNT": 2022.166667,
-            "MOP": 7.98897,
+            "LKR": 144.689001,
+            "LRD": 84.661531,
+            "LSL": 14.80449,
+            "LTL": 3.017286,
+            "LVL": 0.617786,
+            "LYD": 1.346425,
+            "MAD": 9.617573,
+            "MDL": 19.61498,
+            "MGA": 3177.343366,
+            "MKD": 53.99044,
+            "MMK": 1178,
+            "MNT": 2021.833333,
+            "MOP": 7.98608,
             "MRO": 346,
             "MTL": 0.683738,
-            "MUR": 35.036425,
+            "MUR": 35.03035,
             "MVR": 15.243333,
-            "MWK": 684.746658,
-            "MXN": 17.67815,
-            "MYR": 3.89013,
-            "MZN": 52.010001,
-            "NAD": 14.78503,
-            "NGN": 199.112001,
-            "NIO": 28.09536,
-            "NOK": 8.207496,
-            "NPR": 106.3664,
-            "NZD": 1.458982,
-            "OMR": 0.385029,
+            "MWK": 684.669958,
+            "MXN": 17.67694,
+            "MYR": 3.89077,
+            "MZN": 52.074999,
+            "NAD": 14.80449,
+            "NGN": 199.092001,
+            "NIO": 28.17942,
+            "NOK": 8.207566,
+            "NPR": 106.3198,
+            "NZD": 1.457883,
+            "OMR": 0.385035,
             "PAB": 1,
-            "PEN": 3.2997,
-            "PGK": 3.1213,
-            "PHP": 46.10442,
-            "PKR": 104.683,
-            "PLN": 3.753422,
-            "PYG": 5603.55498,
-            "QAR": 3.64167,
-            "RON": 3.916886,
-            "RSD": 107.7097,
-            "RUB": 66.82638,
-            "RWF": 755.154993,
-            "SAR": 3.750072,
+            "PEN": 3.29907,
+            "PGK": 3.121175,
+            "PHP": 46.10704,
+            "PKR": 104.653,
+            "PLN": 3.752942,
+            "PYG": 5604.688314,
+            "QAR": 3.64165,
+            "RON": 3.916686,
+            "RSD": 107.6771,
+            "RUB": 66.897161,
+            "RWF": 761.742493,
+            "SAR": 3.750022,
             "SBD": 7.936214,
-            "SCR": 13.46734,
-            "SDG": 6.098825,
-            "SEK": 8.122734,
-            "SGD": 1.345243,
-            "SHP": 0.702751,
+            "SCR": 13.39558,
+            "SDG": 6.095425,
+            "SEK": 8.121704,
+            "SGD": 1.345186,
+            "SHP": 0.702543,
             "SLL": 3976.5,
-            "SOS": 614.150003,
-            "SRD": 5.074493,
+            "SOS": 615.107503,
+            "SRD": 5.075508,
             "STD": 21502.25,
-            "SVC": 8.744375,
-            "SYP": 219.488998,
-            "SZL": 14.78721,
-            "THB": 35.05188,
+            "SVC": 8.74065,
+            "SYP": 219.508998,
+            "SZL": 14.80249,
+            "THB": 35.04396,
             "TJS": 7.8696,
-            "TMT": 3.5016,
-            "TND": 2.00411,
+            "TMT": 3.5015,
+            "TND": 2.00457,
             "TOP": 2.240743,
-            "TRY": 2.834975,
-            "TTD": 6.57712,
-            "TWD": 32.39812,
-            "TZS": 2187.83335,
-            "UAH": 25.58036,
+            "TRY": 2.834535,
+            "TTD": 6.57324,
+            "TWD": 32.37136,
+            "TZS": 2185.7,
+            "UAH": 25.56658,
             "UGX": 3348.2,
             "USD": 1,
-            "UYU": 31.10608,
+            "UYU": 31.11728,
             "UZS": 2892.339966,
             "VEF": 9.9715,
             "VND": 22338.333333,
             "VUV": 107.82,
-            "WST": 2.517497,
-            "XAF": 575.695395,
-            "XAG": 0.062641,
-            "XAU": 0.0007925,
+            "WST": 2.553249,
+            "XAF": 575.338523,
+            "XAG": 0.062766,
+            "XAU": 0.0007975,
             "XCD": 2.70302,
-            "XDR": 0.708166,
-            "XOF": 581.214115,
+            "XDR": 0.708116,
+            "XOF": 581.029783,
             "XPD": 0.001828,
-            "XPF": 104.651613,
+            "XPF": 104.659938,
             "XPT": 0.001011,
-            "YER": 249.879001,
-            "ZAR": 14.806,
+            "YER": 249.595001,
+            "ZAR": 14.79407,
             "ZMK": 5253.075255,
-            "ZMW": 9.805125,
+            "ZMW": 9.72435,
             "ZWL": 322.387247
           }
         }
     http_version: 
-  recorded_at: Tue, 12 Apr 2016 00:00:48 GMT
+  recorded_at: Tue, 12 Apr 2016 01:34:18 GMT
 - request:
     method: get
     uri: http://openexchangerates.org/api/historical/2015-04-12.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=USD
@@ -239,7 +239,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 12 Apr 2016 00:00:48 GMT
+      - Tue, 12 Apr 2016 01:34:20 GMT
       Server:
       - Apache
       Last-Modified:
@@ -437,7 +437,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Tue, 12 Apr 2016 00:00:48 GMT
+  recorded_at: Tue, 12 Apr 2016 01:34:18 GMT
 - request:
     method: get
     uri: http://openexchangerates.org/api/historical/2014-04-12.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=USD
@@ -457,7 +457,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 12 Apr 2016 00:00:49 GMT
+      - Tue, 12 Apr 2016 01:34:20 GMT
       Server:
       - Apache
       Last-Modified:
@@ -652,7 +652,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Tue, 12 Apr 2016 00:00:48 GMT
+  recorded_at: Tue, 12 Apr 2016 01:34:18 GMT
 - request:
     method: get
     uri: http://openexchangerates.org/api/historical/2013-04-12.json?app_id=d89861a2fc9f4018b72156cbea82cd4a&base=USD
@@ -672,7 +672,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 12 Apr 2016 00:00:49 GMT
+      - Tue, 12 Apr 2016 01:34:21 GMT
       Server:
       - Apache
       Last-Modified:
@@ -866,7 +866,7 @@ http_interactions:
           }
         }
     http_version: 
-  recorded_at: Tue, 12 Apr 2016 00:00:49 GMT
+  recorded_at: Tue, 12 Apr 2016 01:34:19 GMT
 - request:
     method: post
     uri: https://api.twitter.com/1.1/statuses/update.json
@@ -879,12 +879,84 @@ http_interactions:
       User-Agent:
       - TwitterRubyGem/5.16.0
       Authorization:
-      - OAuth oauth_consumer_key="Ps5UAcArCyIKYNjWiwCNBTrHI", oauth_nonce="5be84f61abca640234c482447448c2b8",
-        oauth_signature="fs7pbUmLo2CgtzYzoHYOtW0PS18%3D", oauth_signature_method="HMAC-SHA1",
-        oauth_timestamp="1460419249", oauth_token="3767014753-dBYdtNN0vMZ9C8RNVQTS2A5IC1j1p4jtP0xW8Y8",
+      - OAuth oauth_consumer_key="Ps5UAcArCyIKYNjWiwCNBTrHI", oauth_nonce="4dde3ec0d95ad607fe1ebfd557f2fa24",
+        oauth_signature="%2FsRK0V2iCvL6Is9zuT0FgNYCkg0%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1460424859", oauth_token="3767014753-dBYdtNN0vMZ9C8RNVQTS2A5IC1j1p4jtP0xW8Y8",
         oauth_version="1.0"
       Content-Type:
       - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Disposition:
+      - attachment; filename=json.json
+      Content-Length:
+      - '85'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 12 Apr 2016 01:34:20 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Tue, 12 Apr 2016 01:34:20 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tsa_a
+      Set-Cookie:
+      - guest_id=v1%3A146042486087158473; Domain=.twitter.com; Path=/; Expires=Thu,
+        12-Apr-2018 01:34:20 UTC
+      - lang=en; Path=/
+      Status:
+      - 403 Forbidden
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write
+      X-Connection-Hash:
+      - d446158390e5418a1f0f7374406544dd
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Response-Time:
+      - '15'
+      X-Transaction:
+      - 53c1ecb242870577
+      X-Tsa-Request-Body-Time:
+      - '0'
+      X-Twitter-Response-Tags:
+      - BouncerCompliant
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":187,"message":"Status is a duplicate."}]}'
+    http_version: 
+  recorded_at: Tue, 12 Apr 2016 01:34:19 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/user_timeline.json?count=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - TwitterRubyGem/5.16.0
+      Authorization:
+      - OAuth oauth_consumer_key="Ps5UAcArCyIKYNjWiwCNBTrHI", oauth_nonce="23067922fcfb94cfd5f9e7c4b53ab6f6",
+        oauth_signature="0k3PHBxzOteFXjdGU%2FzZVHtB7GE%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1460424859", oauth_token="3767014753-dBYdtNN0vMZ9C8RNVQTS2A5IC1j1p4jtP0xW8Y8",
+        oauth_version="1.0"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -897,22 +969,22 @@ http_interactions:
       Content-Disposition:
       - attachment; filename=json.json
       Content-Length:
-      - '1020'
+      - '1023'
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Tue, 12 Apr 2016 00:00:49 GMT
+      - Tue, 12 Apr 2016 01:34:21 GMT
       Expires:
       - Tue, 31 Mar 1981 05:00:00 GMT
       Last-Modified:
-      - Tue, 12 Apr 2016 00:00:49 GMT
+      - Tue, 12 Apr 2016 01:34:21 GMT
       Pragma:
       - no-cache
       Server:
       - tsa_a
       Set-Cookie:
-      - guest_id=v1%3A146041924932451908; Domain=.twitter.com; Path=/; Expires=Thu,
-        12-Apr-2018 00:00:49 UTC
+      - guest_id=v1%3A146042486116914782; Domain=.twitter.com; Path=/; Expires=Thu,
+        12-Apr-2018 01:34:21 UTC
       - lang=en; Path=/
       Status:
       - 200 OK
@@ -921,30 +993,34 @@ http_interactions:
       X-Access-Level:
       - read-write
       X-Connection-Hash:
-      - 99fd5e6487ecb3cb0d90cac6f722dc47
+      - e5103dfccc8f6c22913fd871d32494f7
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '179'
+      X-Rate-Limit-Reset:
+      - '1460425761'
       X-Response-Time:
-      - '240'
+      - '99'
       X-Transaction:
-      - 29cf4e0e4524cec0
-      X-Tsa-Request-Body-Time:
-      - '0'
+      - b5fa8963c88cb2ed
       X-Twitter-Response-Tags:
       - BouncerCompliant
       X-Xss-Protection:
       - 1; mode=block
     body:
       encoding: ASCII-8BIT
-      string: '{"created_at":"Tue Apr 12 00:00:49 +0000 2016","id":719676609616195584,"id_str":"719676609616195584","text":"World
+      string: '[{"created_at":"Tue Apr 12 00:00:49 +0000 2016","id":719676609616195584,"id_str":"719676609616195584","text":"World
         expense trends: https:\/\/t.co\/iLXTCpmIOs","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[{"url":"https:\/\/t.co\/iLXTCpmIOs","expanded_url":"http:\/\/www.example.com\/display_map?utf8=%E2%9C%93&country=148&region=world&commit=Submit","display_url":"example.com\/display_map?ut\u2026","indices":[22,45]}]},"truncated":false,"source":"\u003ca
         href=\"http:\/\/127.0.0.1:3000\" rel=\"nofollow\"\u003eRamble Map\u003c\/a\u003e","in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":null,"in_reply_to_user_id_str":null,"in_reply_to_screen_name":null,"user":{"id":3767014753,"id_str":"3767014753","name":"Steven
         Olson","screen_name":"oSteveOscar","location":"Denver, CO","description":"Turing
         student, webdev, photographer, traveler, former commercial fisherman. Life-long
         cereal enthusiast.","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":64,"friends_count":92,"listed_count":8,"created_at":"Sat
-        Oct 03 05:59:31 +0000 2015","favourites_count":107,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":78,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"000000","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/676288331215335424\/xFUgQmzk_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/676288331215335424\/xFUgQmzk_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/3767014753\/1455767878","profile_link_color":"FAB81E","profile_sidebar_border_color":"000000","profile_sidebar_fill_color":"000000","profile_text_color":"000000","profile_use_background_image":false,"has_extended_profile":false,"default_profile":false,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":0,"favorite_count":0,"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}'
+        Oct 03 05:59:31 +0000 2015","favourites_count":107,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":78,"lang":"en","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"000000","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/676288331215335424\/xFUgQmzk_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/676288331215335424\/xFUgQmzk_normal.jpg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/3767014753\/1455767878","profile_link_color":"FAB81E","profile_sidebar_border_color":"000000","profile_sidebar_fill_color":"000000","profile_text_color":"000000","profile_use_background_image":false,"has_extended_profile":false,"default_profile":false,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"is_quote_status":false,"retweet_count":1,"favorite_count":0,"favorited":false,"retweeted":false,"possibly_sensitive":false,"lang":"en"}]'
     http_version: 
-  recorded_at: Tue, 12 Apr 2016 00:00:49 GMT
+  recorded_at: Tue, 12 Apr 2016 01:34:20 GMT
 recorded_with: VCR 3.0.1

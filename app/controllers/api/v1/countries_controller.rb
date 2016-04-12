@@ -21,6 +21,14 @@ class Api::V1::CountriesController < Api::V1::BaseController
     respond_with @percent_one_year
   end
 
+  def expenses
+    country = Country.find_by(country_name: params["country"])
+    params[:id] = country.id
+    @data_factory = APIDataFactory.new(params)
+    generate_map_data
+    respond_with @relative_expenses
+  end
+
   private
 
   def generate_map_data
@@ -30,9 +38,9 @@ class Api::V1::CountriesController < Api::V1::BaseController
     else
       region = params["region"].gsub("-", "_")
     end
-    relative_expenses = data_factory.relative_prices(params)
+    @relative_expenses = data_factory.relative_prices(params)
     peace_index = data_factory.peace_index
-    generate_yearly_currency_trends(data_factory.exchange_rates(params), relative_expenses)
+    generate_yearly_currency_trends(data_factory.exchange_rates(params), @relative_expenses)
   end
 
   def generate_yearly_currency_trends(latest, relative_expenses)
