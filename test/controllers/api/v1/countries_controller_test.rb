@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class Api::V1::CountriesControllerTest < ActionController::TestCase
+  def setup
+    request.env['HTTP_AUTHORIZATION'] = "Token token=#{ENV["RAMBLE_MAP_ID"]}"
+  end
+
   test "#index" do
     get :index, format: :json
 
@@ -29,13 +33,12 @@ class Api::V1::CountriesControllerTest < ActionController::TestCase
     get :trends, country: country.country_name, format: :json
 
     data = JSON.parse(response.body)
-
     assert_response :success
     assert_equal data.count, 171
-    assert_equal data.first[0], "Iceland"
+    assert_equal data.first[0], "Sierra Leone"
   end
 
-  test "#expenses" dog
+  test "#expenses" do
     get :expenses, country: 'United States', format: :json
 
     data = JSON.parse(response.body)
