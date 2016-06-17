@@ -36,7 +36,7 @@ class Api::V1::CountriesController < Api::V1::BaseController
     end
 
     def generate_yearly_currency_trends(latest, relative_expenses)
-      time = params["year"].to_i || 1
+      time = params["year"] ? params["year"].to_i : 1
       @exchange_trend = data_factory.compare_exchange_rates(latest, params, time)
       # @stats = data_factory.stat_card_data(@exchange_trend, relative_expenses)
     end
