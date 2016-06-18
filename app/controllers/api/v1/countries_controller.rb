@@ -14,8 +14,8 @@ class Api::V1::CountriesController < Api::V1::BaseController
   # end
 
   def trends
-    generate_data(data_factory)
-    respond_with @exchange_trend
+    data = generate_data(data_factory)
+    respond_with data
   end
 
   def expenses
@@ -36,9 +36,21 @@ class Api::V1::CountriesController < Api::V1::BaseController
     end
 
     def generate_yearly_currency_trends(latest, relative_expenses)
-      time = params["year"] ? params["year"].to_i : 1
-      @exchange_trend = data_factory.compare_exchange_rates(latest, params, time)
-      # @stats = data_factory.stat_card_data(@exchange_trend, relative_expenses)
+      trends1 = data_factory.compare_exchange_rates(latest, params, 1)
+      trends2 = data_factory.compare_exchange_rates(latest, params, 2)
+      trends3 = data_factory.compare_exchange_rates(latest, params, 3)
+      compile_trends_by_country(trends1, trends2, trends3)
+      # @stats = data_factory.stat_card_data(@exchange_trends, relative_expenses)
+    end
+
+    def compile_trends_by_country(trends1, trends2, trends3)
+      trends1.each_with_index do |trend, i|
+        rate2 = trends2.select {|country, rate| country == trend.first }
+        trend << rate2.first.last
+        rate3 = trends3.select {|country, rate| country == trend.first }
+        trend << rate3.first.last
+      end
+      trends1
     end
 
 end
