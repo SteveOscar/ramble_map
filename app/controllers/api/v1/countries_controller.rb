@@ -51,12 +51,11 @@ class Api::V1::CountriesController < Api::V1::BaseController
         trend << rate3.first.last
       end
       country = Country.find_by(country_name: params['country'])
-      currency_id = country.currency_id
-      country_id = country.id
-      currency_code = Currency.find(currency_id).code
-      trends1.insert(0, currency_code)
-      trends1.insert(1, country_id)
-      trends1
+      currency_code = Currency.find(country.currency_id).code
+      results = trends1.select{|trend| trend[0] != country.country_name}
+      results.insert(0, currency_code)
+      results.insert(1, country.id)
+      results
     end
 
 end
