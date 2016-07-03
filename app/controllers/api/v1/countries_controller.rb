@@ -19,8 +19,28 @@ class Api::V1::CountriesController < Api::V1::BaseController
   end
 
   def expenses
-    params[:id] = Country.find_by(country_name: params["country"]).id
     respond_with data_factory.relative_prices(params)
+  end
+
+  def combined_response
+    trends = generate_data(data_factory)
+    expenses = data_factory.relative_prices(params)
+    results = trends.map do |trend|
+      if trend.class == Array
+        expense = expenses.select{ |name, one, two, three| name == trend.first }
+        trend << expense[0].last if expense[0]
+        trend
+      else
+        trend
+      end
+    end
+    peace = data_factory.peace_index
+    final_results = results[2..results.length-1].map do |trend|
+      peace_score = peace.select{ |name, scores| name == trend.first }
+      peace_score = 'NA' if peace_score.empty?
+      peace_score == 'NA' ? trend << peace_score : trend << peace_score.values[0].last.to_i
+    end
+    respond_with final_results.select{ |data| data.length == 6 }
   end
 
   private

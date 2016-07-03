@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :v1, defaults: {format: :json} do
       resources :countries, defaults: {format: :json}
       get '/trends/:country', to: 'countries#trends'
-      get '/expenses/:country', to: 'countries#expenses'
+      get '/expenses/:country', to: 'countries#combined_response'
     end
   end
 end
