@@ -40,7 +40,9 @@ class Api::V1::CountriesController < Api::V1::BaseController
       peace_score = 'NA' if peace_score.empty?
       peace_score == 'NA' ? trend << peace_score : trend << peace_score.values[0].last.to_i
     end
-    respond_with final_results.select{ |data| data.length == 6 }
+    final_results.unshift(results[1])
+    final_results.unshift(results[0])
+    respond_with final_results.select{ |data| data.class == Fixnum || data.class == String || data.length == 6 }
   end
 
   private

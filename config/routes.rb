@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: {format: :json} do
       resources :countries, defaults: {format: :json}
-      get '/trends/:country', to: 'countries#trends'
+      get '/trends/:country', to: 'countries#combined_response'
       get '/expenses/:country', to: 'countries#combined_response'
     end
   end
