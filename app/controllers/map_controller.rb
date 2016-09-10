@@ -25,10 +25,10 @@ class MapController < ApplicationController
     gon.region = params["region"].gsub("-", "_")
     gon.relative_expenses = data_factory.relative_prices(params)
     gon.peace_index = data_factory.peace_index
-    generate_yearly_currency_trends(data_factory.exchange_rates(params))
+    generate_currency_trends(data_factory.exchange_rates(params))
   end
 
-  def generate_yearly_currency_trends(latest)
+  def generate_currency_trends(latest)
     gon.percent_one_year = data_factory.compare_exchange_rates(latest, params, 1)
     gon.percent_two_years = data_factory.compare_exchange_rates(latest, params, 2)
     gon.percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)

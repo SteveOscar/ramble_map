@@ -34,7 +34,7 @@ class APIDataFactory
   end
 
   def compare_exchange_rates(latest, params, years_back)
-    date = format_date(years_back)
+    date = format_date(hours_back)
     old = historical_data(date, params)
     results = latest.each_with_object({}) do |rate, hash|
       hash[rate[0]] = (((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f) * 100).round(1).to_s
@@ -42,7 +42,7 @@ class APIDataFactory
     results.sort_by{|k, v| v.to_f}
   end
 
-  def format_date(years_back)
+  def format_date(hours_back)
     years_back.year.ago.strftime('%Y-%m-%d')
   end
 

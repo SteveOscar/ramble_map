@@ -13,16 +13,19 @@ class ExchangeRateService
   end
 
   def get_data
-    Rails.cache.fetch("rates-for-#{@currency}", expires_in: 24.hours) do
+    # Rails.cache.fetch("rates-for-#{@currency}", expires_in: 24.hours) do
+      # (Time.now.beginning_of_hour.utc - Historical.last.time) / 3600
       response = Faraday.get("https://openexchangerates.org/api/latest.json?app_id=#{ENV["OPEN_EXCHANGE_ID"]}&base=" + @currency)
+      res = JSON.parse(response.body)
+      Historical.create(base: res['base'], data: res['rates'], time: Time.now.beginning_of_hour.utc)
       JSON.parse(response.body)
-    end
+    # end
   end
 
   def get_historical_data(date)
-    Rails.cache.fetch("rates-for-#{@currency} on #{date}", expires_in: 24.hours) do
+    # Rails.cache.fetch("rates-for-#{@currency} on #{date}", expires_in: 24.hours) do
       response = Faraday.get('http://openexchangerates.org/api/historical/' + date + ".json?app_id=#{ENV["OPEN_EXCHANGE_ID"]}&base=" + @currency)
       JSON.parse(response.body)
-    end
+    # end
   end
 end
