@@ -30,9 +30,9 @@ class MapController < ApplicationController
 
   def generate_currency_trends(latest)
     base = Country.find(params["country"]).currency.code
-    gon.percent_one_year = data_factory.compare_hourly_rates(24, base)
-    gon.percent_two_years = data_factory.compare_hourly_rates(24, base)
-    gon.percent_three_years = data_factory.compare_hourly_rates(24, base)
+    gon.percent_one_year = data_factory.compare_hourly_rates(1, base)
+    gon.percent_two_years = data_factory.compare_hourly_rates(4, base)
+    gon.percent_three_years = data_factory.compare_hourly_rates(8, base)
     # gon.percent_one_year = data_factory.compare_exchange_rates(latest, params, 3)
     # gon.percent_two_years = data_factory.compare_exchange_rates(latest, params, 3)
     # gon.percent_three_years = data_factory.compare_exchange_rates(latest, params, 3)
