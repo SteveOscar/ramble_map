@@ -2,6 +2,7 @@ $(document).ready(function(){
     var currentView = "currency";
     var currentYear = gon.percent_one_year;
     $(function(){
+      debugger
       $('#' + gon.region).vectorMap({
       map: gon.region + '_mill',
       backgroundColor: ['transparent'],
@@ -48,6 +49,7 @@ $(document).ready(function(){
       // Generates content of on-hover label over regions
       var dataSet = function(e, el, code) {
         if (currentView === "currency") {
+          debugger
           if (currentYear[code] > 0) {
             el.html(el.html()+': currency has become \n'+currentYear[code]+'% weaker against that of: '+gon.country);
           } else if (currentYear[code] < 0) {
@@ -92,6 +94,7 @@ $(document).ready(function(){
       };
 
       var updateMap = function(r, min, max, values, view) {
+        debugger
         r.params.min = min;
         r.params.max = max;
         r.setValues(values);
