@@ -23,7 +23,8 @@ default: &default
 
 development:
   <<: *default
-  database: globe_squatter_development
+  database: mylocaldb
+  # database: globe_squatter_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

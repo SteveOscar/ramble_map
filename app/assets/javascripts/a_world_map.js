@@ -2,7 +2,6 @@ $(document).ready(function(){
     var currentView = "currency";
     var currentYear = gon.percent_one_year;
     $(function(){
-      debugger
       $('#' + gon.region).vectorMap({
       map: gon.region + '_mill',
       backgroundColor: ['transparent'],
@@ -48,16 +47,18 @@ $(document).ready(function(){
       var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
       // Generates content of on-hover label over regions
       var dataSet = function(e, el, code) {
+        debugger
         if (currentView === "currency") {
-          debugger
           if (currentYear[code] > 0) {
-            el.html(el.html()+': currency has become \n'+currentYear[code]+'% weaker against that of: '+gon.country);
+            var x = currentYear[code]/100
+            el.html('The '+gon.conversion[gon.country]+' has lost \n'+ Math.floor(x * 1000) / 1000 +'% against the: '+gon.conversion[el.html()]);
           } else if (currentYear[code] < 0) {
-            el.html(el.html()+': currency has become \n'+currentYear[code]*(-1)+'% stronger against that of: '+gon.country);
+            var x = (currentYear[code]/100)*(-1)
+            el.html('The '+gon.conversion[gon.country]+' has gained \n'+ Math.floor(x * 1000) / 1000 +'% against the: '+gon.conversion[el.html()]);
           } else if (currentYear[code] === 0) {
             el.html(el.html()+' uses the same currency');
           } else {
-            el.html(el.html() + ' N/A');
+            el.html(el.html() + ' No data or markets closed');
           }
         } else if (currentView === "peace") {
             if (gon.peace_index[code][0] > 3) {
@@ -94,7 +95,6 @@ $(document).ready(function(){
       };
 
       var updateMap = function(r, min, max, values, view) {
-        debugger
         r.params.min = min;
         r.params.max = max;
         r.setValues(values);
