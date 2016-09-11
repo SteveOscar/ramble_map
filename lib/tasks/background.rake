@@ -19,4 +19,6 @@ task :background => :environment do
     # df.get_historical_data(2.years.ago.strftime('%Y-%m-%d'))
     # df.get_historical_data(3.years.ago.strftime('%Y-%m-%d'))
   end
+  cutoff = Time.now.utc - 12.hours
+  Historical.where("time < ?", cutoff).delete_all
 end
