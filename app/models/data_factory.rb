@@ -5,8 +5,8 @@ class DataFactory
     @countries = Rails.cache.fetch("#{:updated_at}/countries_and_currency") do
       Country.includes(:currency).all
     end
-    @rates = Historical.where(base: Country.find(params['country']).currency.code).last.data
-    # @rates = ExchangeRateService.new(params).get_data["rates"]
+    # @rates = Historical.where(base: Country.find(params['country']).currency.code).last.data
+    @rates = ExchangeRateService.new(params).get_data["rates"]
     if !params[:id].nil?
       @base_country = Country.includes(:currency).find(params[:id])
     else
@@ -47,10 +47,11 @@ class DataFactory
     end
   end
 
-  def compare_hourly_rates(hours_back, base_code, latest)
+  def compare_hourly_rates(hours_back, base_code)
     base = Historical.where(base: base_code).last
     # latest = base.data
     time_query = base.time.utc - hours_back.hours
+    latest = hourly_exchange_rates(base.data)
     old = hourly_exchange_rates(Historical.where(time: time_query, base: base_code)[0].data)
     latest.each_with_object({}) do |rate, hash|
       hash[rate[0]] = (((rate[1].to_f - old[rate[0]].to_f) / rate[1].to_f) * 10000).round(1).to_s
