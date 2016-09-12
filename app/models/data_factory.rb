@@ -59,7 +59,6 @@ class DataFactory
   end
 
   def format_date(hours_back)
-    # binding.pry
     hours_back.year.ago.strftime('%Y-%m-%d')
   end
 

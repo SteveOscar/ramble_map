@@ -11,10 +11,21 @@
 <div class="col s12 m6 circle welcome-circle">
   <div class="welcome-form">
     <%= form_tag('/display_map', :method => "get") do %>
-    <h5 class="welcome-text">Set your perspective</h5>
+    <h5 class="welcome-text">Select Base Currency:</h5>
 
       <div class="select select-box">
-        <%= select_tag(:country, options_for_select(@countries, selected: country_to_view)) %>
+        <!-- <%= select_tag(:country, options_for_select(@countries, selected: country_to_view)) %> -->
+        <%= select_tag(:country, options_for_select([
+                     ['Australian Dollar (AUD)', '8'],
+                     ['US Dollar (USD)', "148"],
+                     ['British Pound (GBP)', '59'],
+                     ['Brazilian Real (BRL)', '16'],
+                     ['Russian Ruble (RUB)', '120'],
+                     ['Euro (EUR)', '43'],
+                     ['Swiss Franc (CHF)', '24'],
+                     ['Argentine Peso (ARS)', '7'],
+                     ['Chinese Yuan (CNY)', '26'],
+                     ['Japanense Yen (JPY)', '79']], selected: country_to_view)) %>
       </div>
 
       <h5 class="welcome-text">View data for...</h5>

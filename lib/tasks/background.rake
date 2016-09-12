@@ -7,7 +7,6 @@ task :background => :environment do
                Country.find_by(country_name: 'Germany').id.to_s,
                Country.find_by(country_name: 'Switzerland').id.to_s,
                Country.find_by(country_name: 'Argentina').id.to_s,
-               Country.find_by(country_name: 'Australia').id.to_s,
                Country.find_by(country_name: 'China').id.to_s,
                Country.find_by(country_name: 'Japan').id.to_s
               ]

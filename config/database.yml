@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: mylocaldb
+  database: heroku_clone_2
   # database: globe_squatter_development
 
   # The specified database role being used to connect to postgres.

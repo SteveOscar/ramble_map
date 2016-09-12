@@ -47,7 +47,6 @@ $(document).ready(function(){
       var mapObject = $('#' + gon.region).vectorMap('get', 'mapObject');
       // Generates content of on-hover label over regions
       var dataSet = function(e, el, code) {
-        debugger
         if (currentView === "currency") {
           if (currentYear[code] > 0) {
             var x = currentYear[code]/100
